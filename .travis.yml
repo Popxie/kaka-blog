@@ -1,0 +1,43 @@
+language: node_js
+
+node_js: 
+  - '10'
+
+# Travis-CI Caching
+cache:
+  directories:
+    - node_modules
+
+
+# S: Build Lifecycle
+install:
+  - npm install
+
+before_script:
+
+# 无其他依赖项所以执行npm run build 构建就行了
+script:
+  - npm run build:prod
+
+after_script:
+  - echo ${U_NAME}
+  - echo ${U_EMAIL}
+  - cd ./dist
+  - git init
+  - git config user.name "xiehuaqiang"
+  - git config user.email "mexiehuaqiang@163.com"
+  - git add .
+  - git commit -m "Automatically update from travis-c"
+  - git push --quiet -f "https://${GH_TOKEN}@${GH_REF}" master:gh-pages
+  # https://6bd3ed0126a3a83fbf0b76df15d7d585b8c28cac@github.com/Popxie/kaka-blog.git master:gh-pages
+  
+  - cd -
+# E: Build LifeCycle
+
+branches:
+  only:
+    - master
+env:
+  global:
+    # 我将其添加到了travis-ci的环境变量中
+    - GH_REF: github.com/Popxie/kaka-blog.git
