@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- html插值： https://cli.vuejs.org/zh/guide/html-and-static-assets.html#%E6%8F%92%E5%80%BC -->
+    <!-- BASE_URL（会自动生成即使没有定义且值为'/'） - 会和 vue.config.js 中的 publicPath 选项相符，即你的应用会部署到的基础路径 -->
+    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+    <!-- 使用 CDN 的 CSS 文件 -->
+    <% for (var i in htmlWebpackPlugin.options.cdn && htmlWebpackPlugin.options.cdn.css) { %>
+      <link href="<%= htmlWebpackPlugin.options.cdn.css[i] %>" rel="stylesheet">
+    <% } %>
+    <title><%= htmlWebpackPlugin.options.title %></title>
+  </head>
+  <body>
+    <!-- <div><%= JSON.stringify(htmlWebpackPlugin.options) %></div> -->
+    <!-- <div><%= htmlWebpackPlugin.options.cdn && JSON.stringify(htmlWebpackPlugin.options.cdn) %></div> -->
+    <noscript>
+      <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+    </noscript>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+    <!-- 使用 CDN 的 JS 文件 -->
+    <% for (var i in htmlWebpackPlugin.options.cdn && htmlWebpackPlugin.options.cdn.js) { %>
+      <script src="<%= htmlWebpackPlugin.options.cdn.js[i] %>"></script>
+    <% } %>
+  </body>
+</html>
