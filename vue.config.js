@@ -132,14 +132,15 @@ module.exports = {
           if (isProduction || devNeedCdn) args[0].cdn = cdn
           return args
         })
-      config.module
-        .rule('md')
-        .test(/\.md$/)
-        .use('html-loader')
-        .loader('html-loader')
+      config.module.rule('md')
+        .test(/\.md/)
+        .use('vue-loader')
+        .loader('vue-loader')
         .end()
-        .use('markdown-loader')
-        .loader('markdown-loader')
-        .end()
+        .use('vue-markdown-loader')
+        .loader('vue-markdown-loader/lib/markdown-compiler')
+        .options({
+          raw: true
+        })
     },
 }
