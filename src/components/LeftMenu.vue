@@ -2,7 +2,7 @@
  * @Description: 
  * @Author: xiehuaqiang
  * @Date: 2020-06-09 13:22:58
- * @LastEditTime: 2020-06-09 17:13:08
+ * @LastEditTime: 2020-06-11 17:09:09
 --> 
 
 <template>
@@ -10,7 +10,7 @@
     <el-menu
       :default-openeds='defaultOpeneds'
       :default-active='activeMenu'
-      active-text-color='#42b983'
+      active-text-color='#00c58e'
       background-color='#ffffff'
       text-color='#304455'
       @close='handleClose'
@@ -66,16 +66,21 @@ export default {
 
 <style lang='scss'>
   .left-menu-cont {
-    width: 200px;
+    width: 250px;
     height: 100%;
+    overflow: hidden;
+    overflow-y: scroll;
     border-right: 1px solid #eaecef;
     .el-menu {
-      width: 200px;
       height: 100%;
+      border: none;
     }
+    // 超出内容显示三个点 ...
     .el-menu-item {
       height: 40px;
       line-height: 40px;
+      overflow:hidden;
+      text-overflow: ellipsis;
     }
     .el-menu-item-group__title {
       padding: 0;

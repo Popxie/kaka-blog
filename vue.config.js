@@ -68,18 +68,20 @@ module.exports = {
       filename: 'index.html',
       // template 中的 title 标签需要是 <title><%= htmlWebpackPlugin.options.title %></title>
       // 如何没有设置这个title字段那么title会默认去package中的name字段的值
-      // title: 'kaka-blob-pro',
+      title: 'KaKa’s blog',
       // 
       test: '自定义字段，会被添加到 htmlWebpackPlugin.options对象中'
     },
   },
   // 调整 webpack 配置
-  configureWebpack: smp.wrap({
+  configureWebpack: 
+  // smp.wrap(
+    {
       devtool: NODE_ENV !== 'production' ? 'source-map' : '',
       resolve: {
         alias: {
           '@': resolve('src'),
-          'components': resolve('src/components'),
+          'components': resolve('src/components')
         }
       },
       module: {
@@ -117,7 +119,8 @@ module.exports = {
           })
         ]
       }
-    }),
+    },
+  // ),
     /**
      * @param {type} 
      * 执行 vue inspect --plugins 命令 查看插件列表
