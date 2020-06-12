@@ -69,15 +69,14 @@
 
     function refreshRem(){
         var width = docEl.getBoundingClientRect().width;
-        console.log('width: ', width)
+        console.log('实际width: ', width)
         // 默认
         if (width / dpr > 1920) {
             width = 1920 * dpr;
         }
-        if (width / dpr < 1200) {
-            width = 1200 * dpr;
+        if (width / dpr < 1300) {
+            width = 1300 * dpr;
         }
-        console.log('width2: ', width);
         // 支持所有宽度
         // if (width / dpr > width) {
         //     width = width * dpr;

@@ -96,7 +96,7 @@ body {
   }
   .main-cont {
     display: flex;
-    height: calc(100% - 56px);
+    height: calc(100% - 56px - 1px);
     .right-cont {
       width: 100%;
       padding: 20px;

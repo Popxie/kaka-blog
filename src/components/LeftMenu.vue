@@ -63,32 +63,42 @@ export default {
 }
 </script>
 
-<style lang='scss' scoped>
+<style lang='scss'>
   .left-menu-cont {
-    width: 250px;
+    padding-right: 20px;
     height: 100%;
-    overflow: hidden;
-    overflow-y: scroll;
+    background: lightblue !important;
+    overflow: auto;
     border-right: 1px solid #eaecef;
     .el-menu {
+      width: 250px !important;
       height: 100%;
       border: none;
+      // 超出内容显示三个点 ...
+      .el-menu-item {
+        min-width: 150px !important;
+        width: 210px;
+        height: 40px;
+        line-height: 40px;
+        font-size: 14px;
+        overflow:hidden;
+        text-overflow: ellipsis;
+        padding-right: 0px;
+        padding-left: 40px !important;
+      }
     }
-    // 超出内容显示三个点 ...
-    .el-menu-item {
-      height: 40px;
-      line-height: 40px;
-      font-size: 14px;
-      overflow:hidden;
-      text-overflow: ellipsis;
-    }
-    /deep/.el-menu-item-group__title {
+    .el-menu-item-group__title {
       padding: 0;
     }
-    /deep/.el-submenu__title {
+    .el-submenu__title {
+      padding: 0 !important;
       height: 40px;
       line-height: 40px;
       font-size: 14px;
     }
   }
+</style>
+
+<style lang="scss">
+ 
 </style>
