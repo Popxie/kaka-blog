@@ -2,10 +2,8 @@
  * @Description: 
  * @Author: xiehuaqiang
  * @Date: 2020-06-09 14:27:33
- * @LastEditTime: 2020-06-09 14:31:00
+ * @LastEditTime: 2020-06-12 20:19:50
 --> 
 <template>
-  <div>
-    <router-view></router-view>
-  </div>
+  <router-view></router-view>
 </template>

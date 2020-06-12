@@ -98,6 +98,7 @@ body {
     display: flex;
     height: calc(100% - 56px);
     .right-cont {
+      width: 100%;
       padding: 20px;
       overflow: hidden;
       overflow-y: scroll;
