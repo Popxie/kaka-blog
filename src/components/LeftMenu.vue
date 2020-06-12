@@ -2,7 +2,6 @@
  * @Description: 
  * @Author: xiehuaqiang
  * @Date: 2020-06-09 13:22:58
- * @LastEditTime: 2020-06-11 17:09:09
 --> 
 
 <template>
@@ -64,7 +63,7 @@ export default {
 }
 </script>
 
-<style lang='scss'>
+<style lang='scss' scoped>
   .left-menu-cont {
     width: 250px;
     height: 100%;
@@ -79,15 +78,17 @@ export default {
     .el-menu-item {
       height: 40px;
       line-height: 40px;
+      font-size: 14px;
       overflow:hidden;
       text-overflow: ellipsis;
     }
-    .el-menu-item-group__title {
+    /deep/.el-menu-item-group__title {
       padding: 0;
     }
-    .el-submenu__title {
+    /deep/.el-submenu__title {
       height: 40px;
       line-height: 40px;
+      font-size: 14px;
     }
   }
 </style>

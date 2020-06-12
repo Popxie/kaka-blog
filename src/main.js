@@ -2,10 +2,14 @@ import Vue from 'vue'
 import ElementUI from 'element-ui'
 import router from './router'
 import App from './App.vue'
-Vue.config.productionTip = false
 import Highlight from 'vue-markdown-highlight'
+
+// js
+import '@/assets/js/flexible.js'
+// 样式
 import 'element-ui/lib/theme-chalk/index.css'
 
+Vue.config.productionTip = false
 
 Vue.use(Highlight)
 

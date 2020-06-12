@@ -66,6 +66,9 @@ body {
   padding: 0;
   height: 100%;
 }
+body {
+  font-size: 14px;
+}
 #app {
   height: 100%;
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
@@ -87,13 +90,15 @@ body {
         color: #42b983;
       }
     }
+    .top-right {
+      font-size: 14px;
+    }
   }
   .main-cont {
     display: flex;
     height: calc(100% - 56px);
     .right-cont {
       padding: 20px;
-      width: 100%;
       overflow: hidden;
       overflow-y: scroll;
     }

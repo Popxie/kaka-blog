@@ -73,6 +73,29 @@ module.exports = {
       test: '自定义字段，会被添加到 htmlWebpackPlugin.options对象中'
     },
   },
+  css: {
+    loaderOptions: {
+      postcss: {
+        plugins: [
+          require('postcss-plugin-px2rem')({
+            /**
+             * 换算基数， 默认100  ，这样的话把根标签的字体规定为1rem为50px,
+             * 这样就可以从设计稿上量出多少个px直接在代码中写多上px了。
+             */
+            rootValue: 144, 
+            /**
+             * 默认false，可以（reg）利用正则表达式排除某些文件夹的方法，
+             * 例如/(node_module)\/如果想把前端UI框架内的px也转换成rem，
+             * 请把此属性设为默认值
+             */
+            exclude: /(node_module)/,
+            //（布尔值）允许在媒体查询中转换px。
+            mediaQuery: false,
+          }),
+        ]
+      }
+    }
+  },
   // 调整 webpack 配置
   configureWebpack: 
   // smp.wrap(
@@ -96,8 +119,10 @@ module.exports = {
         new webpack.ProvidePlugin({
           axios: 'axios'
         }),
+        
         // 实例化体积分析插件
         // new BundleAnalyzerPlugin(),
+
         // 开启gzip会生成.gz文件
         new CompressionWebpackPlugin({
           filename: '[path].gz[query]',
@@ -135,15 +160,27 @@ module.exports = {
           if (isProduction || devNeedCdn) args[0].cdn = cdn
           return args
         })
-      config.module.rule('md')
-        .test(/\.md/)
-        .use('vue-loader')
-        .loader('vue-loader')
-        .end()
-        .use('vue-markdown-loader')
-        .loader('vue-markdown-loader/lib/markdown-compiler')
-        .options({
-          raw: true
-        })
+      config.module
+        .rule('md')
+          .test(/\.md/)
+          .use('vue-loader')
+          .loader('vue-loader')
+          .end()
+          .use('vue-markdown-loader')
+          .loader('vue-markdown-loader/lib/markdown-compiler')
+          .options({
+            raw: true
+          })
+          .end() //返回到loader配置这一层
+          .end()//返回到rules配置这一层
+        // .rule('css') 
+        //   .test(/\.css$/)
+        //   .oneOf('vue')
+        //   .resourceQuery(/\?vue/)
+        //   .use('px2rem')
+        //   .loader('px2rem-loader') // px2rem-loader这里只能仅限于css
+        //   .options({
+        //     remUnit: 192
+        //   })
     },
 }
