@@ -62,6 +62,7 @@ export default {
 <style lang='scss'>
 html,
 body {
+  min-width: 800px;
   margin: 0;
   padding: 0;
   height: 100%;
