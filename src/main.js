@@ -4,8 +4,8 @@ import router from './router'
 import App from './App.vue'
 import Highlight from 'vue-markdown-highlight'
 
-// js
 import '@/assets/js/flexible.js'
+// import 'lib-flexible'
 // 样式
 import 'element-ui/lib/theme-chalk/index.css'
 
@@ -14,7 +14,6 @@ Vue.config.productionTip = false
 Vue.use(Highlight)
 
 if (!window.ELEMENT) Vue.use(ElementUI, {size: 'small'})
-console.log('window:', window)
 
 new Vue({
   render: h => h(App),

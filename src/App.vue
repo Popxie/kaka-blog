@@ -63,9 +63,12 @@ export default {
 html,
 body {
   min-width: 800px;
+  overflow: hidden;
+  overflow-x: scroll;
   margin: 0;
   padding: 0;
   height: 100%;
+  width: 100%;
 }
 body {
   font-size: 14px;

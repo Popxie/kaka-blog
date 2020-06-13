@@ -63,42 +63,31 @@ export default {
 }
 </script>
 
-<style lang='scss'>
-  .left-menu-cont {
-    padding-right: 20px;
-    height: 100%;
-    background: lightblue !important;
-    overflow: auto;
-    border-right: 1px solid #eaecef;
-    .el-menu {
-      width: 250px !important;
-      height: 100%;
-      border: none;
-      // 超出内容显示三个点 ...
-      .el-menu-item {
-        min-width: 150px !important;
-        width: 210px;
-        height: 40px;
-        line-height: 40px;
-        font-size: 14px;
-        overflow:hidden;
-        text-overflow: ellipsis;
-        padding-right: 0px;
-        padding-left: 40px !important;
-      }
-    }
-    .el-menu-item-group__title {
-      padding: 0;
-    }
-    .el-submenu__title {
-      padding: 0 !important;
-      height: 40px;
-      line-height: 40px;
-      font-size: 14px;
-    }
-  }
-</style>
-
 <style lang="scss">
- 
+  .left-menu-cont {
+    width: 250px;
+    height: 100%;
+    overflow: auto;
+  }
+  .el-menu {
+    height: 100%;
+  }
+  .el-menu-item {
+    width: 215px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 14px;
+    overflow:hidden;
+    text-overflow: ellipsis;
+    padding-right: 0 !important;
+  }
+  .el-menu-item-group__title {
+    padding: 0;
+  }
+  .el-submenu__title {
+    padding: 0 !important;
+    height: 40px;
+    line-height: 40px;
+    font-size: 14px;
+  }
 </style>

@@ -79,7 +79,8 @@ module.exports = {
         plugins: [
           require('postcss-plugin-px2rem')({
             /**
-             * 换算基数， 默认100  ，这样的话把根标签的字体规定为1rem为50px,
+             * 换算基数， 默认100 。
+             * 这样的话把根标签的字体规定为1rem为`${rootValue}px`,
              * 这样就可以从设计稿上量出多少个px直接在代码中写多上px了。
              */
             rootValue: 192, 
@@ -88,7 +89,7 @@ module.exports = {
              * 例如/(node_module)\/如果想把前端UI框架内的px也转换成rem，
              * 请把此属性设为默认值
              */
-            exclude: /(node_module)/,
+            exclude: false,
             //（布尔值）允许在媒体查询中转换px。
             mediaQuery: false,
           }),
@@ -146,41 +147,41 @@ module.exports = {
       }
     },
   // ),
-    /**
-     * @param {type} 
-     * 执行 vue inspect --plugins 命令 查看插件列表
-     * cdn报错的原因是 html 改了 改成html-index了
-     * https://github.com/staven630/vue-cli4-config/issues/22
-     */
-    chainWebpack: config => {
-      config.plugin('html-index')
-        .tap(args => {
-          console.log('======args=========: ', args)
-          // 生产环境或本地需要cdn时，才注入cdn
-          if (isProduction || devNeedCdn) args[0].cdn = cdn
-          return args
+  /**
+   * @param {type} 
+   * 执行 vue inspect --plugins 命令 查看插件列表
+   * cdn报错的原因是 html 改了 改成html-index了
+   * https://github.com/staven630/vue-cli4-config/issues/22
+   */
+  chainWebpack: config => {
+    config.plugin('html-index')
+      .tap(args => {
+        console.log('======args=========: ', args)
+        // 生产环境或本地需要cdn时，才注入cdn
+        if (isProduction || devNeedCdn) args[0].cdn = cdn
+        return args
+      })
+    config.module
+      .rule('md')
+        .test(/\.md/)
+        .use('vue-loader')
+        .loader('vue-loader')
+        .end()
+        .use('vue-markdown-loader')
+        .loader('vue-markdown-loader/lib/markdown-compiler')
+        .options({
+          raw: true
         })
-      config.module
-        .rule('md')
-          .test(/\.md/)
-          .use('vue-loader')
-          .loader('vue-loader')
-          .end()
-          .use('vue-markdown-loader')
-          .loader('vue-markdown-loader/lib/markdown-compiler')
-          .options({
-            raw: true
-          })
-          .end() //返回到loader配置这一层
-          .end()//返回到rules配置这一层
-        // .rule('css') 
-        //   .test(/\.css$/)
-        //   .oneOf('vue')
-        //   .resourceQuery(/\?vue/)
-        //   .use('px2rem')
-        //   .loader('px2rem-loader') // px2rem-loader这里只能仅限于css
-        //   .options({
-        //     remUnit: 192
-        //   })
-    },
+        .end() //返回到loader配置这一层
+        .end()//返回到rules配置这一层
+      // .rule('css') 
+      //   .test(/\.css$/)
+      //   .oneOf('vue')
+      //   .resourceQuery(/\?vue/)
+      //   .use('px2rem')
+      //   .loader('px2rem-loader') // px2rem-loader这里只能仅限于css
+      //   .options({
+      //     remUnit: 192
+      //   })
+  },
 }

@@ -11,7 +11,7 @@
     var flexible = lib.flexible || (lib.flexible = {});
 
     if (metaEl) {
-        console.warn('将根据已有的meta标签来设置缩放比例');
+        // console.warn('将根据已有的meta标签来设置缩放比例');
         var match = metaEl.getAttribute('content').match(/initial\-scale=([\d\.]+)/);
         if (match) {
             scale = parseFloat(match[1]);
@@ -71,6 +71,10 @@
         var width = docEl.getBoundingClientRect().width;
         console.log('实际width: ', width)
         // 默认
+        // if (width / dpr > 540) {
+        //     width = 540 * dpr;
+        // }
+
         if (width / dpr > 1920) {
             width = 1920 * dpr;
         }
