@@ -114,6 +114,11 @@ const routes = [
         component: () => import(/* webpackChunkName: "view" */ '@/pages/ViewList')
       },
       {
+        path: 'rem',
+        name: 'PC端,移动端如何使用rem',
+        component: () => import(/* webpackChunkName: "view" */ '@/pages/ViewList')
+      },
+      {
         path: 'mac-terminal',
         name: 'Mac Terminal命令',
         component: () => import(/* webpackChunkName: "view" */ '@/pages/ViewList')
