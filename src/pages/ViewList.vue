@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import 'highlight.js/styles/atelier-cave-light.css'
+import '@/assets/style/atelier-cave-light.css'
 import '@/assets/style/github-markdown.css'
 
 export default {
