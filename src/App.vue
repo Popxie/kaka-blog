@@ -5,6 +5,7 @@
         KaKa's blog
       </div>
       <div class='top-right'>
+        <el-button @click="fullViewClick">全屏</el-button>
         NODE_ENV: {{NODE_ENV}}
       </div>
     </div>
@@ -21,6 +22,8 @@
 </template>
 
 <script>
+import screenfull from 'screenfull'
+console.log('screenfull: ', screenfull)
 
 export default {
   name: 'app',
@@ -54,7 +57,16 @@ export default {
     this.NODE_ENV = process.env.NODE_ENV
   },
   methods: {
-  
+    fullViewClick() {
+      if (!screenfull.isEnabled) {
+        this.$message({
+          message: 'you browser can not work',
+          type: 'warning'
+        })
+        return false
+      }
+      screenfull.toggle()
+    }
   }
 }
 </script>
