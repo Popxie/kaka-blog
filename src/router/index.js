@@ -72,6 +72,11 @@ const routes = [
         name: 'OPTIONS请求',
         component: () => import(/* webpackChunkName: "view" */ '@/pages/ViewList')
       },
+      {
+        path: 'prototype',
+        name: '原型继承的方法',
+        component: () => import(/* webpackChunkName: "view" */ '@/pages/ViewList')
+      },
     ]
   },
   {

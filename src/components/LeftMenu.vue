@@ -66,16 +66,17 @@ export default {
 <style lang="scss">
   .left-menu-cont {
     width: 250px;
+    min-width: 250px;
     height: 100%;
     overflow: auto;
   }
   .el-menu {
     height: 100%;
   }
-  .el-menu-item {
+  .el-submenu .el-menu-item {
     width: 215px;
-    height: 40px;
-    line-height: 40px;
+    height: 36px;
+    line-height: 36px;
     font-size: 14px;
     overflow:hidden;
     text-overflow: ellipsis;

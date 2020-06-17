@@ -11,6 +11,7 @@
     <rem v-else-if="path === 'rem'" v-highlight/>
     <mac-terminal v-else-if="path === 'mac-terminal'" v-highlight/>
     <install-private-npm v-else-if="path === 'install-private-npm'" v-highlight/>
+    <prototype v-else-if="path === 'prototype'" v-highlight/>
   </div>
 </template>
 
@@ -31,6 +32,7 @@ export default {
     'rem': () => import('@/docs/rem.md'),
     'mac-terminal': () => import('@/docs/mac-terminal.md'),
     'install-private-npm': () => import('@/docs/install-private-npm.md'),
+    'prototype': () => import('@/docs/prototype.md'),
   },
   data() {
     return {
@@ -51,4 +53,11 @@ export default {
   }
 }
 </script>
+
+<style lang="scss">
+  .markdown-body {
+    background: #ffffff;
+    padding:  0 20px;
+  }
+</style>
 
