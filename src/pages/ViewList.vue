@@ -19,8 +19,6 @@
 </template>
 
 <script>
-import '@/assets/style/atelier-cave-light.css'
-import '@/assets/style/github-markdown.css'
 
 export default {
   components: {

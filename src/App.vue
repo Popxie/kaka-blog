@@ -23,8 +23,6 @@
 
 <script>
 import screenfull from 'screenfull'
-console.log('screenfull: ', screenfull)
-
 export default {
   name: 'app',
   components: {
@@ -55,6 +53,7 @@ export default {
   },
   created() {
     this.NODE_ENV = process.env.NODE_ENV
+    console.log(this.defaultOpeneds)
   },
   methods: {
     fullViewClick() {

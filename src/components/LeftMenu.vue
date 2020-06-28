@@ -22,16 +22,31 @@
           :key='index'
           :index='item.name'>
           <template slot='title'>
-            <i class='el-icon-location'></i>
+            <!-- <i class='el-icon-location'></i> -->
             <span>{{item.name}}</span>
           </template>
           <!-- 二级菜单 -->
-          <template v-for='(sonItem, sonIndex) in item.children'>
-            <el-menu-item-group :key='sonIndex'>
-              <!-- <template slot="title">分组一</template> -->
+          <template v-if="item.children && item.children.length">
+            <template v-for="(sonItem, sonIndex) in item.children">
+              <!-- 有三级菜单 -->
+              <el-submenu
+                v-if="sonItem.children && sonItem.children.length"
+                class="second-level-title"
+                :key="sonIndex"
+                :index="sonItem.name">
+                <span slot="title">{{sonItem.name}}</span>
+                <template v-for="(sonSonItem, sonSonIndex) in sonItem.children">
+                  <el-menu-item
+                    :index='`${item.path}/${sonItem.path}/${sonSonItem.path}`'
+                    :key="sonSonIndex">{{sonSonItem.name}}</el-menu-item>
+                </template>
+              </el-submenu>
+              <!-- 没有三级菜单 -->
               <el-menu-item
+                v-else
+                :key="sonIndex"
                 :index='`${item.path}/${sonItem.path}`'>{{sonItem.name}}</el-menu-item>
-            </el-menu-item-group>
+            </template>
           </template>
         </el-submenu>
       </template>
@@ -56,7 +71,6 @@ export default {
   },
   created() {},
   methods: {
-  
     handleOpen() {},
     handleClose() {},
   },
@@ -81,14 +95,19 @@ export default {
     overflow:hidden;
     text-overflow: ellipsis;
     padding-right: 0 !important;
+    padding-left: 30px !important;
   }
   .el-menu-item-group__title {
     padding: 0;
   }
   .el-submenu__title {
-    padding: 0 !important;
+    padding: 0 0 0 10px !important;
     height: 40px;
     line-height: 40px;
-    font-size: 14px;
+    font-size: 16px;
+    font-weight: 600;
+  }
+  .second-level-title {
+    padding-left: 20px;
   }
 </style>
