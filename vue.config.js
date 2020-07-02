@@ -77,6 +77,7 @@ module.exports = {
     loaderOptions: {
       postcss: {
         plugins: [
+          // https://www.cnblogs.com/taohuaya/p/10274993.html
           require('postcss-plugin-px2rem')({
             /**
              * 换算基数， 默认100 。
@@ -90,6 +91,7 @@ module.exports = {
              * 请把此属性设为默认值
              */
             exclude: false,
+            // exclude: /(node_module)/,
             //（布尔值）允许在媒体查询中转换px。
             mediaQuery: false,
           }),
