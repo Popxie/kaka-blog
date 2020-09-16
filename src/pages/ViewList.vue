@@ -15,6 +15,7 @@
     <promise v-else-if="path === 'promise'" v-highlight/>
     <blog-entry v-else-if="path === 'blog-entry'" v-highlight/>
     <new-date v-else-if="path === 'new-date'" v-highlight/>
+    <deep-copy v-else-if="path === 'deep-copy'" v-highlight/>
   </div>
 </template>
 
@@ -36,7 +37,8 @@ export default {
     'prototype': () => import('@/docs/prototype.md'),
     'promise': () => import('@/docs/promise.md'),
     'blog-entry': () => import('@/docs/blog-entry.md'),
-    'new-date': () => import('@/docs/new-date.md')
+    'new-date': () => import('@/docs/new-date.md'),
+    'deep-copy': () => import('@/docs/deep-copy.md')
   },
   data() {
     return {

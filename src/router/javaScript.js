@@ -40,6 +40,11 @@ const javaScript = {
       name: 'new Date()',
       component: () => import(/* webpackChunkName: "javascript" */ '@/pages/ViewList')
     },
+    {
+      path: 'deep-copy',
+      name: 'deep copy',
+      component: () => import(/* webpackChunkName: "javascript" */ '@/pages/ViewList')
+    },
   ]
 }
 
