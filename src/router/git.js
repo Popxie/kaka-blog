@@ -7,7 +7,7 @@ const git = {
   children: [
     {
       path: 'git-config',
-      name: 'Git Config',
+      name: 'git config',
       component: () => import(/* webpackChunkName: "git" */ '@/pages/ViewList')
     },
     {

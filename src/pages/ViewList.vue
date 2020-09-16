@@ -16,6 +16,8 @@
     <blog-entry v-else-if="path === 'blog-entry'" v-highlight/>
     <new-date v-else-if="path === 'new-date'" v-highlight/>
     <deep-copy v-else-if="path === 'deep-copy'" v-highlight/>
+    <book-list v-else-if="path === 'book-list'" v-highlight/>
+    <debounce-throttle v-else-if="path === 'debounce-throttle'" v-highlight/>
   </div>
 </template>
 
@@ -38,7 +40,9 @@ export default {
     'promise': () => import('@/docs/promise.md'),
     'blog-entry': () => import('@/docs/blog-entry.md'),
     'new-date': () => import('@/docs/new-date.md'),
-    'deep-copy': () => import('@/docs/deep-copy.md')
+    'deep-copy': () => import('@/docs/deep-copy.md'),
+    'book-list': () => import('@/docs/book-list.md'),
+    'debounce-throttle': () => import('@/docs/function-debounce-throttle.md'),
   },
   data() {
     return {

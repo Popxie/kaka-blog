@@ -16,18 +16,18 @@ const javaScript = {
       component: () => import(/* webpackChunkName: "javascript" */ '@/pages/ViewList')
     },
     {
+      path: 'prototype',
+      name: '原型继承',
+      component: () => import(/* webpackChunkName: "javascript" */ '@/pages/ViewList')
+    },
+    {
       path: 'es-678',
       name: 'ES6/7/8',
       component: () => import(/* webpackChunkName: "javascript" */ '@/pages/ViewList')
     },
     {
       path: 'options',
-      name: 'OPTIONS请求',
-      component: () => import(/* webpackChunkName: "javascript" */ '@/pages/ViewList')
-    },
-    {
-      path: 'prototype',
-      name: '原型继承的方法',
+      name: 'options请求',
       component: () => import(/* webpackChunkName: "javascript" */ '@/pages/ViewList')
     },
     {
@@ -43,6 +43,11 @@ const javaScript = {
     {
       path: 'deep-copy',
       name: 'deep copy',
+      component: () => import(/* webpackChunkName: "javascript" */ '@/pages/ViewList')
+    },
+    {
+      path: 'debounce-throttle',
+      name: '函数节流&防抖',
       component: () => import(/* webpackChunkName: "javascript" */ '@/pages/ViewList')
     },
   ]

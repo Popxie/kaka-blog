@@ -113,6 +113,7 @@ body {
     display: flex;
     height: calc(100% - 56px - 1px);
     .right-cont {
+      position: relative;
       width: 100%;
       padding: 20px;
       overflow: hidden;

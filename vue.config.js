@@ -84,9 +84,9 @@ module.exports = {
              * 这样的话把根标签的字体规定为1rem为`${rootValue}px`,
              * 这样就可以从设计稿上量出多少个px直接在代码中写多上px了。
              */
-            rootValue: 192, 
+            rootValue: 192, // 1920px的设计搞来转换
             /**
-             * 默认false，可以（reg）利用正则表达式排除某些文件夹的方法，
+             * 默认false，可以利用正则表达式（reg）排除某些文件夹的方法，
              * 例如/(node_module)\/如果想把前端UI框架内的px也转换成rem，
              * 请把此属性设为默认值
              */
