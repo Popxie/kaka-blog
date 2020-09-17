@@ -26,8 +26,6 @@ Accept、Accept-Language、Content-Language、Content-Type（需要注意额外�
 
 **非简单请求 会在正式通信之前，增加一次HTTP请求，称之为预检请求。浏览器会先发起OPTIONS方法到服务器，以获知服务器是否允许该实际请求。**
 
----
-
 由此可知，若要我们的请求满足简单请求就可以避免发起OPTIONS请求了。
 
 但是
@@ -53,7 +51,7 @@ Accept、Accept-Language、Content-Language、Content-Type（需要注意额外�
 
 Access-Control-Max-Age方法对完全一样的url的缓存设置生效，多一个参数也视为不同url。也就是说，如果设置了10分钟的缓存，在10分钟内，所有请求第一次会产生options请求，第二次以及第二次以后就只发送真正的请求了。
 
-## 
+---
 
 ## 跨域避免 option 请求
 
