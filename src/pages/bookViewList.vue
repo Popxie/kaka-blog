@@ -1,5 +1,5 @@
 <!--
- * @Description: 
+ * @Description: 专门用于显示 you dont know js相关文档
  * @Author: xiehuaqiang
  * @Date: 2020-06-28 14:00:02
 --> 

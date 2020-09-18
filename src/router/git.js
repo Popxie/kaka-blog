@@ -12,7 +12,12 @@ const git = {
     },
     {
       path: 'git-order',
-      name: 'Git常用命令',
+      name: 'git常用命令',
+      component: () => import(/* webpackChunkName: "git" */ '@/pages/ViewList')
+    },
+    {
+      path: 'github-https-to-ssh',
+      name: 'github https to ssh',
       component: () => import(/* webpackChunkName: "git" */ '@/pages/ViewList')
     },
   ]

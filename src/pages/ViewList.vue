@@ -18,6 +18,7 @@
     <deep-copy v-else-if="path === 'deep-copy'" v-highlight/>
     <book-list v-else-if="path === 'book-list'" v-highlight/>
     <debounce-throttle v-else-if="path === 'debounce-throttle'" v-highlight/>
+    <github-https-to-ssh v-else-if="path === 'github-https-to-ssh'" v-highlight/>
   </div>
 </template>
 
@@ -43,6 +44,7 @@ export default {
     'deep-copy': () => import('@/docs/deep-copy.md'),
     'book-list': () => import('@/docs/book-list.md'),
     'debounce-throttle': () => import('@/docs/function-debounce-throttle.md'),
+    'github-https-to-ssh': () => import('@/docs/github-https-to-ssh.md'),
   },
   data() {
     return {
