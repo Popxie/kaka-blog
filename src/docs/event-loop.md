@@ -3,11 +3,11 @@
 
 除了我们的主线程之外，任务队列分为 microtask 和 macrotask，通常我们会称之为微任务和宏任务。  
 
- js 中存在宏任务和微任务，js 的执行顺序是 一个宏任务执行结束之后才会去执行下一个宏任务，微任务是在本宏任务的主要的任务结束之后，再去执行微任务，当所有的微任务结束之后，这个宏任务也就算执行结束了，值的注意的是，script 就是一个大的宏任务
+js 中存在宏任务和微任务，js 的执行顺序是 一个宏任务执行结束之后才会去执行下一个宏任务，微任务是在本宏任务的主要的任务结束之后，再去执行微任务，当所有的微任务结束之后，这个宏任务也就算执行结束了，值的注意的是，script 就是一个大的宏任务
  
- 宏任务 macrotask | 微任务 microtasks
- ---|---
- srcipt | process.nextTick
+宏任务 macrotask | 微任务 microtasks
+---|---
+srcipt | process.nextTick
 setTimeout | Promise.then    catch    finally 
 setInterval | MutationObserver
 setImmediate|  
@@ -18,32 +18,32 @@ setImmediate|
 ```
 console.log('script start')
 async function async1() {
-   console.log('async1 start')
-   await async2()
-   console.log('async1 end')
+	console.log('async1 start')
+   	await async2()
+   	console.log('async1 end')
 }
  
 async function async2() {
-   console.log('async2')
+   	console.log('async2')
 }
 async1()
 new Promise( function( resolve ) {
- console.log('promise1')
- resolve();
-} ).then( function() {
- console.log('promise2')
- 结果：
- script start
- async1 start
- async2
- promise1
- async1 end
- promise2
- 
+ 	console.log('promise1')
+	resolve();
+}).then(function() {
+	console.log('promise2')
+})
+结果：
+script start
+async1 start
+async2
+promise1
+async1 end
+promise2
 ```
 
 ```
-setTimeout(function(){
+setTimeout(function() {
     console.log(1);
 })
 

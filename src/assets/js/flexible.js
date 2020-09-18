@@ -34,7 +34,7 @@
     }
 
     if (!dpr && !scale) {
-        var isAndroid = win.navigator.appVersion.match(/android/gi);
+        // var isAndroid = win.navigator.appVersion.match(/android/gi);
         var isIPhone = win.navigator.appVersion.match(/iphone/gi);
         var devicePixelRatio = win.devicePixelRatio;
         if (isIPhone) {
@@ -104,7 +104,7 @@
     if (doc.readyState === 'complete') {
         doc.body.style.fontSize = 12 * dpr + 'px';
     } else {
-        doc.addEventListener('DOMContentLoaded', function(e) {
+        doc.addEventListener('DOMContentLoaded', function() {
             doc.body.style.fontSize = 12 * dpr + 'px';
         }, false);
     }
