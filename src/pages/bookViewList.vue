@@ -16,12 +16,13 @@
     <types-grammar-ch3 v-else-if="path === 'types-grammar-ch3'" v-highlight/>
     <types-grammar-ch4 v-else-if="path === 'types-grammar-ch4'" v-highlight/>
     <types-grammar-ch5 v-else-if="path === 'types-grammar-ch5'" v-highlight/>
+    <class v-else-if="path === 'class'" v-highlight/>
+    <class-extends v-else-if="path === 'class-extends'" v-highlight/>
   </div>
 </template>
 <script>
 
 export default {
-  name: 'this & object prototypes',
   components: {
     'this-ch1': () => import('@/docs/You-Dont-Know-JS/this & object prototypes/ch1.md'),
     'this-ch2': () => import('@/docs/You-Dont-Know-JS/this & object prototypes/ch2.md'),
@@ -34,6 +35,8 @@ export default {
     'types-grammar-ch3': () => import('@/docs/You-Dont-Know-JS/types & grammar/ch3.md'),
     'types-grammar-ch4': () => import('@/docs/You-Dont-Know-JS/types & grammar/ch4.md'),
     'types-grammar-ch5': () => import('@/docs/You-Dont-Know-JS/types & grammar/ch5.md'),
+    'class': () => import('@/docs/ruanyifeng/docs/class.md'),
+    'class-extends': () => import('@/docs/ruanyifeng/docs/class-extends.md')
   },
   data() {
     return {

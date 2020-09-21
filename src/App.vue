@@ -54,6 +54,7 @@ export default {
   created() {
     this.NODE_ENV = process.env.NODE_ENV
     console.log(this.defaultOpeneds)
+    console.log('routeList: ', this.routeList)
   },
   methods: {
     fullViewClick() {
