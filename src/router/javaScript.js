@@ -12,7 +12,6 @@ const javaScript = {
     { path: 'prototype', name: '原型继承', component },
     { path: 'es-678', name: 'ES6/7/8', component },
     { path: 'options', name: 'options请求', component },
-    { path: 'promise', name: 'Promise', component },
     { path: 'new-date', name: 'new Date()', component },
     { path: 'deep-copy', name: 'deep copy', component },
     { path: 'debounce-throttle', name: '函数节流&防抖', component },
