@@ -8,7 +8,8 @@ const ruanYiFeng = {
   component: RouterView,
   children: [
     { path: 'class', name: 'Class的基本语法', component },
-    { path: 'class-extends', name: 'Class的继承', component }
+    { path: 'class-extends', name: 'Class的继承', component },
+    { path: 'promise', name: 'Promise', component }
   ]
 }
 

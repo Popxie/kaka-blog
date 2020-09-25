@@ -18,6 +18,7 @@
     <types-grammar-ch5 v-else-if="path === 'types-grammar-ch5'" v-highlight/>
     <class v-else-if="path === 'class'" v-highlight/>
     <class-extends v-else-if="path === 'class-extends'" v-highlight/>
+    <promise v-else-if="path === 'promise'" v-highlight/>
   </div>
 </template>
 <script>
@@ -36,7 +37,8 @@ export default {
     'types-grammar-ch4': () => import('@/docs/You-Dont-Know-JS/types & grammar/ch4.md'),
     'types-grammar-ch5': () => import('@/docs/You-Dont-Know-JS/types & grammar/ch5.md'),
     'class': () => import('@/docs/ruanyifeng/docs/class.md'),
-    'class-extends': () => import('@/docs/ruanyifeng/docs/class-extends.md')
+    'class-extends': () => import('@/docs/ruanyifeng/docs/class-extends.md'),
+    'promise': () => import('@/docs/ruanyifeng/docs/promise.md')
   },
   data() {
     return {

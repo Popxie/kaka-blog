@@ -12,7 +12,6 @@
     <mac-terminal v-else-if="path === 'mac-terminal'" v-highlight/>
     <install-private-npm v-else-if="path === 'install-private-npm'" v-highlight/>
     <prototype v-else-if="path === 'prototype'" v-highlight/>
-    <promise v-else-if="path === 'promise'" v-highlight/>
     <blog-entry v-else-if="path === 'blog-entry'" v-highlight/>
     <new-date v-else-if="path === 'new-date'" v-highlight/>
     <deep-copy v-else-if="path === 'deep-copy'" v-highlight/>
@@ -38,7 +37,6 @@ export default {
     'mac-terminal': () => import('@/docs/mac-terminal.md'),
     'install-private-npm': () => import('@/docs/install-private-npm.md'),
     'prototype': () => import('@/docs/prototype.md'),
-    'promise': () => import('@/docs/promise.md'),
     'blog-entry': () => import('@/docs/blog-entry.md'),
     'new-date': () => import('@/docs/new-date.md'),
     'deep-copy': () => import('@/docs/deep-copy.md'),
