@@ -8,7 +8,7 @@
         <el-button @click="fullViewClick">全屏</el-button>
       </div>
     </div>
-    <div class='main-cont'>
+    <div class='main-cont' :class="{'reset-height': !showTopTitle}">
       <left-memu
         :default-openeds='defaultOpeneds'
         :route-list='routeList'
@@ -133,6 +133,9 @@ body {
       overflow-y: scroll;
       // background: #f4f5f5;
     }
+  }
+  .reset-height {
+    height: 100%;
   }
 }
 </style>
