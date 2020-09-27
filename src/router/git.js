@@ -1,5 +1,5 @@
 const RouterView = () => import('components/RouterView')
-const component = () => import(/* webpackChunkName: "git" */ '@/pages/bookViewList')
+const component = () => import(/* webpackChunkName: "git" */ '@/pages/ViewList')
 
 const git = {
   path: '/git',
