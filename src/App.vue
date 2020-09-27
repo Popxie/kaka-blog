@@ -1,12 +1,11 @@
 <template>
   <div id='app'>
-    <div class='top-cont'>
+    <div class='top-cont' v-if="showTopTitle">
       <div class='top-left' @click="() => $router.push('/home')">
         KaKa's blog
       </div>
       <div class='top-right'>
         <el-button @click="fullViewClick">全屏</el-button>
-        NODE_ENV: {{NODE_ENV}}
       </div>
     </div>
     <div class='main-cont'>
@@ -14,7 +13,7 @@
         :default-openeds='defaultOpeneds'
         :route-list='routeList'
         :active-menu='activeMenu' />
-      <div class='right-cont'>
+      <div class='right-cont'  ref="right-cont-ref">
         <router-view></router-view>
       </div>
     </div>
@@ -30,7 +29,8 @@ export default {
   },
   data() {
     return {
-      NODE_ENV: ''
+      NODE_ENV: '',
+      showTopTitle: true
     }
   },
   computed: {
@@ -53,10 +53,21 @@ export default {
   },
   created() {
     this.NODE_ENV = process.env.NODE_ENV
-    console.log(this.defaultOpeneds)
-    console.log('routeList: ', this.routeList)
+  },
+  mounted () {
+    this.$refs['right-cont-ref'].addEventListener('scroll', this.pageScroll)
+  },
+  beforeDestroy () {
+    this.$refs['right-cont-ref'].removeEventListener('scroll', this.pageScroll)
   },
   methods: {
+    /**
+     * 监听页面滚动事件
+     */
+    pageScroll () {
+      const currentTop = this.$refs['right-cont-ref'].scrollTop || window.scrollY
+      this.showTopTitle = currentTop < 100
+    },
     fullViewClick() {
       if (!screenfull.isEnabled) {
         this.$message({
@@ -98,6 +109,7 @@ body {
     border-bottom: 1px solid #eaecef;
     display: flex;
     justify-content: space-between;
+    transition: opacity .5s;
     .top-left {
       font-size: 20px;
       font-weight: 800;
