@@ -9,7 +9,8 @@ const ruanYiFeng = {
   children: [
     { path: 'class', name: 'Class的基本语法', component },
     { path: 'class-extends', name: 'Class的继承', component },
-    { path: 'promise', name: 'Promise', component }
+    { path: 'promise', name: 'Promise', component },
+    { path: 'object', name: '对象的扩展', component }
   ]
 }
 

@@ -19,6 +19,7 @@
     <class v-else-if="path === 'class'" v-highlight/>
     <class-extends v-else-if="path === 'class-extends'" v-highlight/>
     <promise v-else-if="path === 'promise'" v-highlight/>
+    <object-extends v-else-if="path === 'object'" v-highlight/>
   </div>
 </template>
 <script>
@@ -38,7 +39,8 @@ export default {
     'types-grammar-ch5': () => import('@/docs/You-Dont-Know-JS/types & grammar/ch5.md'),
     'class': () => import('@/docs/ruanyifeng/docs/class.md'),
     'class-extends': () => import('@/docs/ruanyifeng/docs/class-extends.md'),
-    'promise': () => import('@/docs/ruanyifeng/docs/promise.md')
+    'promise': () => import('@/docs/ruanyifeng/docs/promise.md'),
+    'object-extends': () => import('@/docs/ruanyifeng/docs/object.md')
   },
   data() {
     return {
