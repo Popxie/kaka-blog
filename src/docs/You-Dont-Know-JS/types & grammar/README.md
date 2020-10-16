@@ -1,6 +1,6 @@
 # 你不懂JS：类型与语法
 
-<img src="cover.jpg" width="300">
+<img src="./cover.jpg" width="300">
 
 -----
 

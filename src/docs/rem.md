@@ -5,7 +5,7 @@
 
 这里的适配方案用的是淘宝的lib-flexible下的flexible.js
 
-**1.安装lib-flexible**
+### 1 安装lib-flexible
 
 ```
 npm i lib-flexible
@@ -91,13 +91,13 @@ npm i lib-flexible
 ```
 实践证明这端代码的效果跟上述的一毛一样~就是写法会比较麻烦在实际项目当中肯定不会这么做。所以接下来就会用到 `px2rem-loader`
 
-**2.安装px2rem-loader**
+### 2.0 安装px2rem-loader
 
 ```
 npm i px2rem-loader -D
 ```
 
-**2.1配置px2rem-loader**  
+### 2.1 配置px2rem-loader
 
 在vue.config.js中进行配置，配置后记得`重启`项目使配置生效！
 
@@ -266,12 +266,12 @@ function refreshRem(){
 然后你在你的宽为1920px的显示器上按照设计稿开始撸代码，那可谓撸码一时爽，一直撸码一直爽[奸笑]，最后完美收工开心的不了。  
 
 <!--![表情]()  -->
-![image.png](https://upload-images.jianshu.io/upload_images/12297114-67aa78bb2a5f8f42.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image.png](http://upload-images.jianshu.io/upload_images/12297114-67aa78bb2a5f8f42.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 
 结果产品家里有个21:9（3440*1440）的超宽的曲面屏显示器,打开了你认为完美的产品，然后惊奇的一幕发生了！  
 
-![image.png](https://upload-images.jianshu.io/upload_images/12297114-08a624f663b0b4b3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image.png](http://upload-images.jianshu.io/upload_images/12297114-08a624f663b0b4b3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ![握草.png](http://upload-images.jianshu.io/upload_images/12297114-a33a9194d7cf2838.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/80)  
 
@@ -306,4 +306,88 @@ function refreshRem(){
     - 如果自定义化的话 建议把他的js复制到自己的项目当中
 - `px2rem-loader`：将px转换成rem  
   - 缺点：只能转换普通的css样式，如果设置了lang='less || scss',就无法转换成rem了
-- `postcss-plugin-px2rem`：同样也是将px转换成rem但是**更吊**，**更棒** [旺柴]
+- `postcss-plugin-px2rem`：同样也是将px转换成rem但是**更吊**，**更棒** [旺柴]  
+
+### 附项目信息
+
+```
+{
+  "name": "kaka-blog",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve --copy",
+    "build:dev": "vue-cli-service build --mode development --report",
+    "build:test": "vue-cli-service build --mode test --report",
+    "build:prod": "vue-cli-service build --mode production --report",
+    "lint": "vue-cli-service lint"
+  },
+  "dependencies": {
+    "core-js": "^3.6.5",
+    "element-ui": "^2.13.2",
+    "less-loader": "^6.1.1",
+    "lib-flexible": "^0.3.2",
+    "sass-loader": "^8.0.2",
+    "screenfull": "^5.0.2",
+    "vue": "^2.6.11",
+    "vue-router": "^3.3.2"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "~4.4.0",
+    "@vue/cli-plugin-eslint": "~4.4.0",
+    "@vue/cli-service": "~4.4.0",
+    "babel-eslint": "^10.1.0",
+    "compression-webpack-plugin": "^4.0.0",
+    "eslint": "^6.7.2",
+    "eslint-plugin-vue": "^6.2.2",
+    "github-markdown-css": "^4.0.0",
+    "highlight.js": "^10.0.3",
+    "node-sass": "^4.14.1",
+    "postcss-plugin-px2rem": "^0.8.1",
+    "px2rem-loader": "^0.1.9",
+    "speed-measure-webpack-plugin": "^1.3.3",
+    "terser-webpack-plugin": "^3.0.3",
+    "thread-loader": "^2.1.3",
+    "uglifyjs-webpack-plugin": "^2.2.0",
+    "vue-loader": "^15.9.2",
+    "vue-markdown-highlight": "^1.0.5",
+    "vue-markdown-loader": "^2.4.1",
+    "vue-template-compiler": "^2.6.11",
+    "webpack": "^4.43.0",
+    "webpack-bundle-analyzer": "^3.8.0"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "eslint:recommended"
+    ],
+    "parserOptions": {
+      "parser": "babel-eslint"
+    },
+    "rules": {
+      "no-unused-vars": [
+        1,
+        {
+          "vars": "all",
+          "args": "after-used"
+        }
+      ]
+    }
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {},
+      "precss": {}
+    }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}
+```

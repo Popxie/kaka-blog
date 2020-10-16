@@ -561,4 +561,4 @@ $ git apply --check ../sync.patch
 $ git --version
 ```
 
-<!-- [git常用命令·知乎](https://zhuanlan.zhihu.com/p/137194960) -->
+> [git命令大全·知乎](https://zhuanlan.zhihu.com/p/137194960)

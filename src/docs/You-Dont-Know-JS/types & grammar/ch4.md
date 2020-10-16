@@ -1813,7 +1813,7 @@ function doSomething(a,b) {
 
 这里是由Alex Dorey (@dorey on GitHub)制作的一个方便的表格，将各种比较进行了可视化：
 
-<img src="fig1.png" width="600">
+<img src="./fig1.png" width="600">
 
 出处：https://github.com/dorey/JavaScript-Equality-Table
 

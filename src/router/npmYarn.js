@@ -7,7 +7,9 @@ const npmYarn = {
   component: RouterView,
   children: [
     { path: 'npm-yarn', name: 'npm & yarn', component },
-    { path: 'npm-orders', name: 'npm相关命令', component }
+    { path: 'npm-orders', name: 'npm相关命令', component },
+    { path: 'u-dont-konw-npm', name: '你不知道的npm', component },
+    { path: 'npm-version-control', name: 'npm的语义版本控制', component }
   ]
 }
 

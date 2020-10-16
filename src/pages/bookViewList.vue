@@ -20,6 +20,10 @@
     <class-extends v-else-if="path === 'class-extends'" v-highlight/>
     <promise v-else-if="path === 'promise'" v-highlight/>
     <object-extends v-else-if="path === 'object'" v-highlight/>
+    <destructuring v-else-if="path === 'destructuring'" v-highlight/>
+    <regex v-else-if="path === 'regex'" v-highlight/>
+    <object-methods v-else-if="path === 'object-methods'" v-highlight/>
+    <function v-else-if="path === 'function'" v-highlight/>
   </div>
 </template>
 <script>
@@ -40,7 +44,11 @@ export default {
     'class': () => import('@/docs/ruanyifeng/docs/class.md'),
     'class-extends': () => import('@/docs/ruanyifeng/docs/class-extends.md'),
     'promise': () => import('@/docs/ruanyifeng/docs/promise.md'),
-    'object-extends': () => import('@/docs/ruanyifeng/docs/object.md')
+    'object-extends': () => import('@/docs/ruanyifeng/docs/object.md'),
+    'destructuring': () => import('@/docs/ruanyifeng/docs/destructuring.md'),
+    'regex': () => import('@/docs/ruanyifeng/docs/regex.md'),
+    'object-methods': () => import('@/docs/ruanyifeng/docs/object-methods.md'),
+    'function': () => import('@/docs/ruanyifeng/docs/function.md')
   },
   data() {
     return {

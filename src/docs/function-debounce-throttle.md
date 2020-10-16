@@ -27,20 +27,29 @@
 ### 4.1函数防抖实验
 
 ```
+// bad
 function debounce(fn, delay) {
-    let timer = null;
+    let timer = null
     // 返回函数对debounce作用域形成闭包
     return function () {
         // setTimeout()中用到函数环境总是window,故需要当前环境的副本；
-        let _this = this, args = arguments;
-        // 如果事件被触发，清除timer并重新开始计时
-        clearTimeout(timer);
+        let _this = this, args = arguments
+        clearTimeout(timer)
         timer = setTimeout(function () {
-            fn.apply(_this, args);
-        }, delay);
+            fn.apply(_this, args)
+        }, delay)
     }
 }
-
+// good
+function debouncesss (fn, delay) {
+  let timer = null
+  return (...args) => {
+    clearTimeout(timer)
+    timer = setTimeout(() => {
+      fn(args)
+    }, delay)
+  }
+}
 ```
 
 代码解读  
@@ -56,17 +65,29 @@ function debounce(fn, delay) {
 #### 4.2.1 利用时间戳简单实现
 
 ```
+// bad
 function throttle(fn, threshold) {
-    let timer;
-    let prev = Date.now();
+    let timer
+    let prev = Date.now()
     return function () {
-        let _this = this, args = arguments;
-        let now = Date.now();
+        let _this = this, args = arguments
+        let now = Date.now()
         if (now - prev > threshold) {
-            prev = now;
-            fn.apply(_this, args);
+            prev = now
+            fn.apply(_this, args)
         }
     }
+}
+// good
+function throttle (fn, threshold) {
+  let prev = Date.now()
+  return (...args) => {
+    let now = Date.now()
+    if (now - prev > threshold) {
+      prev = now
+      fn(args)
+    }
+  }
 }
 
 ```
@@ -74,19 +95,32 @@ function throttle(fn, threshold) {
 #### 4.2.2 利用定时器简单实现
 
 ```
+// bad
 function throttle2(fn, threshold) {
-    let timer;
+    let timer
     return function () {
-        let _this = this, args = arguments;
+        let _this = this, args = arguments
         if (!timer) {
             timer = setTimeout(function () {
-                fn.apply(_this, args);
-                timer = null;
+                fn.apply(_this, args)
+                timer = null
             }, threshold)
         }
     }
 }
 
+// good
+function throttle2(fn, threshold) {
+    let timer
+    return (...args) => {
+        if (!timer) {
+            timer = setTimeout(() => {
+                fn(args)
+                timer = null
+            }, threshold)
+        }
+    }
+}
 ```
 
 ## 总结
