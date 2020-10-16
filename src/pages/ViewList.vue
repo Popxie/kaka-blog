@@ -20,6 +20,7 @@
     <github-https-to-ssh v-else-if="path === 'github-https-to-ssh'" v-highlight/>
     <npm-yarn v-else-if="path === 'npm-yarn'" v-highlight/>
     <npm-orders v-else-if="path === 'npm-orders'" v-highlight/>
+    2
   </div>
 </template>
 
