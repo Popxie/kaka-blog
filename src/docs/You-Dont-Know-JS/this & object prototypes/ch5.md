@@ -195,7 +195,7 @@ Object.getPrototypeOf( a ) === Foo.prototype; // true
 
 在 JavaScript 中，我们不从一个对象（“类”）向另一个对象（“实例”） *拷贝*。我们在对象之间制造 *链接*。对于 `[[Prototype]]` 机制，视觉上，箭头的移动方向是从右至左，由下至上。
 
-<img src="fig3.png">
+<img src="./fig3.png">
 
 这种机制常被称为“原型继承（prototypal inheritance）”（我们很快就用代码说明），它经常被说成是动态语言版的“类继承”。这种说法试图建立在面向类世界中对“继承”含义的共识上。但是 *弄拧*（**意思是：抹平**） 了被理解的语义，来适应动态脚本。
 
@@ -383,7 +383,7 @@ Object.defineProperty( Foo.prototype, "constructor" , {
 
 实际上，我们已经看到了一个常被称为“原型继承”的机制如何工作：`a` 可以“继承自” `Foo.prototype`，并因此可以访问 `myName()` 函数。但是我们传统的想法认为“继承”是两个“类”间的关系，而非“类”与“实例”的关系。
 
-<img src="fig3.png">
+<img src="./fig3.png">
 
 回想之前这幅图，它不仅展示了从对象（也就是“实例”）`a1` 到对象 `Foo.prototype` 的委托，而且从 `Bar.prototype` 到 `Foo.prototype`，这酷似类继承的亲子概念。*酷似*，除了方向，箭头表示的是委托链接，而不是拷贝操作。
 
