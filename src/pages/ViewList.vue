@@ -18,6 +18,8 @@
     <book-list v-else-if="path === 'book-list'" v-highlight/>
     <debounce-throttle v-else-if="path === 'debounce-throttle'" v-highlight/>
     <github-https-to-ssh v-else-if="path === 'github-https-to-ssh'" v-highlight/>
+    <npm-yarn v-else-if="path === 'npm-yarn'" v-highlight/>
+    <npm-orders v-else-if="path === 'npm-orders'" v-highlight/>
   </div>
 </template>
 
@@ -43,6 +45,8 @@ export default {
     'book-list': () => import('@/docs/book-list.md'),
     'debounce-throttle': () => import('@/docs/function-debounce-throttle.md'),
     'github-https-to-ssh': () => import('@/docs/github-https-to-ssh.md'),
+    'npm-yarn': () => import('@/docs/npm-yarn.md'),
+    'npm-orders': () => import('@/docs/npm-orders.md'),
   },
   data() {
     return {

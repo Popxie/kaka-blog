@@ -13,6 +13,7 @@ import git from './git'
 import other from './other'
 import collection from './collection'
 import css from './css'
+import npmYarn from './npmYarn'
 import youDontKonwJs from './youDontKonwJs'
 import ruanYiFeng from './ruanYiFeng'
 
@@ -38,9 +39,10 @@ const routes = [
   engineering,
   javaScript,
   git,
+  npmYarn,
   other,
   collection,
-  css,
+  css
 ]
 
 const router = new VueRouter({ routes })
