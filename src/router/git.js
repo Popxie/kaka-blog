@@ -9,6 +9,7 @@ const git = {
     { path: 'git-config', name: 'git config', component },
     { path: 'git-order', name: 'git常用命令', component },
     { path: 'github-https-to-ssh', name: 'github https to ssh', component },
+    { path: 'git-rebase', name: 'git rebase', component },
   ]
 }
 
