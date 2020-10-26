@@ -83,9 +83,11 @@ export default {
     min-width: 250px;
     height: 100%;
     overflow: auto;
+    border-right: 1px solid #e6e6e6;
   }
   .el-menu {
     height: 100%;
+    border-right: none;
   }
   .el-submenu .el-menu-item {
     width: 215px;

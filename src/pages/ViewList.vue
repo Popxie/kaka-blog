@@ -6,7 +6,7 @@
     <es-678 v-else-if="path === 'es-678'" v-highlight/>
     <options v-else-if="path === 'options'" v-highlight/>
     <git-config v-else-if="path === 'git-config'" v-highlight/>
-    <git-order v-else-if="path === 'git-order'" v-highlight/>
+    <git-order-list v-else-if="path === 'git-order-list'" v-highlight/>
     <picture-403 v-else-if="path === 'picture-403'" v-highlight/>
     <rem v-else-if="path === 'rem'" v-highlight/>
     <mac-terminal v-else-if="path === 'mac-terminal'" v-highlight/>
@@ -22,6 +22,7 @@
     <npm-orders v-else-if="path === 'npm-orders'" v-highlight/>
     <npm-version-control v-else-if="path === 'npm-version-control'" v-highlight/>
     <git-rebase v-else-if="path === 'git-rebase'" v-highlight/>
+    <git-common-orders v-else-if="path === 'git-common-orders'" v-highlight/>
   </div>
 </template>
 
@@ -35,7 +36,7 @@ export default {
     'es-678': () => import('@/docs/es678.md'),
     'options': () => import('@/docs/options.md'),
     'git-config': () => import('@/docs/git-config.md'),
-    'git-order': () => import('@/docs/git-order.md'),
+    'git-order-list': () => import('@/docs/git-order-list.md'),
     'picture-403': () => import('@/docs/picture-403.md'),
     'rem': () => import('@/docs/rem.md'),
     'mac-terminal': () => import('@/docs/mac-terminal.md'),
@@ -50,7 +51,8 @@ export default {
     'npm-yarn': () => import('@/docs/npm-yarn.md'),
     'npm-orders': () => import('@/docs/npm-orders.md'),
     'npm-version-control': () => import('@/docs/npm-version-control.md'),
-    'git-rebase': () => import('@/docs/git-rebase.md')
+    'git-rebase': () => import('@/docs/git-rebase.md'),
+    'git-common-orders': () => import('@/docs/git-common-orders.md')
   },
   data() {
     return {

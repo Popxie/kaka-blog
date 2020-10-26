@@ -7,6 +7,7 @@ const ruanYiFeng = {
   name: "ECMAScript 6",
   component: RouterView,
   children: [
+    { path: 'destructuring', name: '变量的结构赋值', component },
     { path: 'class', name: 'Class的基本语法', component },
     { path: 'class-extends', name: 'Class的继承', component },
     { path: 'promise', name: 'Promise', component },
