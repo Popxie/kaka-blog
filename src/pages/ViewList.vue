@@ -20,6 +20,7 @@
     <github-https-to-ssh v-else-if="path === 'github-https-to-ssh'" v-highlight/>
     <npm-yarn v-else-if="path === 'npm-yarn'" v-highlight/>
     <npm-orders v-else-if="path === 'npm-orders'" v-highlight/>
+    <npm-version-control v-else-if="path === 'npm-version-control'" v-highlight/>
     <git-rebase v-else-if="path === 'git-rebase'" v-highlight/>
   </div>
 </template>
@@ -48,6 +49,7 @@ export default {
     'github-https-to-ssh': () => import('@/docs/github-https-to-ssh.md'),
     'npm-yarn': () => import('@/docs/npm-yarn.md'),
     'npm-orders': () => import('@/docs/npm-orders.md'),
+    'npm-version-control': () => import('@/docs/npm-version-control.md'),
     'git-rebase': () => import('@/docs/git-rebase.md')
   },
   data() {
