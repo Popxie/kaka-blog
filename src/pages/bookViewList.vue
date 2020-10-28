@@ -21,6 +21,7 @@
     <promise v-else-if="path === 'promise'" v-highlight/>
     <object-extends v-else-if="path === 'object'" v-highlight/>
     <destructuring v-else-if="path === 'destructuring'" v-highlight/>
+    <regex v-else-if="path === 'regex'" v-highlight/>
   </div>
 </template>
 <script>
@@ -42,7 +43,8 @@ export default {
     'class-extends': () => import('@/docs/ruanyifeng/docs/class-extends.md'),
     'promise': () => import('@/docs/ruanyifeng/docs/promise.md'),
     'object-extends': () => import('@/docs/ruanyifeng/docs/object.md'),
-    'destructuring': () => import('@/docs/ruanyifeng/docs/destructuring.md')
+    'destructuring': () => import('@/docs/ruanyifeng/docs/destructuring.md'),
+    'regex': () => import('@/docs/ruanyifeng/docs/regex.md'),
   },
   data() {
     return {
