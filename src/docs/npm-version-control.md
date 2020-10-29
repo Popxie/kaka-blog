@@ -50,4 +50,24 @@
 - 无符号: 仅接受指定的特定版本（例如 1.2.1）。
 - latest: 使用可用的最新版本。
 
-[使用 npm 的语义版本控制·node.js](http://nodejs.cn/learn/semantic-versioning-using-npm)
+[使用 npm 的语义版本控制·node.js](http://nodejs.cn/learn/semantic-versioning-using-npm)  
+
+## npm 执行顺序  
+
+如果 npm 脚本里面需要执行多个任务，那么需要明确它们的执行顺序。  
+
+如果是并行执行（即同时的平行执行），可以使用`&`符号。  
+
+```
+npm run script1.js & npm run script2.js
+```  
+
+如果是继发执行（即只有前一个任务成功，才执行下一个任务），可以使用`&&`符号。  
+
+```
+npm run script1.js && npm run script2.js  
+```  
+
+这两个符号是 Bash 的功能。
+
+[npm scripts 使用指南·阮一峰](http://www.ruanyifeng.com/blog/2016/10/npm_scripts.html)
