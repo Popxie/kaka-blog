@@ -24,6 +24,7 @@
     <git-rebase v-else-if="path === 'git-rebase'" v-highlight/>
     <git-common-orders v-else-if="path === 'git-common-orders'" v-highlight/>
     <es-2020-operator v-else-if="path === 'es-2020-operator'" v-highlight/>
+    <u-dont-konw-npm v-else-if="path === 'u-dont-konw-npm'" v-highlight/>
   </div>
 </template>
 
@@ -54,7 +55,8 @@ export default {
     'npm-version-control': () => import('@/docs/npm-version-control.md'),
     'git-rebase': () => import('@/docs/git-rebase.md'),
     'git-common-orders': () => import('@/docs/git-common-orders.md'),
-    'es-2020-operator': () => import('@/docs/es-2020-operator.md')
+    'es-2020-operator': () => import('@/docs/es-2020-operator.md'),
+    'u-dont-konw-npm': () => import('@/docs/u-dont-konw-npm.md')
   },
   data() {
     return {
