@@ -2,11 +2,15 @@
 
 ### 1.背景说明
 
+> 每当我们开发完一个功能分支以后，在合并到master分支以后，会附带的将开发期间所有的commit记录一并merge到了远端，若为一个人开发还好问题不大，一旦牵扯多个人协同开发的话，就会导致master分支commit记录严重混乱，‘交叉感染’，commit记录不清晰。
+
+> 理想情况下master分支commit记录应尽量做到干净清晰，一个commit为一个功能（但是这个commit会包含这个功能分支的所有commit记录），方便出问题了进行整体回滚，以及有个清晰的树状图(git log --graph)
+
 ### 2.前置条件
 
-- 从`test`分支分别创建两个新的功能分支用来模拟两(多)个人开发
+- 从远端拉取两次项目模拟两个人，再将这两个项目分别从`test`分支创建一个新的功能分支，用来模拟两个人开发
     - 这里用`user1`和`user2`来表示
-- `user1`和`user2`分别轮流交叉提交commit，用来模拟最终merge到test分支commit交叉混乱的情况
+- `user1`和`user2`分别轮流交叉提交commit，用来模拟最终merge到test分支commit记录交叉混乱的情况
 
 <!--git1.png-->
 ![user1&user2对比提交记录](https://cdn.hhdd.com/frontend/as/i/9b9753f5-db82-539d-bd0c-3916835a4e28.png)
@@ -42,7 +46,7 @@ user1 rebase 前后对比 如上图所示
 
 #### 情况一：我们的多次commit已经提交到远端。
 
-- 涉及到危险操作`git reset --hard xxxx` & `git push -f`
+- 涉及到危险操作`git push -f`
 
 > 友情提示： 如果对变基不是很清楚，建议在变基之前对'`user1`'的分支进行备份
 
@@ -106,7 +110,34 @@ s 948aa5a add user1.4 ↑  // s 表示向上合并，所以p(ick)都会在上 s(
 :wq //退出保存
 ```
 
-3.最终效果前后对比
+3. 退出保存后进入如下页面
+
+```
+# 这是一个 4 个提交的组合。
+# 这是第一个提交说明：
+
+add user1.1
+
+# 这是提交说明 #2：
+
+add user1.2
+
+# 这是提交说明 #3：
+
+add user1.3
+
+# 这是提交说明 #4：
+
+add user1.4
+
+# 请为您的变更输入提交说明。以 '#' 开始的行将被忽略，而一个空的提交
+# 说明将会终止提交
+//
+:wq //退出保存
+```
+4.直接 `:wq`退出保存走默认的即可
+
+5.最终效果前后对比
 
 <!--git4-->
 ![git4](https://cdn.hhdd.com/frontend/as/i/19ec1340-3e59-5d1f-88a6-f12b4636c63c.png)
@@ -116,7 +147,7 @@ s 948aa5a add user1.4 ↑  // s 表示向上合并，所以p(ick)都会在上 s(
 <!--git5-->
 ![git5](https://cdn.hhdd.com/frontend/as/i/cf48f96f-de87-57eb-a36f-05a77b908cce.png)
 
-这个时候vscode左下角会有提示告诉你 当前分支落后远端分支4次commit，且有一个未提交的commit 如上图所示
+**`But`** 这个时候vscode左下角会有提示告诉你 当前分支落后远端分支4次commit，且有一个未提交的commit 如上图所示
 
 <!--git6-->
 ![git6](https://cdn.hhdd.com/frontend/as/i/1812166b-3e74-5929-9aaf-0c848b912189.png)
@@ -138,3 +169,6 @@ s 948aa5a add user1.4 ↑  // s 表示向上合并，所以p(ick)都会在上 s(
 最终变基合并后的效果 如上图所示：
 
 
+#### 结束语
+
+> **不要在一个已经公开的远端分支上使用 rebase**

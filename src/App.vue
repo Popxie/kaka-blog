@@ -15,8 +15,10 @@
         :route-list='routeList'
         :active-menu='activeMenu' />
       <div class='right-cont' ref="right-cont-ref">
-        <el-button class="control-btn" @click="() => collapse = !collapse">{{ collapse ? '展开' : '折叠'}}</el-button>
-        <router-view></router-view>
+        <el-button
+          class="control-btn"
+          @click="() => collapse = !collapse">{{ collapse ? '展开' : '折叠'}}</el-button>
+        <router-view />
       </div>
     </div>
   </div>
@@ -33,7 +35,8 @@ export default {
     return {
       NODE_ENV: '',
       collapse: false,
-      showTopTitle: true
+      showTopTitle: true,
+      throttleFn: null
     }
   },
   computed: {
@@ -58,7 +61,6 @@ export default {
     this.NODE_ENV = process.env.NODE_ENV
   },
   mounted () {
-    console.log('dom:', this.$refs['test'])
     this.$refs['right-cont-ref'].addEventListener('scroll', this.pageScroll)
   },
   beforeDestroy () {
@@ -90,11 +92,11 @@ export default {
 .is-hide-top {
   margin-bottom: -56px;
   transform: translateY(-56px);
-  transition: all 1s !important;
+  transition: all .6s !important;
 }
 .is-show-top {
   transform: translateY(0);
-  transition: all 1s !important;
+  transition: all .6s !important;
 }
 
 html,
@@ -148,9 +150,9 @@ body {
       // background: #f4f5f5;
       .control-btn {
         position: sticky;
-        top: 0px;
-        left: 20px;
-        height: 40px;
+        top: 0;
+        left: 0;
+        float: left;
       }
     }
   }
