@@ -5,7 +5,9 @@
 --> 
 
 <template>
-  <div class='left-menu-cont'>
+  <div
+    class='left-menu-cont'
+    :class="{'is-hide': collapse, 'is-show': !collapse}">
     <el-menu
       :default-openeds='defaultOpeneds'
       :default-active='activeMenu'
@@ -22,7 +24,7 @@
           :key='index'
           :index='item.name'>
           <template slot='title'>
-            <!-- <i class='el-icon-location'></i> -->
+            <i class='el-icon-location'></i>
             <span>{{item.name}}</span>
           </template>
           <!-- 二级菜单 -->
@@ -58,6 +60,10 @@
 export default {
   props: {
     routeList: Array,
+    collapse: {
+      type: Boolean,
+      default: false
+    },
     defaultOpeneds: Array,
     activeMenu: {
       type: String,
@@ -65,19 +71,24 @@ export default {
     },
   },
   data() {
-    return {
-
-    }
+    return {}
   },
-  created() {},
   methods: {
-    handleOpen() {},
     handleClose() {},
   },
 }
 </script>
 
 <style lang="scss">
+  .is-hide {
+    transform: translateX(-250px);
+    margin-right: -250px;
+    transition: all 1s;
+  }
+  .is-show {
+    transform: translateX(0);
+    transition: all 1s;
+  }
   .left-menu-cont {
     width: 250px;
     min-width: 250px;

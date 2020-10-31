@@ -1,6 +1,6 @@
 <template>
   <div id='app'>
-    <div class='top-cont' v-if="showTopTitle">
+    <div class='top-cont' :class="{'is-hide-top': !showTopTitle, 'is-show-top': showTopTitle}">
       <div class='top-left' @click="() => $router.push('/home')">
         KaKa's blog
       </div>
@@ -11,9 +11,11 @@
     <div class='main-cont' :class="{'reset-height': !showTopTitle}">
       <left-memu
         :default-openeds='defaultOpeneds'
+        :collapse="collapse"
         :route-list='routeList'
         :active-menu='activeMenu' />
-      <div class='right-cont'  ref="right-cont-ref">
+      <div class='right-cont' ref="right-cont-ref">
+        <el-button class="control-btn" @click="() => collapse = !collapse">{{ collapse ? '展开' : '折叠'}}</el-button>
         <router-view></router-view>
       </div>
     </div>
@@ -30,6 +32,7 @@ export default {
   data() {
     return {
       NODE_ENV: '',
+      collapse: false,
       showTopTitle: true
     }
   },
@@ -55,6 +58,7 @@ export default {
     this.NODE_ENV = process.env.NODE_ENV
   },
   mounted () {
+    console.log('dom:', this.$refs['test'])
     this.$refs['right-cont-ref'].addEventListener('scroll', this.pageScroll)
   },
   beforeDestroy () {
@@ -83,6 +87,16 @@ export default {
 </script>
 
 <style lang='scss'>
+.is-hide-top {
+  margin-bottom: -56px;
+  transform: translateY(-56px);
+  transition: all 1s !important;
+}
+.is-show-top {
+  transform: translateY(0);
+  transition: all 1s !important;
+}
+
 html,
 body {
   min-width: 800px;
@@ -132,6 +146,12 @@ body {
       overflow: hidden;
       overflow-y: scroll;
       // background: #f4f5f5;
+      .control-btn {
+        position: sticky;
+        top: 0px;
+        left: 20px;
+        height: 40px;
+      }
     }
   }
   .reset-height {

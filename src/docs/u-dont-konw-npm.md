@@ -495,6 +495,49 @@ npm run dev --foo=bar
 
 ##### `默认配置`  
 
-通过`npm config ls -l`查看 npm 内部的默认配置参数。如果命令行、环境变量、所有配置文件都没有配置参数，则使用默认参数值。  
+通过`npm config ls -l`查看 npm 内部的默认配置参数。如果命令行、环境变量、所有配置文件都没有配置参数，则使用默认参数值。
 
-<!-- [参考至·GitHub](https://github.com/Cosen95/blog/issues/8) -->
+#### npm config 指令  
+
+##### `set`  
+
+```
+npm config set <key> <value> [-g|--global]
+npm config set registry <url>  # 指定下载 npm 包的来源，默认为 https://registry.npmjs.org/ ，可以指定私有源
+```  
+
+设置配置参数 key 的值为 value，如果省略 value，key 会被设置为 true。  
+
+##### `get`  
+
+```
+npm config get <key>
+```  
+
+查看配置参数 key 的值。  
+
+##### `delete`  
+
+```
+npm config delete <key>
+```  
+
+删除配置参数 key  
+
+##### `list`  
+
+```
+npm config list [-l] [--json]
+```  
+
+查看所有设置过的配置参数。使用 -l 查看所有设置过的以及默认的配置参数。使用 --json 以 json 格式查看。  
+
+##### edit  
+
+```
+npm config edit
+``` 
+
+在编辑器中打开 npmrc 文件，使用 --global 参数打开全局 npmrc 文件。
+
+<!--[参考至·GitHub](https://github.com/Cosen95/blog/issues/8)-->
