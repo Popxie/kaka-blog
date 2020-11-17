@@ -13,6 +13,7 @@ const ruanYiFeng = {
     { path: 'promise', name: 'Promise', component },
     { path: 'regex', name: '正则的扩展', component },
     { path: 'object', name: '对象的扩展', component },
+    { path: 'object-methods', name: '对象的新增方法', component },
   ]
 }
 
