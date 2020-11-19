@@ -1,12 +1,15 @@
 <template>
   <div id='app'>
-    <div class='top-cont' :class="{'is-hide-top': !showTopTitle, 'is-show-top': showTopTitle}">
-      <div class='top-left' @click="() => $router.push('/home')">
-        KaKa's blog
+    <div class='top-cont'>
+      <div
+        :class="{'is-hide-top': !showTopTitle, 'is-show-top': showTopTitle}"
+        class="info-cont">
+        <div class='top-left' @click="() => $router.push('/home')">
+          KaKa's blog
+        </div>
       </div>
-      <div class='top-right'>
-        <el-button @click="fullViewClick">全屏</el-button>
-      </div>
+      <div class="titlte-cont">{{$route.name}}</div>
+      <el-button class='full-screen-btn' type="text" @click="fullViewClick">{{ isFullScreeen ? `退出全屏` : `全屏`}}</el-button>
     </div>
     <div class='main-cont' :class="{'reset-height': !showTopTitle}">
       <left-memu
@@ -16,8 +19,13 @@
         :active-menu='activeMenu' />
       <div class='right-cont' ref="right-cont-ref">
         <el-button
+          v-if="isShowBtn"
           class="control-btn"
-          @click="() => collapse = !collapse">{{ collapse ? '展开' : '折叠'}}</el-button>
+          @click="() => collapse = !collapse">
+          <i v-if="!collapse" class="el-icon-d-arrow-left"/>
+          {{ collapse ? '展开' : '折叠' }}
+          <i v-if="collapse" class="el-icon-d-arrow-right"/>
+        </el-button>
         <router-view />
       </div>
     </div>
@@ -36,7 +44,8 @@ export default {
       NODE_ENV: '',
       collapse: false,
       showTopTitle: true,
-      throttleFn: null
+      isFullScreeen: false,
+      isShowBtn: false
     }
   },
   computed: {
@@ -57,6 +66,12 @@ export default {
       return tempArr
     }
   },
+  watch: {
+    $route: function(route) {
+      if (route.name === 'Home') return this.isShowBtn = false
+      this.isShowBtn = true
+    }
+  },
   created() {
     this.NODE_ENV = process.env.NODE_ENV
   },
@@ -74,7 +89,7 @@ export default {
       const currentTop = this.$refs['right-cont-ref'].scrollTop || window.scrollY
       this.showTopTitle = currentTop < 100
     },
-    fullViewClick() {
+    async fullViewClick() {
       if (!screenfull.isEnabled) {
         this.$message({
           message: 'you browser can not work',
@@ -82,7 +97,8 @@ export default {
         })
         return false
       }
-      screenfull.toggle()
+      await screenfull.toggle()
+      this.isFullScreeen = screenfull.isFullscreen
     }
   }
 }
@@ -91,12 +107,14 @@ export default {
 <style lang='scss'>
 .is-hide-top {
   margin-bottom: -56px;
+  opacity: 0;
   transform: translateY(-56px);
-  transition: all .6s !important;
+  transition: all 1.2s !important;
 }
 .is-show-top {
+  opacity: 1;
   transform: translateY(0);
-  transition: all .6s !important;
+  transition: all 1.2s !important;
 }
 
 html,
@@ -119,23 +137,37 @@ body {
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
   .top-cont {
-    height: 36px;
-    line-height: 36px;
-    padding: 10px;
+    height: 56px;
+    padding: 0 10px;
     border-bottom: 1px solid #eaecef;
-    display: flex;
-    justify-content: space-between;
-    transition: opacity .5s;
-    .top-left {
-      font-size: 20px;
-      font-weight: 800;
-      &:hover {
-        cursor: pointer;
-        color: #42b983;
+    overflow: hidden;
+    position: relative;
+    .info-cont {
+      display: flex;
+      justify-content: space-between;
+      height: 56px;
+      line-height: 56px;
+      .top-left {
+        font-size: 20px;
+        font-weight: 800;
+        &:hover {
+          cursor: pointer;
+          color: #42b983;
+        }
       }
     }
-    .top-right {
+    .full-screen-btn {
       font-size: 14px;
+      position: absolute;
+      top: 8px;
+      right: 10px;
+    }
+    .titlte-cont {
+      height: 56px;
+      line-height: 56px;
+      font-size: 20px;
+      font-weight: 800;
+      text-align: center;
     }
   }
   .main-cont {
@@ -152,7 +184,6 @@ body {
         position: sticky;
         top: 0;
         left: 0;
-        float: left;
       }
     }
   }

@@ -1,3 +1,9 @@
+<!--
+ * @Description: 
+ * @Author: xiehuaqiang
+ * @FilePath: /kaka-blog/src/pages/ViewList.vue
+ * @Date: 2020-11-19 14:51:39
+-->
 <template>
   <div class="markdown-body">
     <webpack-one v-if="path === 'webpack-one'" v-highlight/>

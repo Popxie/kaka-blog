@@ -25,7 +25,7 @@ if (!window.VueRouter) Vue.use(VueRouter)
 const routes = [
   {
     path: '/',
-    name: '',
+    name: 'Home',
     redirect: { name: 'Home' }
   },
   {

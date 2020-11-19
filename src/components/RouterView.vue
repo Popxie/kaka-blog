@@ -1,9 +1,9 @@
 <!--
  * @Description: 
  * @Author: xiehuaqiang
- * @Date: 2020-06-09 14:27:33
- * @LastEditTime: 2020-06-12 20:19:50
---> 
+ * @FilePath: /kaka-blog/src/components/RouterView.vue
+ * @Date: 2020-11-19 14:49:14
+-->
 <template>
-  <router-view></router-view>
+  <router-view :key="$route.fullPath"></router-view>
 </template>
