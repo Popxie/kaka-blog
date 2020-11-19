@@ -23,6 +23,7 @@
     <destructuring v-else-if="path === 'destructuring'" v-highlight/>
     <regex v-else-if="path === 'regex'" v-highlight/>
     <object-methods v-else-if="path === 'object-methods'" v-highlight/>
+    <function v-else-if="path === 'function'" v-highlight/>
   </div>
 </template>
 <script>
@@ -46,7 +47,8 @@ export default {
     'object-extends': () => import('@/docs/ruanyifeng/docs/object.md'),
     'destructuring': () => import('@/docs/ruanyifeng/docs/destructuring.md'),
     'regex': () => import('@/docs/ruanyifeng/docs/regex.md'),
-    'object-methods': () => import('@/docs/ruanyifeng/docs/object-methods.md')
+    'object-methods': () => import('@/docs/ruanyifeng/docs/object-methods.md'),
+    'function': () => import('@/docs/ruanyifeng/docs/function.md')
   },
   data() {
     return {
