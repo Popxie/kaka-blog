@@ -68,6 +68,7 @@ export default {
   },
   watch: {
     $route: function(route) {
+      console.log('route.name: ', route.name);
       if (route.name === 'Home') return this.isShowBtn = false
       this.isShowBtn = true
     }
