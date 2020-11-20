@@ -1,13 +1,12 @@
 language: node_js
 
 node_js: 
-  - '10'
+  - '12.16.1'
 
 # Travis-CI Caching
 cache:
   directories:
     - node_modules
-
 
 # S: Build Lifecycle
 install:
