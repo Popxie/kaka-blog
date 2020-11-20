@@ -1,17 +1,20 @@
 {
   "name": "kaka-blog",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve --copy",
     "build:dev": "vue-cli-service build --mode development --report",
     "build:test": "vue-cli-service build --mode test --report",
     "build:prod": "vue-cli-service build --mode production --report",
-    "lint": "vue-cli-service lint"
+    "clean": "rimraf ./node_modules",
+    "lint": "vue-cli-service lint",
+    "deploy": "sh ./deploy.sh"
   },
   "dependencies": {
     "core-js": "^3.6.5",
     "element-ui": "^2.13.2",
+    "gitalk": "^1.7.0",
     "less-loader": "^6.1.1",
     "lib-flexible": "^0.3.2",
     "sass-loader": "^8.0.2",
@@ -28,7 +31,7 @@
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.2.2",
     "github-markdown-css": "^4.0.0",
-    "highlight.js": "^10.0.3",
+    "highlight.js": "^10.4.0",
     "node-sass": "^4.14.1",
     "postcss-plugin-px2rem": "^0.8.1",
     "px2rem-loader": "^0.1.9",

@@ -1,0 +1,20 @@
+# 官方文档： https://prettier.io/docs/en/options.html
+trailingComma: 'none' # 数组，对象等末尾是否加逗号
+tabWidth: 2           # 缩进为2
+printWidth: 80        # 当行列达到60的时候就换行 -默认80
+semi: false           # 分号 -默认true
+singleQuote: true     # 单引号 -默认true
+bracketSpacing: true  # {}之间是否有空格 -默认true
+arrowParens: avoid    # 箭头函数形参是否加括号 -默认always
+htmlWhitespaceSensitivity: ignore # 行内元素（inline-block）内容前后没有添加空格或者换行或者只有一个属性的话,格式化会有问题标签>会被强制换行
+overrides:
+  - files: '*.md'
+    options:
+      parser: markdown
+
+
+# <span class="dolorum atque aspernatur">Est molestiae sunt facilis qui rem.</span>
+
+# <span class="dolorum atque aspernatur"
+#   >Est molestiae sunt facilis qui rem.</span
+#  >

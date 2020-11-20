@@ -12,6 +12,7 @@ cache:
 install:
   - npm install
 
+
 before_script:
 
 # 无其他依赖项所以执行npm run build 构建就行了
@@ -28,10 +29,6 @@ after_script:
   - git add .
   - git commit -m "Automatically update from travis-c"
   - git push --quiet -f "https://${GH_TOKEN}@${GH_REF}" master:gh-pages
-  # https://6bd3ed0126a3a83fbf0b76df15d7d585b8c28cac@github.com/Popxie/kaka-blog.git master:gh-pages
-  
-  - cd -
-# E: Build LifeCycle
 
 branches:
   only:

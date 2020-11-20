@@ -1,13 +1,13 @@
 const RouterView = () => import('components/RouterView')
-const component = () => import(/* webpackChunkName: "collection" */ '@/pages/bookViewList')
+const component = () => import(/* webpackChunkName: "collection" */ '@/pages/ViewList')
 
-const collection = {
+const engineering = {
   path: '/collection',
-  name: '外链收藏',
+  name: '博客外链收藏',
   component: RouterView,
   children: [
-    { path: 'blog-entry', name: '博客分享入口', component },
+    { path: 'blog-list', name: '博客外链汇总', component },
   ]
 }
 
-export default collection
+export default engineering
