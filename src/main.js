@@ -11,7 +11,6 @@ import 'element-ui/lib/theme-chalk/index.css'
 import '@/assets/style/atelier-cave-light.css'
 import '@/assets/style/github-markdown.css'
 
-
 Vue.config.productionTip = false
 
 Vue.use(Highlight)

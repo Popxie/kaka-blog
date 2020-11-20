@@ -31,14 +31,17 @@ const cdn = {
   },
   // cdn的css链接
   css: [
-    'https://cdn.bootcdn.net/ajax/libs/element-ui/2.13.2/theme-chalk/index.css'
+    'https://cdn.bootcdn.net/ajax/libs/element-ui/2.13.2/theme-chalk/index.css',
+    'https://unpkg.com/gitalk/dist/gitalk.css'
   ],
   // cdn的js链接
   js: [
     'https://cdn.staticfile.org/vue/2.6.10/vue.min.js',
     'https://cdn.staticfile.org/vuex/3.0.1/vuex.min.js',
     'https://cdn.staticfile.org/vue-router/3.0.3/vue-router.min.js',
-    'https://cdn.bootcdn.net/ajax/libs/element-ui/2.13.2/index.js'
+    // 'https://cdn.bootcdn.net/ajax/libs/element-ui/2.13.2/index.js',
+    'https://cdn.hhdd.com/frontend/as/w/e89f5c40-6848-51ed-99d9-2c648ef3507c.js',
+    'https://unpkg.com/gitalk/dist/gitalk.min.js'
   ]
 }
 
@@ -84,7 +87,7 @@ module.exports = {
              * 这样的话把根标签的字体规定为1rem为`${rootValue}px`,
              * 这样就可以从设计稿上量出多少个px直接在代码中写多上px了。
              */
-            rootValue: 192, // 1920px的设计搞来转换
+            rootValue: 192, // 1920px的设计搞来转换 1rem = 192px,总共10rem
             /**
              * 默认false，可以利用正则表达式（reg）排除某些文件夹的方法，
              * 例如/(node_module)\/如果想把前端UI框架内的px也转换成rem，
@@ -107,7 +110,8 @@ module.exports = {
       resolve: {
         alias: {
           '@': resolve('src'),
-          'components': resolve('src/components')
+          'components': resolve('src/components'),
+          'kaka': resolve('src/docs/kaka')
         }
       },
       module: {
@@ -161,6 +165,16 @@ module.exports = {
         console.log('======args=========: ', args)
         // 生产环境或本地需要cdn时，才注入cdn
         if (isProduction || devNeedCdn) args[0].cdn = cdn
+        return args
+      })
+    config.optimization
+      .minimizer('terser')
+      .tap(args => {
+        // 经过测试得出结论： 这玩意儿只在生产环境才会生效！！
+        if (process.env.NODE_ENV === 'production') {
+          args[0].terserOptions.compress.drop_console = true
+          args[0].terserOptions.compress.drop_debugger = true
+        }
         return args
       })
     config.module

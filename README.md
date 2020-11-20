@@ -1,24 +1,7 @@
-# use kaka-plugin
+# KaKa's blog
 
-## Project setup
-```
-yarn install
-```
+> 日常笔记,总结与分享
 
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
+[GitHub Pages for Blog](https://popxie.github.io/kaka-blog/#/home)  
 
-### Compiles and minifies for production
-```
-yarn build
-```
-
-### Lints and fixes files
-```
-yarn lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+[掘金](https://juejin.cn/user/4160207730518871/posts)

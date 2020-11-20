@@ -14,8 +14,11 @@ const javaScript = {
     { path: 'es-2020-operator', name: 'ES2020操作符', component },
     { path: 'options', name: 'options请求', component },
     { path: 'new-date', name: 'new Date()', component },
-    { path: 'deep-copy', name: 'deep copy', component },
+    { path: 'deep-copy', name: '深拷贝那些事儿', component },
     { path: 'debounce-throttle', name: '函数节流&防抖', component },
+    { path: 'a-tag', name: 'a标签的那些事儿', component },
+    { path: 'module-loader-summary', name: 'ES6 Module总结', component },
+    { path: 'class-summary', name: 'ES6 Class总结', component },
   ]
 }
 

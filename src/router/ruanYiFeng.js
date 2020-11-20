@@ -15,6 +15,8 @@ const ruanYiFeng = {
     { path: 'object', name: '对象的扩展', component },
     { path: 'object-methods', name: '对象的新增方法', component },
     { path: 'function', name: '函数的扩展', component },
+    { path: 'module', name: 'Module 的语法', component },
+    { path: 'module-loader', name: 'Module 加载实现', component }
   ]
 }
 

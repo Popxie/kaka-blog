@@ -75,8 +75,11 @@
         //     width = 540 * dpr;
         // }
 
-        if (width / dpr > 1920) {
-            width = 1920 * dpr;
+        // if (width / dpr > 1920) {
+        //     width = 1920 * dpr;
+        // }
+        if (width / dpr > 1650) {
+            width = 1650 * dpr;
         }
         if (width / dpr < 1300) {
             width = 1300 * dpr;

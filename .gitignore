@@ -14,3 +14,6 @@ yarn.lock
 *.ntvs*
 *.njsproj
 *.sln
+
+# 自定义
+output.js

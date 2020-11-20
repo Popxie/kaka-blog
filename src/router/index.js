@@ -1,5 +1,4 @@
 /*
- * @Description: 
  * @Author: xiehuaqiang
  * @Date: 2020-06-05 16:34:53
  */ 
@@ -10,12 +9,14 @@ import webpack from './webpack'
 import engineering from './engineering'
 import javaScript from './javaScript'
 import git from './git'
-import other from './other'
+import dailyNotes from './dailyNotes'
 import collection from './collection'
 import css from './css'
 import npmYarn from './npmYarn'
 import youDontKonwJs from './youDontKonwJs'
 import ruanYiFeng from './ruanYiFeng'
+import qingFeng from './qingFeng'
+import vue from './vue'
 
 /**
  * 通过cdn的形式注入 VueRouter Vuex  Vue 都会挂载到window下面，反之没有
@@ -33,16 +34,19 @@ const routes = [
     name: 'Home',
     component: () => import(/* webpackChunkName: "home" */ '@/pages/Home')
   },
-  youDontKonwJs,
-  ruanYiFeng,
-  webpack,
   engineering,
   javaScript,
+  vue,
   git,
   npmYarn,
-  other,
+  dailyNotes,
   collection,
-  css
+  css,
+  webpack,
+
+  youDontKonwJs,
+  ruanYiFeng,
+  qingFeng,
 ]
 
 const router = new VueRouter({ routes })
