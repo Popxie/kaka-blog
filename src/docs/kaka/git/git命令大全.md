@@ -1,12 +1,12 @@
 <!--
  * @Description: 有道 Git文件
  * @Author: xiehuaqiang
- * @FilePath: /kaka-blog/src/docs/kaka/git/git命令大全.md
+ * @FilePath: \kaka-blog\src\docs\kaka\git\git命令大全.md
  * @Date: 2021-06-10 15:59:34
- * @LastEditTime: 2021-06-10 16:01:39
+ * @LastEditTime: 2021-07-31 23:29:27
 -->
 
-# git 命令大全
+# Git 命令大全
 
 ## 1.帮助
 
@@ -482,6 +482,12 @@ $ git tag [tag] [commit]
 
 # 删除本地tag
 $ git tag -d [tag]
+
+# 删除本地所有tag
+git tag | xargs git tag -d
+
+# 删除远端所有tag
+git tag -l | xargs -n 1 git push --delete origin
 
 # 删除远程tag
 $ git push origin :refs/tags/[tagName]

@@ -1,14 +1,14 @@
 <!--
  * @Description: 博客分享文件夹
  * @Author: xiehuaqiang
- * @FilePath: \kaka-blog\src\docs\kaka\blogs\教你一招如何解决GitHub资源加载失败.md
+ * @FilePath: /kaka-blog/src/docs/kaka/blogs/教你一招如何解决GitHub资源加载失败.md
  * @Date: 2021-06-27 15:23:37
- * @LastEditTime: 2021-06-27 23:43:25
+ * @LastEditTime: 2021-07-08 14:25:44
 -->
 
 # 教你一招如何解决 GitHub 资源(图片)加载失败
 
-![20_github资源加载不出来](https://raw.githubusercontent.com/Popxie/kaka-img-repo/master/img/blogs/20_github资源加载不出来.jpg)
+![29_github资源加载不出来](https://raw.githubusercontent.com/Popxie/kaka-img-repo/master/img/blogs/29_github资源加载不出来.jpg)
 
 ## 前言
 
@@ -19,6 +19,7 @@
 ### 方法一
 
 - 1.找到 hosts 文件
+
   Windows：
 
   ```bash
@@ -63,7 +64,7 @@
   ||githubassets.com
   ```
 
-  ![21_github资源加载不出来](https://raw.githubusercontent.com/Popxie/kaka-img-repo/master/img/blogs/21_github资源加载不出来.jpg)
+  ![30_github资源加载不出来](https://raw.githubusercontent.com/Popxie/kaka-img-repo/master/img/blogs/30_github资源加载不出来.jpg)
 
 ## 授人以鱼不如授人以渔
 
@@ -77,7 +78,7 @@
 
   比如这个域名`raw.githubusercontent.com`我是用的比较多，因为我利用 `GitHub` 的机制，创建了一个图床项目，所有的图片访问都要通过这个域名访问。所以就会很有可能出现别人在预览该域名下的图片时，图片资源加载失败！
 
-  ![22_github资源加载不出来](https://raw.githubusercontent.com/Popxie/kaka-img-repo/master/img/blogs/22_github资源加载不出来.png)
+  ![31_github资源加载不出来](https://raw.githubusercontent.com/Popxie/kaka-img-repo/master/img/blogs/31_github资源加载不出来.png)
 
   ```bash
   # 由上图可以可知， raw.githubusercontent.com 对应四个ip地址
@@ -106,8 +107,6 @@
   185.199.109.133 raw.githubusercontent.com
   185.199.110.133 raw.githubusercontent.com
   185.199.111.133 raw.githubusercontent.com
-  # 用户头像
-
   # GitHub End
   ```
 

@@ -1,10 +1,10 @@
-# JavaScript 深入之从 ECMAScript 规范解读 this
+# 06 从 ECMAScript 规范解读 this
 
 > JavaScript 深入系列第六篇，本篇我们追根溯源，从 ECMAScript5 规范解读 this 在函数调用时到底是如何确定的。
 
 ## 前言
 
-在[《JavaScript 深入之执行上下文栈》](https://github.com/mqyqingfeng/Blog/issues/4)中讲到，当 JavaScript 代码执行一段可执行代码(executable code)时，会创建对应的执行上下文(execution context)。
+在[《03 执行上下文栈》](#/qingfeng/deep/deep-03)中讲到，当 JavaScript 代码执行一段可执行代码(executable code)时，会创建对应的执行上下文(execution context)。
 
 对于每个执行上下文，都有三个重要属性
 
@@ -186,15 +186,15 @@ GetValue 返回对象属性真正的值，但是要注意：
 
 让我们描述一下：
 
-1.计算 MemberExpression 的结果赋值给 ref
+- 1.计算 MemberExpression 的结果赋值给 ref
 
-2.判断 ref 是不是一个 Reference 类型
+- 2.判断 ref 是不是一个 Reference 类型
 
-  2.1 如果 ref 是 Reference，并且 IsPropertyReference(ref) 是 true, 那么 this 的值为 GetBase(ref)
+  - 2.1 如果 ref 是 Reference，并且 IsPropertyReference(ref) 是 true, 那么 this 的值为 GetBase(ref)
 
-  2.2 如果 ref 是 Reference，并且 base value 值是 Environment Record, 那么this的值为 ImplicitThisValue(ref)
+  - 2.2 如果 ref 是 Reference，并且 base value 值是 Environment Record, 那么this的值为 ImplicitThisValue(ref)
 
-  2.3 如果 ref 不是 Reference，那么 this 的值为 undefined
+  - 2.3 如果 ref 不是 Reference，那么 this 的值为 undefined
 
 ## 具体分析
 
@@ -450,4 +450,4 @@ console.log((false || foo.bar)()) // 1
 
 ## 下一篇文章
 
-[《JavaScript 深入之执行上下文》](https://github.com/mqyqingfeng/Blog/issues/8)
+[《07 执行上下文》](#/qingfeng/deep/deep-07)

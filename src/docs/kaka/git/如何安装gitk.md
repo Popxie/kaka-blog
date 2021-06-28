@@ -1,14 +1,17 @@
 <!--
  * @Description: Git文件夹
  * @Author: xiehuaqiang
- * @FilePath: /kaka-blog/src/docs/kaka/git/如何安装gitk.md
+ * @FilePath: \kaka-blog\src\docs\kaka\git\如何安装gitk.md
  * @Date: 2021-03-03 17:41:49
- * @LastEditTime: 2021-06-17 18:42:04
+ * @LastEditTime: 2021-08-01 00:33:31
 -->
 
 # 如何安装 gitk
 
-![gitk](https://raw.githubusercontent.com/Popxie/kaka-img-repo/master/img/daily-notes/15_gitk.png)
+<!-- ![gitk](https://raw.githubusercontent.com/Popxie/kaka-img-repo/master/img/daily-notes/15_gitk.png) -->
+
+![15_gitk](https://user-images.githubusercontent.com/24952644/127746366-034253e5-a8b7-41e0-af3d-829b6aab920f.png)
+
 
 前置条件：  
 **Mac 系统环境下**

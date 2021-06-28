@@ -1,47 +1,53 @@
 <!--
  * @Description: Git文件夹
  * @Author: xiehuaqiang
- * @FilePath: /kaka-blog/src/docs/kaka/git/如何创建一个优美的commit记录.md
+ * @FilePath: \kaka-blog\src\docs\kaka\git\如何创建一个优美的commit记录.md
  * @Date: 2021-06-17 19:15:33
- * @LastEditTime: 2021-06-18 12:33:35
+ * @LastEditTime: 2021-07-31 22:53:38
 -->
 
 # 如何创建一个优美的 commit 记录
 
 ## 1.背景说明
 
-> 每当我们开发完一个功能分支以后，在合并到 master 分支以后，会附带的将开发期间所有的 commit 记录一并 merge 到了远端，若为一个人开发还好问题不大，一旦牵扯多个人协同开发的话，就会导致 master 分支 commit 记录严重混乱，‘交叉感染’，commit 记录不清晰。  
-> 理想情况下 master 分支 commit 记录应尽量做到干净清晰，一个 commit 为一个功能（但是这个 commit 会包含这个功能分支的所有 commit 记录），方便出问题了进行整体回滚，以及有个清晰的树状图(git log --graph)
+> 每当我们开发完一个功能分支以后，在合并到 `master` 分支以后，会附带的将开发期间所有的 `commit` 记录一并 merge 到了远端，若为一个人开发还好问题不大，一旦牵扯多个人协同开发的话，就会导致 `master` 分支 `commit` 记录严重混乱，"交叉感染"，`commit` 记录不清晰。  
+> 理想情况下 `master` 分支 `commit` 记录应尽量做到干净清晰，一个 `commit` 为一个功能（但是这个 `commit` 会包含这个功能分支的所有 `commit` 记录），方便出问题了进行整体回滚，以及有个清晰的树状图(`git log --graph`)
 
 ## 2.前置条件
 
-- 从远端拉取两次项目模拟两个人，再将这两个项目分别从`test`分支创建一个新的功能分支，用来模拟两个人开发
-  - 这里用`user1`和`user2`来表示
-- `user1`和`user2`分别轮流交叉提交 commit，用来模拟最终 merge 到 test 分支 commit 记录交叉混乱的情况
+- 从远端拉取两次项目模拟两个人，再将这两个项目分别从 `test` 分支创建一个新的功能分支，用来模拟两个人开发
+  - 这里用 `user1` 和 `user2` 来表示
+- `user1` 和 `user2` 分别轮流交叉提交 `commit`，用来模拟最终 `merge` 到 test 分支 `commit` 记录交叉混乱的情况
 
 <!--git1.png 16_git_rebase-->
 
-![16_git_rebase](https://raw.githubusercontent.com/Popxie/kaka-img-repo/master/img/daily-notes/16_git_rebase.png)
+<!-- ![16_git_rebase](https://raw.githubusercontent.com/Popxie/kaka-img-repo/master/img/daily-notes/16_git_rebase.png) -->
 
-user1 & user2 分别进行的 4 次提交 如上图所示
+![16_git_rebase](https://user-images.githubusercontent.com/24952644/127743001-076af257-ae11-4500-b16a-573ec2c2d2aa.png)
+
+`user1` & `user2` 分别进行的 4 次提交 如上图所示
 
 ## 3.最终效果对比
 
-> commit 记录‘交叉混乱’ ,视觉上看着并不是很爽朗
+> `commit` 记录"交叉混乱",视觉上看着并不是很爽朗
 
-<!-- merge后的commit是按照commit的时间自上而下的排序,所以看着会比较不清爽 -->
+`merge` 后的 `commit` 是按照 `commit` 的时间自上而下的排序,所以看着会比较不清爽
 
 <!--git2 17_git_rebase-->
 
-![17_git_rebase](https://raw.githubusercontent.com/Popxie/kaka-img-repo/master/img/daily-notes/17_git_rebase.png)
+<!-- ![17_git_rebase](https://raw.githubusercontent.com/Popxie/kaka-img-repo/master/img/daily-notes/17_git_rebase.png) -->
 
-git log 前后对比 如上图所示
+![17_git_rebase](https://user-images.githubusercontent.com/24952644/127743173-35e674d8-7400-4656-b141-2f9d46b2eba9.png)
+
+`git log` 前后对比 如上图所示
 
 <!--git3 18_git_rebase-->
 
-![18_git_rebase](https://raw.githubusercontent.com/Popxie/kaka-img-repo/master/img/daily-notes/18_git_rebase.png)
+<!-- ![18_git_rebase](https://raw.githubusercontent.com/Popxie/kaka-img-repo/master/img/daily-notes/18_git_rebase.png) -->
 
-git log --graph 前后对比 如上图所示
+![18_git_rebase](https://user-images.githubusercontent.com/24952644/127743268-428e310c-173b-4ba3-bfc9-b2748e0b69a5.png)
+
+`git log --graph` 前后对比 如上图所示
 
 ## 4.如何避免这种问题??
 
@@ -51,19 +57,21 @@ git log --graph 前后对比 如上图所示
 
 <!--git4 19_git_rebase-->
 
-![19_git_rebase](https://raw.githubusercontent.com/Popxie/kaka-img-repo/master/img/daily-notes/19_git_rebase.png)
+<!-- ![19_git_rebase](https://raw.githubusercontent.com/Popxie/kaka-img-repo/master/img/daily-notes/19_git_rebase.png) -->
+
+![19_git_rebase](https://user-images.githubusercontent.com/24952644/127743271-54fc1a3f-277e-464c-95c1-54a285313b0f.png)
 
 user1 rebase 前后对比 如上图所示
 
-### 情况一：我们的多次 commit 已经提交到远端。
+### 情况一：我们的多次 commit 已经提交到远端
 
-- 涉及到危险操作`git push -f`
+- 涉及到危险操作 `git push -f`
 
 > 友情提示： 如果对变基不是很清楚，建议在变基之前对'`user1`'的分支进行备份
 
-通常情况下，一个新的功能分支不可能一直暂存在本地而不提交远端，就样子就会造成多次的 commit 都会被提交到远端，最终 merge 到 test 分支的时候也会附带的把之前的多次 commit 记录一并给提交上去了。而我们期望的是：**简化 commit 记录，在 merge 到 test 之前将之前的 commit 都合并为一个**
+通常情况下，一个新的功能分支不可能一直暂存在本地而不提交远端，就样子就会造成多次的 `commit` 都会被提交到远端，最终 `merge` 到 test 分支的时候也会附带的把之前的多次 `commit` 记录一并给提交上去了。而我们期望的是：**简化 commit 记录，在 `merge` 到 test 之前将之前的 `commit` 都合并为一个**
 
-但是`git rebase`命令多用于**未提交到远端之前**进行 commit 合并操作。
+但是`git rebase`命令多用于**未提交到远端之前**进行 `commit` 合并操作。
 
 所以就有了友情提示做个备份，以免操作失误不好挽回的局面。
 
@@ -77,7 +85,7 @@ d01d268ddf308d7fd612a9c5db2d27f7dc1bfd27 add user1.1
 e6edcd464317c119c4cfa3cb2b7a354003db9788 (origin/test, origin/master, test, master) 修复you dont know js图片路径引入问题
 ```
 
-由上可知我们要将`add user1.1 ~ add user1.4`合并为一个 commit，所以我们要选择的起点是 `e6edcd464`
+由上可知我们要将`add user1.1 ~ add user1.4`合并为一个 `commit`，所以我们要选择的起点是 `e6edcd464`
 
 1.`git rebase -i e6edcd464`会弹出以下提示
 
@@ -154,25 +162,31 @@ add user1.4
 
 <!--git4 19_git_rebase-->
 
-![19_git_rebase](https://raw.githubusercontent.com/Popxie/kaka-img-repo/master/img/daily-notes/19_git_rebase.png)
+<!-- ![19_git_rebase](https://raw.githubusercontent.com/Popxie/kaka-img-repo/master/img/daily-notes/19_git_rebase.png) -->
+
+![19_git_rebase](https://user-images.githubusercontent.com/24952644/127743271-54fc1a3f-277e-464c-95c1-54a285313b0f.png)
 
 如上图所示
 
 <!--git5 20_git_rebase-->
 
-![20_git_rebase](https://raw.githubusercontent.com/Popxie/kaka-img-repo/master/img/daily-notes/20_git_rebase.png)
+<!-- ![20_git_rebase](https://raw.githubusercontent.com/Popxie/kaka-img-repo/master/img/daily-notes/20_git_rebase.png) -->
 
-**`But`** 这个时候 vscode 左下角会有提示告诉你 当前分支落后远端分支 4 次 commit，且有一个未提交的 commit 如上图所示
+![20_git_rebase](https://user-images.githubusercontent.com/24952644/127743273-bda6ac3e-f800-456c-8c77-6533f90713a9.png)
+
+**`But`** 这个时候 vscode 左下角会有提示告诉你 当前分支落后远端分支 4 次 `commit`，且有一个未提交的 `commit` 如上图所示
 
 <!--git6 21_git_rebase-->
 
-![21_git_rebase](https://raw.githubusercontent.com/Popxie/kaka-img-repo/master/img/daily-notes/21_git_rebase.png)
+<!-- ![21_git_rebase](https://raw.githubusercontent.com/Popxie/kaka-img-repo/master/img/daily-notes/21_git_rebase.png) -->
 
-因为这个分支是自己的，所以可以强制将当前变基后的分支 push 到远端覆盖，结果 如上图所示
+![21_git_rebase](https://user-images.githubusercontent.com/24952644/127743275-408035f1-2232-4b2d-bb38-1d58ed7de594.png)
+
+因为这个分支是自己的，所以可以强制将当前变基后的分支 `push` 到远端覆盖，结果 如上图所示
 
 ### 情况二：我们的多次 commit 还在本地未提交到远端
 
-这种情况呢包含在情况一中，只是没有了强制 push 这一步，也不会出现落后远端分支 4 次 commit 的情况。
+这种情况呢包含在情况一中，只是没有了强制 `push` 这一步，也不会出现落后远端分支 4 次 `commit` 的情况。
 
 所以不再重复赘述~~
 
@@ -180,6 +194,8 @@ add user1.4
 
 <!--git2 17_git_rebase-->
 
-![17_git_rebase](https://raw.githubusercontent.com/Popxie/kaka-img-repo/master/img/daily-notes/17_git_rebase.png)
+<!-- ![17_git_rebase](https://raw.githubusercontent.com/Popxie/kaka-img-repo/master/img/daily-notes/17_git_rebase.png) -->
+
+![17_git_rebase](https://user-images.githubusercontent.com/24952644/127743173-35e674d8-7400-4656-b141-2f9d46b2eba9.png)
 
 最终变基合并后的效果 如上图所示：

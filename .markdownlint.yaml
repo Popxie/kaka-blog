@@ -81,7 +81,7 @@ MD013:
   stern: false
 
 # MD014/commands-show-output - Dollar signs used before commands without showing output
-MD014: true
+MD014: false
 
 # MD018/no-missing-space-atx - No space after hash on atx style heading
 MD018: true
@@ -128,7 +128,7 @@ MD026:
 MD027: true
 
 # MD028/no-blanks-blockquote - Blank line inside blockquote
-MD028: true
+MD028: false
 
 # MD029/ol-prefix - Ordered list item prefix
 MD029:

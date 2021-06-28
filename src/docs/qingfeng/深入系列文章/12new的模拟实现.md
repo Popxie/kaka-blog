@@ -1,4 +1,4 @@
-# JavaScript 深入之 new 的模拟实现
+# 12 new 的模拟实现
 
 > JavaScript 深入系列第十二篇，通过 new 的模拟实现，带大家揭开使用 new 获得构造函数实例的真相
 
@@ -17,7 +17,6 @@
 function Otaku(name, age) {
   this.name = name
   this.age = age
-
   this.habit = 'Games'
 }
 
@@ -70,12 +69,15 @@ var person = objectFactory(Otaku, ……)
 ```js
 // 第一版代码
 function objectFactory() {
-  var obj = new Object(),
-    Constructor = [].shift.call(arguments)
+  var obj = new Object()
+  var Constructor = [].shift.call(arguments)
 
   obj.__proto__ = Constructor.prototype
 
   Constructor.apply(obj, arguments)
+  // Constructor.bind(obj)(arguments[0], arguments[1]) // 同上
+  // Constructor.call(obj, arguments[0], arguments[1]) // 同上 三种方式都ok
+  // Constructor(arguments) // 导致 Otaku 中的this指向window
 
   return obj
 }
@@ -86,16 +88,16 @@ function objectFactory() {
 1. 用 new Object() 的方式新建了一个对象 obj
 2. 取出第一个参数，就是我们要传入的构造函数。此外因为 shift 会修改原数组，所以 arguments 会被去除第一个参数
 3. 将 obj 的原型指向构造函数，这样 obj 就可以访问到构造函数原型中的属性
-4. 使用 apply，改变构造函数 this 的指向到新建的对象，这样 obj 就可以访问到构造函数中的属性
+4. 使用 apply，改变构造函数 this 的指向到新建的对象，这样 obj 就可以访问到构造函数中的属性(不用apply的话构造函数Otaku中的this指向window)
 5. 返回 obj
 
 更多关于：
 
-原型与原型链，可以看[《JavaScript 深入之从原型到原型链》](https://github.com/mqyqingfeng/Blog/issues/2)
+原型与原型链，可以看[《01 从原型到原型链》](#/qingfeng/deep/deep-01)
 
-apply，可以看[《JavaScript 深入之 call 和 apply 的模拟实现》](https://github.com/mqyqingfeng/Blog/issues/11)
+apply，可以看[《10 call 和 apply 的模拟实现》](#/qingfeng/deep/deep-10)
 
-经典继承，可以看[《JavaScript 深入之继承》](https://github.com/mqyqingfeng/Blog/issues/16)
+经典继承，可以看[15《继承》](#/qingfeng/deep/deep-15)
 
 复制以下的代码，到浏览器中，我们可以做一下测试：
 
@@ -114,8 +116,8 @@ Otaku.prototype.sayYourName = function() {
 }
 
 function objectFactory() {
-  var obj = new Object(),
-    Constructor = [].shift.call(arguments)
+  var obj = new Object()
+  var Constructor = [].shift.call(arguments)
   obj.__proto__ = Constructor.prototype
   Constructor.apply(obj, arguments)
   return obj
@@ -186,8 +188,8 @@ console.log(person.age) // 18
 ```js
 // 第二版的代码
 function objectFactory() {
-  var obj = new Object(),
-    Constructor = [].shift.call(arguments)
+  var obj = new Object()
+  var Constructor = [].shift.call(arguments)
 
   obj.__proto__ = Constructor.prototype
 
@@ -199,12 +201,12 @@ function objectFactory() {
 
 ## 下一篇文章
 
-[JavaScript 深入之类数组对象与 arguments](https://github.com/mqyqingfeng/Blog/issues/14)
+[13 类数组对象与 arguments](#/qingfeng/deep/deep-13)
 
 ## 相关链接
 
-[《JavaScript 深入之从原型到原型链》](https://github.com/mqyqingfeng/Blog/issues/2)
+[《01 从原型到原型链》](#/qingfeng/deep/deep-01)
 
-[《JavaScript 深入之 call 和 apply 的模拟实现》](https://github.com/mqyqingfeng/Blog/issues/11)
+[《10 call 和 apply 的模拟实现》](#/qingfeng/deep/deep-10)
 
-[《JavaScript 深入之继承》](https://github.com/mqyqingfeng/Blog/issues/16)
+[《15 继承》](#/qingfeng/deep/deep-15)

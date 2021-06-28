@@ -1,4 +1,4 @@
-# JavaScript 深入之 call 和 apply 的模拟实现
+# 10 call 和 apply 的模拟实现
 
 > JavaScript 深入系列第十篇，通过 call 和 apply 的模拟实现，带你揭开 call 和 apply 改变 this 的真相
 
@@ -308,7 +308,7 @@ Function.prototype.apply = function(context, arr) {
 
 ## 下一篇文章
 
-[JavaScript 深入之 bind 的模拟实现](https://github.com/mqyqingfeng/Blog/issues/12)
+[11 bind 的模拟实现](#/qingfeng/deep/deep-11)
 
 ## 重要参考
 

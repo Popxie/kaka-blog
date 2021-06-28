@@ -1,12 +1,12 @@
-# JavaScript 深入之类数组对象与 arguments
+# 13 类数组对象与 arguments
 
-> JavaScript 深入系列第十三篇，讲解类数组对象与对象的相似与差异以及 arguments 的注意要点
+> JavaScript 深入系列第十三篇，讲解类数组对象与对象的相似与差异以及 `arguments` 的注意要点
 
 ## 类数组对象
 
 所谓的类数组对象:
 
-> 拥有一个 length 属性和若干索引属性的对象
+> 拥有一个 `length` 属性和若干索引属性的对象
 
 举个例子：
 
@@ -28,9 +28,10 @@ var arrayLike = {
 ## 读写
 
 ```js
+// 读
 console.log(array[0]) // name
 console.log(arrayLike[0]) // name
-
+// 写
 array[0] = 'new name'
 arrayLike[0] = 'new name'
 ```
@@ -46,10 +47,10 @@ console.log(arrayLike.length) // 3
 
 ```js
 for(var i = 0, len = array.length; i < len; i++) {
-   ……
+  ……
 }
 for(var i = 0, len = arrayLike.length; i < len; i++) {
-    ……
+  ……
 }
 ```
 
@@ -61,7 +62,7 @@ for(var i = 0, len = arrayLike.length; i < len; i++) {
 arrayLike.push('4')
 ```
 
-然而上述代码会报错: arrayLike.push is not a function
+然而上述代码会报错: `arrayLike.push is not a function`
 
 所以终归还是类数组呐……
 
@@ -69,7 +70,7 @@ arrayLike.push('4')
 
 如果类数组就是任性的想用数组的方法怎么办呢？
 
-既然无法直接调用，我们可以用 Function.call 间接调用：
+既然无法直接调用，我们可以用 `Function.call` 间接调用：
 
 ```js
 var arrayLike = { 0: 'name', 1: 'age', 2: 'sex', length: 3 }
@@ -103,13 +104,13 @@ Array.prototype.concat.apply([], arrayLike)
 
 那么为什么会讲到类数组对象呢？以及类数组有什么应用吗？
 
-要说到类数组对象，Arguments 对象就是一个类数组对象。在客户端 JavaScript 中，一些 DOM 方法(document.getElementsByTagName()等)也返回类数组对象。
+要说到类数组对象，`Arguments` 对象就是一个类数组对象。在客户端 `JavaScript` 中，一些 DOM 方法(`document.getElementsByTagName()`等)也返回类数组对象。
 
 ## Arguments 对象
 
-接下来重点讲讲 Arguments 对象。
+接下来重点讲讲 `Arguments` 对象。
 
-Arguments 对象只定义在函数体中，包括了函数的参数和其他属性。在函数体中，arguments 指代该函数的 Arguments 对象。
+`Arguments` 对象只定义在函数体中，包括了函数的参数和其他属性。在函数体中，`arguments` 指代该函数的 `Arguments` 对象。
 
 举个例子：
 
@@ -125,11 +126,11 @@ foo('name', 'age', 'sex')
 
 ![arguments](https://raw.githubusercontent.com/Popxie/kaka-blog/master/src/docs/qingfeng/Images/arguments.png)
 
-我们可以看到除了类数组的索引属性和 length 属性之外，还有一个 callee 属性，接下来我们一个一个介绍。
+我们可以看到除了类数组的索引属性和 length 属性之外，还有一个 `callee` 属性，接下来我们一个一个介绍。
 
 ## length 属性
 
-Arguments 对象的 length 属性，表示实参的长度，举个例子：
+`Arguments` 对象的 `length` 属性，表示实参的长度，举个例子：
 
 ```js
 function foo(b, c, d) {
@@ -146,9 +147,9 @@ foo(1)
 
 ## callee 属性
 
-Arguments 对象的 callee 属性，通过它可以调用函数自身。
+`Arguments` 对象的 `callee` 属性，通过它可以调用函数自身。
 
-讲个闭包经典面试题使用 callee 的解决方法：
+讲个闭包经典面试题使用 `callee` 的解决方法：
 
 ```js
 var data = []
@@ -168,7 +169,7 @@ data[2]()
 // 2
 ```
 
-接下来讲讲 arguments 对象的几个注意要点：
+接下来讲讲 `arguments` 对象的几个注意要点：
 
 ## arguments 和对应参数的绑定
 
@@ -201,9 +202,9 @@ function foo(name, age, sex, hobbit) {
 foo('name', 'age')
 ```
 
-传入的参数，实参和 arguments 的值会共享，当没有传入时，实参与 arguments 值不会共享
+传入的参数，实参和 `arguments` 的值会共享，当没有传入时，实参与 `arguments` 值不会共享
 
-除此之外，以上是在非严格模式下，如果是在严格模式下，实参和 arguments 是不会共享的。
+除此之外，以上是在非严格模式下，如果是在严格模式下，实参和 `arguments` 是不会共享的。
 
 ## 传递参数
 
@@ -235,18 +236,18 @@ func(1, 2, 3)
 
 ## 应用
 
-arguments 的应用其实很多，在下个系列，也就是 JavaScript 专题系列中，我们会在 jQuery 的 extend 实现、函数柯里化、递归等场景看见 arguments 的身影。这篇文章就不具体展开了。
+`arguments` 的应用其实很多，在下个系列，也就是 JavaScript 专题系列中，我们会在 `jQuery` 的 `extend` 实现、函数柯里化、递归等场景看见 `arguments` 的身影。这篇文章就不具体展开了。
 
 如果要总结这些场景的话，暂时能想到的包括：
 
-1. 参数不定长
-2. 函数柯里化
-3. 递归调用
-4. 函数重载
-   ...
+- 参数不定长
+- 函数柯里化
+- 递归调用
+- 函数重载  
+- ...
 
 欢迎留言回复。
 
 ## 下一篇文章
 
-[JavaScript 深入之创建对象的多种方式以及优缺点](https://github.com/mqyqingfeng/Blog/issues/15)
+[14 创建对象的多种方式以及优缺点](#/qingfeng/deep/deep-14)

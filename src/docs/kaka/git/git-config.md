@@ -1,12 +1,28 @@
 <!--
  * @Description: Git文件
  * @Author: xiehuaqiang
- * @FilePath: /kaka-blog/src/docs/kaka/git/git-config.md
+ * @FilePath: \kaka-blog\src\docs\kaka\git\git-config.md
  * @Date: 2021-03-03 17:40:36
- * @LastEditTime: 2021-06-18 12:04:10
+ * @LastEditTime: 2021-08-01 00:34:00
 -->
 
-# gitconfig 的基本配置
+# .gitconfig 的基本配置
+
+## 前言
+
+通常情况下当们在初次使用 Git 的时候，需要设置一些`个人信息`&`git alias`等，从而提高一些 git 方面的效率。
+
+- `个人信息`
+
+  - 个人邮箱
+  - 用户名
+  - ……
+
+  这样我们在 `commit` 的时候能把个人信息附带上
+
+- `git alias` 别名
+
+  配置以后可以用简短的命令代替默认命令，而且还可以自定义一些个性` git <命令>`
 
 ## 寻找 .gitconfig 文件
 
@@ -25,6 +41,8 @@
   ```
 
 ## 配置 .gitconfig 文件
+
+下面的 alias 是我个人习惯，可以根据自己的习惯进行修改
 
 ```bash
 [user]
@@ -86,11 +104,24 @@
   oldHighlight = red bold 52
   newNormal = green bold
   newHighlight = green bold 22
+
+[core]
+  # https://git-scm.com/book/zh/v2/自定义-Git-配置-Git
+  excludesfile = /Users/${用户名}/.gitignore_global # git config --global core.excludesfile ~/.gitignore_global会自动生成路径
+  ignorecase = false # 开启敏感模式
+  pager = less  # 分页器 默认是less
+
+[pager]
+  # branch, log, diff等支持paper
+  branch = false # 当启用了zsh shell之后 执行git相关操作（log,branch）时会进入vim模式，一旦按q退出以后，就会导致上次操作的查询的结果被清空.设置了这个以后就可以避免了
+
 ```
 
 git lg 效果如下：
 
-![git lg](https://raw.githubusercontent.com/Popxie/kaka-img-repo/master/img/daily-notes/14_git_lg.png)
+<!-- ![git lg](https://raw.githubusercontent.com/Popxie/kaka-img-repo/master/img/daily-notes/14_git_lg.png) -->
+
+![14_git_lg](https://user-images.githubusercontent.com/24952644/127742626-4f5eebb6-e8ba-47e5-b4be-c94fa5cfea7e.png)
 
 ## 查看设置邮箱
 
@@ -121,7 +152,9 @@ git config --list   # 会查询到全局跟项目本地的所有配置
 
 **git 默认`不区分`文件名`大小写`变化！！**
 
-![23](https://raw.githubusercontent.com/Popxie/kaka-img-repo/master/img/funny/23.jpg)
+<!-- ![23](https://raw.githubusercontent.com/Popxie/kaka-img-repo/master/img/funny/23.jpg) -->
+
+![23](https://user-images.githubusercontent.com/24952644/127742637-60a7e807-c8f1-4458-be5f-d3c8dbae1e39.jpg)
 
 ```bash
 # 开启区分大小写
@@ -185,11 +218,11 @@ Other
 
 - 通过 `git config` + `Action`
 
-```bash
-git config --get core.ignorecase
-```
+  ```bash
+  git config --get core.ignorecase
+  ```
 
-### 形式\*
+### 形式 n
 
 ....
 

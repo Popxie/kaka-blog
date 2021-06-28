@@ -11,6 +11,10 @@ const git = {
     { path: 'git-common-orders', name: 'git高频使用命令', component },
     { path: 'github-https-to-ssh', name: 'github https to ssh', component },
     { path: 'git-rebase', name: 'git rebase', component },
+    { path: 'git-obj', name: 'Git内部原理之Git对象', component },
+    { path: 'git-obj-hash', name: 'Git内部原理之Git对象hash', component },
+    { path: 'git-obj-save', name: 'Git内部原理之Git对象存储', component },
+    { path: 'git-obj-reference', name: 'Git内部原理之Git对象引用', component },
   ]
 }
 

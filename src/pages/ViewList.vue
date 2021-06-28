@@ -7,6 +7,10 @@
       <github-https-to-ssh v-else-if="path === 'github-https-to-ssh'" v-highlight />
       <git-rebase v-else-if="path === 'git-rebase'" v-highlight />
       <git-common-orders v-else-if="path === 'git-common-orders'" v-highlight />
+      <git-obj v-else-if="path === 'git-obj'" v-highlight />
+      <git-obj-hash v-else-if="path === 'git-obj-hash'" v-highlight />
+      <git-obj-save v-else-if="path === 'git-obj-save'" v-highlight />
+      <git-obj-reference v-else-if="path === 'git-obj-reference'" v-highlight />
       <!-- 日常随笔 -->
       <picture-403 v-else-if="path === 'picture-403'" v-highlight />
       <rem v-else-if="path === 'rem'" v-highlight />
@@ -25,6 +29,7 @@
       <a-tag v-else-if="path === 'a-tag'" v-highlight />
       <module-loader-summary v-else-if="path === 'module-loader-summary'" v-highlight />
       <class-summary v-else-if="path === 'class-summary'" v-highlight />
+      <blob-download v-else-if="path === 'blob-download'" v-highlight />
       <!-- npm -->
       <npm-yarn v-else-if="path === 'npm-yarn'" v-highlight />
       <npm-orders v-else-if="path === 'npm-orders'" v-highlight />
@@ -57,6 +62,10 @@ export default {
     'github-https-to-ssh': () => import('kaka/git/github协议变更.md'),
     'git-rebase': () => import('kaka/git/如何创建一个优美的commit记录.md'),
     'git-common-orders': () => import('kaka/git/git高频使用命令.md'),
+    'git-obj': () => import('kaka/git/Git内部原理之Git对象.md'),
+    'git-obj-hash': () => import('kaka/git/Git内部原理之Git对象hash.md'),
+    'git-obj-save': () => import('kaka/git/Git内部原理之Git对象存储.md'),
+    'git-obj-reference': () => import('kaka/git/Git内部原理之Git对象引用.md'),
     // 日常随笔
     'picture-403': () => import('kaka/daily-notes/picture-403.md'),
     'rem': () => import('kaka/daily-notes/PC端和Mobile端如何使用rem.md'),
@@ -75,6 +84,7 @@ export default {
     'a-tag': () => import('kaka/js/a标签的那些事儿.md'),
     'module-loader-summary': () => import('kaka/js/module加载实现总结.md'),
     'class-summary': () => import('kaka/js/class类总结.md'),
+    'blob-download': () => import('kaka/js/js实现使用文件流下载文件.md'),
     // npm
     'npm-yarn': () => import('kaka/npm-yarn/npm和yarn.md'),
     'npm-orders': () => import('kaka/npm-yarn/npm相关命令.md'),
