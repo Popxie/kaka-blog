@@ -3,7 +3,7 @@
  * @Author: xiehuaqiang
  * @FilePath: /kaka-blog/src/docs/kaka/git/git标识.md
  * @Date: 2021-06-24 14:40:54
- * @LastEditTime: 2021-06-24 19:28:22
+ * @LastEditTime: 2021-06-29 14:12:46
 -->
 
 # git 标识
@@ -21,11 +21,11 @@
 | U    | 新增文件 未被 git 跟踪记录       |
 | X    | 未知状态。                       |
 
-# 代码里的左侧颜色标识
+# vscode代码里的左侧菜单文件颜色标识
 
 | 标识                                  | 作用                                                                                                      |
 | ------------------------------------- | --------------------------------------------------------------------------------------------------------- |
-| <font color="green">绿色</font>       | 未加入版本控制 <font color="green">U</font> <br> 已经加入版本控制(git add .) <font color="green">A</font> |
+| <font color="green">绿色</font>       | 未加入版本控制 <font color="green">U</font> <br> 已经加入版本控制(git add .) <font color="green">A</font> <br>被重命名(git rm xxx -r)<font color="green">R</font>|
 | <font color="Goldenrod">金黄色</font> | 加入版本控制，已提交，有改动（修改部分）<font color="Goldenrod">M</font>                                  |
 | <font color="WhiteSmoke">白色</font>  | 加入版本控制，已提交，无改动。                                                                            |
 | <font color="gray">灰色</font>        | 版本控制已忽略文件。                                                                                      |

@@ -1,9 +1,9 @@
 <!--
  * @Description: 博客分享文件夹
  * @Author: xiehuaqiang
- * @FilePath: \kaka-blog\src\docs\kaka\blogs\教你一招如何解决GitHub资源加载失败.md
+ * @FilePath: /kaka-blog/src/docs/kaka/blogs/教你一招如何解决GitHub资源加载失败.md
  * @Date: 2021-06-27 15:23:37
- * @LastEditTime: 2021-06-27 23:43:25
+ * @LastEditTime: 2021-06-28 18:00:18
 -->
 
 # 教你一招如何解决 GitHub 资源(图片)加载失败
@@ -19,6 +19,7 @@
 ### 方法一
 
 - 1.找到 hosts 文件
+
   Windows：
 
   ```bash
@@ -106,8 +107,6 @@
   185.199.109.133 raw.githubusercontent.com
   185.199.110.133 raw.githubusercontent.com
   185.199.111.133 raw.githubusercontent.com
-  # 用户头像
-
   # GitHub End
   ```
 
