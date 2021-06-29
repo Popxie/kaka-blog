@@ -3,7 +3,7 @@
  * @Author: xiehuaqiang
  * @FilePath: /kaka-blog/src/docs/kaka/git/【Git系列】Git 大小写不敏感引发的血案.md
  * @Date: 2021-06-24 18:43:38
- * @LastEditTime: 2021-06-29 15:26:18
+ * @LastEditTime: 2021-06-29 18:24:00
 -->
 
 # Git 大小写不敏感引发的血案
@@ -18,7 +18,7 @@
 
 ## demo 部分目录结构
 
-- master 分支的代码及文件目录情况
+- `master` 分支的代码及文件目录情况
 
   ```bash
   # master分支原始目录
@@ -64,7 +64,7 @@
 
 ### 更改文件名 + 更改引用路径
 
-> 因为 这里 git 大小写不敏感所以只进行文件名变更(大小写)的话，不会被 git 检测到，所以必须要改动一个文件，让 git 检测到变更。才能进行`commit`!刚好文件名的变更导致了引用路径也需要变更！因此本次可以进行提交
+> 因为 这里 `git` 大小写不敏感所以只进行文件名变更(大小写)的话，不会被 `git` 检测到，所以必须要改动一个文件，让 `git` 检测到变更。才能进行`commit`!刚好文件名的变更导致了引用路径也需要变更！因此本次可以进行提交
 
 - 由于被<font color="green">绿</font>太狠了，心情不太好就开始了骚操作坑队友！`common => COMMON`结果如下：
 
@@ -94,9 +94,9 @@
 
 ## [user2]的响应
 
-### pull 代码
+### `pull` 代码
 
-- `user2`于是乎就先`pull`然后`merge`了一下，把 user1 的代码同步到自己的分支，结果如下：
+- `user2`于是乎就先`pull`然后`merge`了一下，把 `user1` 的代码同步到自己的分支，结果如下：
 
   ```bash
     # 此时 common => common 没有变化！！！
@@ -120,11 +120,11 @@
   const files = require.context('../components/COMMON', true, /\.vue$/)
   ```
 
-  这个时候，”报应“来的太突然，项目报错了！引用的路径是`COMMON`而实际项目的路径是`common`
+  这个时候，“~~报应~~”来的太突然，项目报错了！引用的路径是`COMMON`而实际项目的路径是`common`
 
   ![18.jpg](https://raw.githubusercontent.com/Popxie/kaka-img-repo/master/img/funny/18.jpg)
 
-- 然后`uesr2`就好奇为啥会是这种情况,文件名没有变化？？于是乎开启了探索之路~~
+- 然后`user2`就好奇为啥会是这种情况,文件名没有变化？？于是乎开启了探索之路~~
 
 ### 探索问题
 
@@ -136,7 +136,7 @@
 
 <strong>温馨提示</strong>
 
-> 因为 `git` 默认不区分大小写，所以如果只更改文件名的话 `git` 并不会检测到文件有变化，固，无法进行 `commit`，所有这次测试在更改文件名的时候附带的改动了其他地方，以便提交！
+> 因为 `git` 默认不区分大小写，所以如果只更改文件名的话 `git` 并不会检测到文件有变化，固！无法进行 `commit`，所有这次测试在更改文件名的时候附带的改动了其他地方，以便提交！
 
 ### 解决问题
 
@@ -156,13 +156,13 @@ git config core.ignorecase false # 让你变的敏感
 
 ### 2. 切换分支，拉取最新代码
 
-- 切分支
+- 切分支 `checkout`
 
   ```bash
   git che master
   ```
 
-- pull 代码
+- 拉代码 `pull`
 
   ```bash
   git pull
@@ -211,7 +211,7 @@ git config core.ignorecase false # 让你变的敏感
 
   ![09_git大小写不敏感引发的问题](https://raw.githubusercontent.com/Popxie/kaka-img-repo/master/img/blogs/09_git大小写不敏感引发的问题.png)
 
-- merge master 到 feature/user2 分支
+- `merge` master 到 `feature/user2` 分支
 
   ```bash
   git merge master
@@ -237,7 +237,7 @@ git config core.ignorecase false # 让你变的敏感
 
 - `user1` 的分支：`feature/user1`
 
-### 1. 让她敏感
+### 1. 让她敏感敏感再敏感
 
 ```bash
 git config core.ignorecase false # emmmmm……俺敏感了
@@ -259,13 +259,13 @@ git config core.ignorecase false # emmmmm……俺敏感了
 
 ### 3. 暂存（add）& 提交(commit)
 
-- 暂存
+- 暂存 `add`
 
   ```bash
   git add .
   ```
 
-- 提交
+- 提交 `commit`
 
   ```bash
   git commit -m <msg>
@@ -273,7 +273,7 @@ git config core.ignorecase false # emmmmm……俺敏感了
 
 ### 4. 切换分支
 
-- `git che master`
+- `git checkout master`
 
   ![08_D_git大小写不敏感引发的问题](https://raw.githubusercontent.com/Popxie/kaka-img-repo/master/img/blogs/08_D_git大小写不敏感引发的问题.png)
 
@@ -291,7 +291,7 @@ git config core.ignorecase false # emmmmm……俺敏感了
 
   ![11_git大小写不敏感引发的问题](https://raw.githubusercontent.com/Popxie/kaka-img-repo/master/img/blogs/11_git大小写不敏感引发的问题.png)
 
-- push
+- 推送 `push`
 
   ```bash
   git push # 推送到远端master
@@ -381,13 +381,13 @@ git config core.ignorecase true # git 默认不敏感
 
 ### 2. 切分支 & pull 代码
 
-- 切分支
+- 切分支 `checkout`
 
   ```bash
-  git che master
+  git checkout master
   ```
 
-- 拉代码
+- 拉代码 `pull`
 
   ```bash
   git pull # 更新 master 分支
@@ -442,13 +442,13 @@ git config core.ignorecase true # git 默认不敏感
 
 # 另外一种方式 git rm
 
-- 删除文件夹
+- 删除文件夹 `rm`
 
   ```bash
   git rm <文件夹路径> -r # -r 表示递归
   ```
 
-- 删除文件
+- 删除文件 `rm`
 
   ```bash
   git rm <文件路径>
@@ -542,7 +542,7 @@ git config core.ignorecase false
 
   - 最后执行 `git check master`
 
-  忽略执行删除后的文件变更，直接 git checkout master
+  忽略执行删除后的文件变更，直接 `git checkout master`
 
 - `merge` 出问题
 
@@ -567,7 +567,7 @@ git config core.ignorecase false
     ![23_git大小写不敏感引发的问题](https://raw.githubusercontent.com/Popxie/kaka-img-repo/master/img/blogs/23_git大小写不敏感引发的问题.png)
   - 最后`git merge feature/user1`就可以了~
 
-### 6. 查看 commit 记录
+### 6. 查看 `commit` 记录
 
 - 如下图：
   ![17_git大小写不敏感引发的问题](https://raw.githubusercontent.com/Popxie/kaka-img-repo/master/img/blogs/17_git大小写不敏感引发的问题.png)
@@ -588,7 +588,7 @@ git config core.ignorecase true
 
   ![10_git大小写不敏感引发的问题](https://raw.githubusercontent.com/Popxie/kaka-img-repo/master/img/blogs/10_git大小写不敏感引发的问题.png)
 
-  卧槽！ Git 并没有检测到 文件有变化！
+  卧槽！ `Git` 并没有检测到 文件有变化！
 
 ### 3. 卒!
 
@@ -688,7 +688,7 @@ git config core.ignorecase true
 综上的出来的结论就是多人协作开发的时候存在已下情况
 
 - 第一种方式
-  user1 两种， user2 两种，总共四种情况。且文件都被标记为<font color="green">A</font>
+  `user1` 两种， `user2` 两种，总共四种情况。且文件都被标记为<font color="green">A</font>
 
   - 都未开启敏感模式（绝大多数都是这个情况）  
     这种情况可想而知，远端的文件名一直都是 common 而非 COMMON，所有人乃至以后都会一直存在这个问题（自己本地需要去手动的更改文件名），
