@@ -3,7 +3,7 @@
  * @Author: xiehuaqiang
  * @FilePath: /kaka-blog/src/docs/kaka/daily-notes/Mac终端常用命令.md
  * @Date: 2021-03-03 17:38:15
- * @LastEditTime: 2021-06-18 10:18:39
+ * @LastEditTime: 2021-06-30 17:48:24
 -->
 
 # Mac Terminal 常用命令
@@ -36,7 +36,7 @@ vim  xxx  # 查看当前xxx文件的内容
   ```bash
   u     # 是撤销上次修改
   cc    # 删除当前行 并进入insert模式(非写入状态时)
-  d     # 删除当前行 (dnd 从当前行向下删除n行)
+  dd    # 删除当前行 (${n}dd 从当前行向下删除n行,eg: 3dd, 4dd)
   set nu        # 显示行序号
   set nonumber  # 关闭显示行序号
   shitf + g     # 返回到底部
