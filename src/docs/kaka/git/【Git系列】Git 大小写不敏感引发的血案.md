@@ -3,7 +3,7 @@
  * @Author: xiehuaqiang
  * @FilePath: /kaka-blog/src/docs/kaka/git/【Git系列】Git 大小写不敏感引发的血案.md
  * @Date: 2021-06-24 18:43:38
- * @LastEditTime: 2021-06-29 18:24:00
+ * @LastEditTime: 2021-07-02 10:49:52
 -->
 
 # Git 大小写不敏感引发的血案
@@ -136,7 +136,7 @@
 
 <strong>温馨提示</strong>
 
-> 因为 `git` 默认不区分大小写，所以如果只更改文件名的话 `git` 并不会检测到文件有变化，固！无法进行 `commit`，所有这次测试在更改文件名的时候附带的改动了其他地方，以便提交！
+> 因为 `git` 默认不区分大小写，所以如果只更改文件名的话 `git` 并不会检测到文件有变化，固！无法进行 `commit`，所以这次测试在更改文件名的时候附带的改动了其他地方，以便提交！
 
 ### 解决问题
 
@@ -708,6 +708,6 @@ git config core.ignorecase true
 
 ## 结束语
 
-已上所有内容都是经过好几遍测试，一遍实践一遍记录的形式来撰写的，最后也反复检查了好几遍，目测没有什么问题，如果有问题了就请留言告知吧~
+已上所有内容都是经过好几遍测试，一边实践一边记录的形式来撰写的，最后也反复检查了好几遍，目测没有什么问题，如果有问题了就请留言告知吧~
 
 ![47.jpg](https://raw.githubusercontent.com/Popxie/kaka-img-repo/master/img/funny/47.jpg)

@@ -3,7 +3,7 @@
  * @Author: xiehuaqiang
  * @FilePath: /kaka-blog/src/docs/kaka/git/git-config.md
  * @Date: 2021-03-03 17:40:36
- * @LastEditTime: 2021-06-18 12:04:10
+ * @LastEditTime: 2021-07-02 16:48:25
 -->
 
 # gitconfig 的基本配置
@@ -86,6 +86,17 @@
   oldHighlight = red bold 52
   newNormal = green bold
   newHighlight = green bold 22
+
+[core]
+  # https://git-scm.com/book/zh/v2/自定义-Git-配置-Git
+  excludesfile = /Users/${用户名}/.gitignore_global # git config --global core.excludesfile ~/.gitignore_global会自动生成路径
+  ignorecase = false # 开启敏感模式
+  pager = less  # 分页器 默认是less
+
+[pager]
+  # branch, log, diff等支持paper
+  branch = false # 当启用了zsh shell之后 执行git相关操作（log,branch）时会进入vim模式，一旦按q退出以后，就会导致上次操作的查询的结果被清空.设置了这个以后就可以避免了
+  
 ```
 
 git lg 效果如下：
@@ -189,7 +200,7 @@ Other
 git config --get core.ignorecase
 ```
 
-### 形式\*
+### 形式 n
 
 ....
 

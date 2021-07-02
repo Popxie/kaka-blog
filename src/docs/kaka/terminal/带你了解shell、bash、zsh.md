@@ -3,7 +3,7 @@
  * @Author: xiehuaqiang
  * @FilePath: /kaka-blog/src/docs/kaka/terminal/带你了解shell、bash、zsh.md
  * @Date: 2021-06-30 16:05:15
- * @LastEditTime: 2021-06-30 18:09:42
+ * @LastEditTime: 2021-07-01 16:46:09
 -->
 
 # 带你了解 `shell`、`bash`、`zsh`
@@ -64,3 +64,5 @@ Bash 是最常见的 `shell`，Mac 中默认 `shell` 就是 `bash`。bash 官网
 虽然这些概念不见得会立即提高我们的工作效率，但是对它们的理解有助于我们在黑框框里输入东西时更加心中有数。
 
 [阅读原文·知乎](https://zhuanlan.zhihu.com/p/34197680)
+[Bash 为何要发明 shopt 命令](https://www.cnblogs.com/ziyunfei/p/4913758.html)
+[为什么说 zsh 是 shell 中的极品？·知乎](https://www.zhihu.com/question/21418449/answer/300879747)
