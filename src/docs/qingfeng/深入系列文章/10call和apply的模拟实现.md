@@ -308,7 +308,7 @@ Function.prototype.apply = function(context, arr) {
 
 ## 下一篇文章
 
-[JavaScript 深入之 bind 的模拟实现](https://github.com/mqyqingfeng/Blog/issues/12)
+[JavaScript 深入之 bind 的模拟实现](#/qingfeng/deep/deep-11)
 
 ## 重要参考
 

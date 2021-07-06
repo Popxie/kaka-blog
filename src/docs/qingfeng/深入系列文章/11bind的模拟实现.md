@@ -1,4 +1,4 @@
-# JavaScript 深入之 bind 的模拟实现
+# bind 的模拟实现
 
 > JavaScript 深入系列第十一篇，通过 bind 函数的模拟实现，带大家真正了解 bind 的特性
 
@@ -32,13 +32,14 @@ var bindFoo = bar.bind(foo)
 bindFoo() // 1
 ```
 
-关于指定 this 的指向，我们可以使用 call 或者 apply 实现，关于 call 和 apply 的模拟实现，可以查看[《JavaScript 深入之 call 和 apply 的模拟实现》](https://github.com/mqyqingfeng/Blog/issues/11)。我们来写第一版的代码：
+关于指定 this 的指向，我们可以使用 call 或者 apply 实现，关于 call 和 apply 的模拟实现，可以查看[《call 和 apply 的模拟实现》](#/qingfeng/deep/deep-10)。我们来写第一版的代码：
 
 ```js
 // 第一版
 Function.prototype.bind2 = function(context) {
-  var self = this
+  var self = this // 这里的this指的是调用bind函数的函数
   return function() {
+    // context（foo） 代指 bar 中的 this
     return self.apply(context)
   }
 }
@@ -139,7 +140,7 @@ console.log(obj.friend)
 
 注意：尽管在全局和 foo 中都声明了 value 值，最后依然返回了 undefind，说明绑定的 this 失效了，如果大家了解 new 的模拟实现，就会知道这个时候的 this 已经指向了 obj。
 
-(哈哈，我这是为我的下一篇文章[《JavaScript 深入系列之 new 的模拟实现》](https://github.com/mqyqingfeng/Blog/issues/13)打广告)。
+(哈哈，我这是为我的下一篇文章[《new 的模拟实现》](#/qingfeng/deep/deep-12)打广告)。
 
 所以我们可以通过修改返回的函数的原型来实现，让我们写一下：
 
@@ -151,6 +152,7 @@ Function.prototype.bind2 = function(context) {
 
   var fBound = function() {
     var bindArgs = Array.prototype.slice.call(arguments)
+    // instanceof 运算符用于检测 构造函 数的 prototype 属性是否出现在某个实例对象的原型链上
     // 当作为构造函数时，this 指向实例，此时结果为 true，将绑定函数的 this 指向该实例，可以让实例获得来自绑定函数的值
     // 以上面的是 demo 为例，如果改成 `this instanceof fBound ? null : context`，实例只是一个空对象，将 null 改成 this ，实例会具有 habit 属性
     // 当作为普通函数时，this 指向 window，此时结果为 false，将绑定函数的 this 指向 context
@@ -165,7 +167,7 @@ Function.prototype.bind2 = function(context) {
 }
 ```
 
-如果对原型链稍有困惑，可以查看[《JavaScript 深入之从原型到原型链》](https://github.com/mqyqingfeng/Blog/issues/2)。
+如果对原型链稍有困惑，可以查看[《从原型到原型链》](#/qingfeng/deep/deep-01)。
 
 ## 构造函数效果的优化实现
 
@@ -286,12 +288,12 @@ Function.prototype.bind2 = function(context) {
 
 ## 下一篇文章
 
-[《JavaScript 深入系列之 new 的模拟实现》](https://github.com/mqyqingfeng/Blog/issues/13)
+[《new 的模拟实现》](#/qingfeng/deep/deep-12)
 
 ## 相关链接
 
-[《JavaScript 深入之从原型到原型链》](https://github.com/mqyqingfeng/Blog/issues/2)
+[《从原型到原型链》](#/qingfeng/deep/deep-01)
 
-[《JavaScript 深入之 call 和 apply 的模拟实现》](https://github.com/mqyqingfeng/Blog/issues/11)
+[《call 和 apply 的模拟实现》](#/qingfeng/deep/deep-10)
 
-[《JavaScript 深入系列之 new 的模拟实现》](https://github.com/mqyqingfeng/Blog/issues/13)
+[《new 的模拟实现》](#/qingfeng/deep/deep-12)
