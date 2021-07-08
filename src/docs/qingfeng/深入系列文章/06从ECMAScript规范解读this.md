@@ -1,10 +1,10 @@
-# 从 ECMAScript 规范解读 this
+# 06 从 ECMAScript 规范解读 this
 
 > JavaScript 深入系列第六篇，本篇我们追根溯源，从 ECMAScript5 规范解读 this 在函数调用时到底是如何确定的。
 
 ## 前言
 
-在[《执行上下文栈》](#/qingfeng/deep/deep-03)中讲到，当 JavaScript 代码执行一段可执行代码(executable code)时，会创建对应的执行上下文(execution context)。
+在[《03 执行上下文栈》](#/qingfeng/deep/deep-03)中讲到，当 JavaScript 代码执行一段可执行代码(executable code)时，会创建对应的执行上下文(execution context)。
 
 对于每个执行上下文，都有三个重要属性
 
@@ -450,4 +450,4 @@ console.log((false || foo.bar)()) // 1
 
 ## 下一篇文章
 
-[《执行上下文》](#/qingfeng/deep/deep-07)
+[《07 执行上下文》](#/qingfeng/deep/deep-07)

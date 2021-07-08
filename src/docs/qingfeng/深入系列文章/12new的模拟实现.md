@@ -1,4 +1,4 @@
-# new 的模拟实现
+# 12 new 的模拟实现
 
 > JavaScript 深入系列第十二篇，通过 new 的模拟实现，带大家揭开使用 new 获得构造函数实例的真相
 
@@ -93,11 +93,11 @@ function objectFactory() {
 
 更多关于：
 
-原型与原型链，可以看[《从原型到原型链》](#/qingfeng/deep/deep-01)
+原型与原型链，可以看[《01 从原型到原型链》](#/qingfeng/deep/deep-01)
 
-apply，可以看[《 call 和 apply 的模拟实现》](#/qingfeng/deep/deep-10)
+apply，可以看[《10 call 和 apply 的模拟实现》](#/qingfeng/deep/deep-10)
 
-经典继承，可以看[《继承》](#/qingfeng/deep/deep-15)
+经典继承，可以看[15《继承》](#/qingfeng/deep/deep-15)
 
 复制以下的代码，到浏览器中，我们可以做一下测试：
 
@@ -201,12 +201,12 @@ function objectFactory() {
 
 ## 下一篇文章
 
-[类数组对象与 arguments](#/qingfeng/deep/deep-13)
+[13 类数组对象与 arguments](#/qingfeng/deep/deep-13)
 
 ## 相关链接
 
-[《从原型到原型链》](#/qingfeng/deep/deep-01)
+[《01 从原型到原型链》](#/qingfeng/deep/deep-01)
 
-[《call 和 apply 的模拟实现》](#/qingfeng/deep/deep-10)
+[《10 call 和 apply 的模拟实现》](#/qingfeng/deep/deep-10)
 
-[《继承》](#/qingfeng/deep/deep-15)
+[《15 继承》](#/qingfeng/deep/deep-15)

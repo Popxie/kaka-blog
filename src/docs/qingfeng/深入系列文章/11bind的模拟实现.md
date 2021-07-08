@@ -1,4 +1,4 @@
-# bind 的模拟实现
+# 11 bind 的模拟实现
 
 > JavaScript 深入系列第十一篇，通过 bind 函数的模拟实现，带大家真正了解 bind 的特性
 
@@ -32,7 +32,7 @@ var bindFoo = bar.bind(foo)
 bindFoo() // 1
 ```
 
-关于指定 this 的指向，我们可以使用 call 或者 apply 实现，关于 call 和 apply 的模拟实现，可以查看[《call 和 apply 的模拟实现》](#/qingfeng/deep/deep-10)。我们来写第一版的代码：
+关于指定 this 的指向，我们可以使用 call 或者 apply 实现，关于 call 和 apply 的模拟实现，可以查看[《10 call 和 apply 的模拟实现》](#/qingfeng/deep/deep-10)。我们来写第一版的代码：
 
 ```js
 // 第一版
@@ -140,7 +140,7 @@ console.log(obj.friend)
 
 注意：尽管在全局和 foo 中都声明了 value 值，最后依然返回了 undefind，说明绑定的 this 失效了，如果大家了解 new 的模拟实现，就会知道这个时候的 this 已经指向了 obj。
 
-(哈哈，我这是为我的下一篇文章[《new 的模拟实现》](#/qingfeng/deep/deep-12)打广告)。
+(哈哈，我这是为我的下一篇文章[《12 new 的模拟实现》](#/qingfeng/deep/deep-12)打广告)。
 
 所以我们可以通过修改返回的函数的原型来实现，让我们写一下：
 
@@ -288,12 +288,12 @@ Function.prototype.bind2 = function(context) {
 
 ## 下一篇文章
 
-[《new 的模拟实现》](#/qingfeng/deep/deep-12)
+[《12 new 的模拟实现》](#/qingfeng/deep/deep-12)
 
 ## 相关链接
 
-[《从原型到原型链》](#/qingfeng/deep/deep-01)
+[《01 从原型到原型链》](#/qingfeng/deep/deep-01)
 
-[《call 和 apply 的模拟实现》](#/qingfeng/deep/deep-10)
+[《10 call 和 apply 的模拟实现》](#/qingfeng/deep/deep-10)
 
-[《new 的模拟实现》](#/qingfeng/deep/deep-12)
+[《12 new 的模拟实现》](#/qingfeng/deep/deep-12)
