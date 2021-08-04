@@ -1,9 +1,9 @@
 <!--
  * @Description: Git文件
  * @Author: xiehuaqiang
- * @FilePath: \kaka-blog\src\docs\kaka\git\git高频使用命令.md
+ * @FilePath: /kaka-blog/src/docs/kaka/git/git高频使用命令.md
  * @Date: 2021-03-03 17:38:29
- * @LastEditTime: 2021-08-01 00:56:42
+ * @LastEditTime: 2021-08-04 11:35:30
 -->
 
 # Git 高频使用命令
@@ -144,6 +144,8 @@ git checkout -b xxx yyy # 在yyy分支的基础之上创建新xxx分支
 
   # 这种情况文件变更都不在（还原成初始状态）
   git reset --hard HEAD~1
+  
+  git update-ref -d HEAD  # 撤销第一次commit，因为已上的操作都无法撤销第一个commit
   ```
 
 - 5.2 回退到指定版本`直接版本号形式`

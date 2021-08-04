@@ -1,9 +1,9 @@
 <!--
  * @Description: Terminal文件夹
  * @Author: xiehuaqiang
- * @FilePath: \kaka-blog\src\docs\kaka\daily-notes\Mac终端常用命令.md
+ * @FilePath: /kaka-blog/src/docs/kaka/daily-notes/Mac终端常用命令.md
  * @Date: 2021-03-03 17:38:15
- * @LastEditTime: 2021-07-31 21:12:27
+ * @LastEditTime: 2021-08-04 11:34:46
 -->
 
 # Mac Terminal 常用命令
@@ -36,6 +36,8 @@ vim  xxx  # 查看当前xxx文件的内容
   ```bash
   u     # 是撤销上次修改
   cc    # 删除当前行 并进入insert模式(非写入状态时)
+  gg    # 返回顶部
+  shift + g # 前往底部
   dd    # 删除当前行 (${n}dd 从当前行向下删除n行,eg: 3dd, 4dd)
   set nu        # 显示行序号
   set nonumber  # 关闭显示行序号
