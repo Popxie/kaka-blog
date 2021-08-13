@@ -109,6 +109,7 @@ export default {
 
 <style lang="scss">
   .markdown-body {
+    max-width: 1100px;
     background: #ffffff;
     padding:  0 20px;
   }
