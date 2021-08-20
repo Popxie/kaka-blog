@@ -3,7 +3,7 @@
  * @Author: xiehuaqiang
  * @FilePath: /kaka-blog/src/docs/kaka/git/git高频使用命令.md
  * @Date: 2021-03-03 17:38:29
- * @LastEditTime: 2021-08-04 11:35:30
+ * @LastEditTime: 2021-08-20 17:59:52
 -->
 
 # Git 高频使用命令
@@ -144,7 +144,7 @@ git checkout -b xxx yyy # 在yyy分支的基础之上创建新xxx分支
 
   # 这种情况文件变更都不在（还原成初始状态）
   git reset --hard HEAD~1
-  
+
   git update-ref -d HEAD  # 撤销第一次commit，因为已上的操作都无法撤销第一个commit
   ```
 
@@ -197,6 +197,16 @@ git show <tagname>   # 可以查看标签的文字说明
 
 # 查看
 git tag              # 查看所有标签
+
+# 获取远端tag
+git fetch --tags
+
+# 将制定tag推送到远端
+git push origin <tagname>
+
+# 将所有tag推送到远端
+git push --tags
+git push origin --tags
 
 # 删除本地
 git tag -d <tagname>  # 删除tag
