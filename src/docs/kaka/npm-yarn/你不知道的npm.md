@@ -3,7 +3,7 @@
  * @Author: xiehuaqiang
  * @FilePath: /kaka-blog/src/docs/kaka/npm-yarn/你不知道的npm.md
  * @Date: 2021-06-10 15:32:17
- * @LastEditTime: 2021-06-15 16:56:03
+ * @LastEditTime: 2021-08-23 11:41:16
 -->
 
 # 你不知道的 npm
@@ -214,7 +214,9 @@ body-parser 依赖了 bytes 和 content-type 等模块:
 
 那么，执行 npm install 后，得到的 node_modules 中模块目录结构就是下面这样的：
 
-![1.png](http://upload-images.jianshu.io/upload_images/12297114-a95713f3c8429ecf.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+<!-- ![1.png](https://upload-images.jianshu.io/upload_images/12297114-a95713f3c8429ecf.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240) -->
+
+![001](https://user-images.githubusercontent.com/24952644/130386982-4a46d9d1-f864-4cb9-9bf1-78813bccd79d.png)
 
 这样的方式优点很明显， `node_modules` 的结构和 `package.json` 结构一一对应，层级结构明显，并且保证了每次安装目录结构都是相同的。
 
@@ -233,7 +235,9 @@ body-parser 依赖了 bytes 和 content-type 等模块:
 
 还是上面的依赖结构，我们在执行 npm install 后将得到下面的目录结构：
 
-![2.png](http://upload-images.jianshu.io/upload_images/12297114-c5cc86b7f2b6922e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+<!-- ![2.png](https://upload-images.jianshu.io/upload_images/12297114-c5cc86b7f2b6922e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240) -->
+
+![002](https://user-images.githubusercontent.com/24952644/130386994-edac7de1-82c2-4876-8fec-d2d0f95772c9.png)
 
 此时我们若在模块中又依赖了 `is-buffer@2.0.1` 版本：
 
@@ -252,7 +256,9 @@ body-parser 依赖了 bytes 和 content-type 等模块:
 
 此时，我们在执行 npm install 后将得到下面的目录结构：
 
-![3.png](http://upload-images.jianshu.io/upload_images/12297114-1c7ff0eef1980fed.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+<!-- ![3.png](https://upload-images.jianshu.io/upload_images/12297114-1c7ff0eef1980fed.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240) -->
+
+![003](https://user-images.githubusercontent.com/24952644/130387002-e6a17f49-24f2-4477-baea-ccb2b3fd6caf.png)
 
 对应的，如果我们在项目代码中引用了一个模块，模块查找流程如下：
 
@@ -264,7 +270,9 @@ body-parser 依赖了 bytes 和 content-type 等模块:
 
 假设我们又依赖了一个包 axios2@^0.19.0，而它依赖了包 is-buffer@^2.0.3，则此时的安装结构是下面这样的：
 
-![4.png](http://upload-images.jianshu.io/upload_images/12297114-3c4c49c1911568b6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+<!-- ![4.png](https://upload-images.jianshu.io/upload_images/12297114-3c4c49c1911568b6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240) -->
+
+![004](https://user-images.githubusercontent.com/24952644/130387008-ae028601-ee79-4a6b-94d0-74f8a3706e36.png)
 
 所以 npm 3.x 版本并未完全解决老版本的模块冗余问题，甚至还会带来新的问题。
 

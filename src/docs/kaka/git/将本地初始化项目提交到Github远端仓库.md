@@ -1,9 +1,9 @@
 <!--
- * @Description:
+ * @Description: Git文件夹
  * @Author: xiehuaqiang
- * @FilePath: \kaka-blog\.vscode\将本地初始化项目提交到Github远端仓库.md
+ * @FilePath: /kaka-blog/src/docs/kaka/git/将本地初始化项目提交到Github远端仓库.md
  * @Date: 2021-07-31 21:21:14
- * @LastEditTime: 2021-07-31 21:22:32
+ * @LastEditTime: 2021-08-23 10:46:22
 -->
 
 # 将本地初始化项目提交到 Github 远端仓库

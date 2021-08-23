@@ -1,9 +1,9 @@
 <!--
  * @Description: Git文件夹
  * @Author: xiehuaqiang
- * @FilePath: \kaka-blog\src\docs\kaka\git\【Git系列】Git 大小写不敏感引发的血案.md
+ * @FilePath: /kaka-blog/src/docs/kaka/git/【Git系列】Git 大小写不敏感引发的血案.md
  * @Date: 2021-06-24 18:43:38
- * @LastEditTime: 2021-08-01 00:25:39
+ * @LastEditTime: 2021-08-23 17:02:15
 -->
 
 # Git 大小写不敏感引发的血案
@@ -771,6 +771,8 @@ git config core.ignorecase true
 
   通过`git rm` 这个操作来处理。通过这种方式变更文件会被标记为<font color="green">R</font>
 
+<!-- 第三种方式 待验证 -->
+<!-- git mv -f [file] [newfile] -->
 ## 结束语
 
 已上所有内容都是经过好几遍测试，一边实践一边记录的形式来撰写的，最后也反复检查了好几遍，目测没有什么问题，如果有问题了就请留言告知吧~
