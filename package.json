@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
-    "element-ui": "^2.13.2",
+    "element-ui": "^2.15.5",
     "gitalk": "^1.7.0",
     "less-loader": "^6.1.1",
     "lib-flexible": "^0.3.2",

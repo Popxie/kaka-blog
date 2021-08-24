@@ -3,10 +3,10 @@
  * @Author: xiehuaqiang
  * @FilePath: /kaka-blog/src/docs/kaka/terminal/带你了解shell、bash、zsh.md
  * @Date: 2021-06-30 16:05:15
- * @LastEditTime: 2021-07-01 16:46:09
+ * @LastEditTime: 2021-08-24 16:55:44
 -->
 
-# 带你了解 `shell`、`bash`、`zsh`
+# 带你了解 shell、bash、zsh
 
 ## 编译 & 解释
 
@@ -14,7 +14,7 @@
 
 - 编译器
 
-  编译器的输入是 A 语言的源代码，而输出是 B 语言；比如 C++，被编译成汇编语言
+  编译器的输入是 A 语言的源代码，而输出是 B 语言；比如 `C++`，被编译成汇编语言
 
 - 解释器
 
@@ -22,7 +22,7 @@
 
 ## terminal
 
-一个程序，是界面上打开的黑框框本身，比如 xterm、kvt 等。`shell` 运行于其中。
+一个程序，是界面上打开的黑框框本身，比如 `xterm`、`kvt` 等。`shell` 运行于其中。
 
 ## shell 概念
 
@@ -32,16 +32,16 @@
 
 ## Interactive 和 Non-interactive
 
-Interactive，如果你打开 terminal，在里面输入 `bash` 代码，回车得到输出，你就是在运行一个 `Interactive shell`，它的特征是可以让用户输入，然后直接把输出打到界面上；如果你运行一个包含了若干行的 `shell` 脚本，这些 `shell` 代码就运行在 `Non-interactive shell` 中。
+`Interactive`，如果你打开 `terminal`，在里面输入 `bash` 代码，回车得到输出，你就是在运行一个 `Interactive shell`，它的特征是可以让用户输入，然后直接把输出打到界面上；如果你运行一个包含了若干行的 `shell` 脚本，这些 `shell` 代码就运行在 `Non-interactive shell` 中。
 
 ## Login 和 Non-login
 
-`login shell` 是指登录系统后所获得的顶层 `shell`，比如最常用的 ssh 登录，登录完后得到一个 `login shell`
-如果已经登录了桌面电脑，打开 terminal 进入的 `shell` 就是 `Non-login shell`。
+`login shell` 是指登录系统后所获得的顶层 `shell`，比如最常用的 `ssh` 登录，登录完后得到一个 `login shell`
+如果已经登录了桌面电脑，打开 `terminal` 进入的 `shell` 就是 `Non-login shell`。
 
 ## 类型
 
-常见的 `shell` 解释器有 sh、`bash` 这两种，其他的 `ksh`、`csh` 和 `zsh` 等是不常见的。Mac OS 中默认安装了以上所有类型，Windows 需要自行安装，Linux 更不用说了。就像上面说的，只要一门语言有解释器，就可以作为 `shell` 使用。比如 Java 有第三方解释器 J`shell`，PHP 有 `PHP Shell`。如果你用过 windows，那你对 cmd 这个词一定不陌生，它是 `windows shell`，官方名称叫做 `command interpreter`。
+常见的 `shell` 解释器有 sh、`bash` 这两种，其他的 `ksh`、`csh` 和 `zsh` 等是不常见的。`Mac OS` 中默认安装了以上所有类型，`Windows` 需要自行安装，`Linux` 更不用说了。就像上面说的，只要一门语言有解释器，就可以作为 `shell` 使用。比如 Java 有第三方解释器 J`shell`，PHP 有 `PHP Shell`。如果你用过 `windows`，那你对 cmd 这个词一定不陌生，它是 `windows shell`，官方名称叫做 `command interpreter`。
 
 ## bash
 

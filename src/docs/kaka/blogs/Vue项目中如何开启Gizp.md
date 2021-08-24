@@ -3,7 +3,7 @@
  * @Author: xiehuaqiang
  * @FilePath: /kaka-blog/src/docs/kaka/blogs/Vue项目中如何开启Gizp.md
  * @Date: 2021-03-03 17:55:59
- * @LastEditTime: 2021-06-17 19:12:32
+ * @LastEditTime: 2021-08-24 17:03:15
 -->
 
 # Vue 项目中如何开启 Gizp
@@ -154,11 +154,15 @@ sudo nginx -s reload
 
 未开启 gzip：
 
-![11_未开启gzip的效果](https://raw.githubusercontent.com/Popxie/kaka-img-repo/master/img/daily-notes/11_未开启gzip的效果.jpeg)
+<!-- ![11_未开启gzip的效果](https://raw.githubusercontent.com/Popxie/kaka-img-repo/master/img/daily-notes/11_未开启gzip的效果.jpeg) -->
+
+![11_未开启gzip的效果](https://user-images.githubusercontent.com/24952644/130588968-37863f19-8d97-43bb-9542-040740db43cd.jpeg)
 
 开启 gzip：
 
-![12_开启gzip后的效果](https://raw.githubusercontent.com/Popxie/kaka-img-repo/master/img/daily-notes/12_开启gzip后的效果.jpeg)
+<!-- ![12_开启gzip后的效果](https://raw.githubusercontent.com/Popxie/kaka-img-repo/master/img/daily-notes/12_开启gzip后的效果.jpeg) -->
+
+![12_开启gzip后的效果](https://user-images.githubusercontent.com/24952644/130588975-babfbea4-c467-491e-b616-a1766c984e29.jpeg)
 
 ## 结语
 

@@ -3,7 +3,7 @@
  * @Author: xiehuaqiang
  * @FilePath: /kaka-blog/src/docs/kaka/npm-yarn/npm相关命令.md
  * @Date: 2021-06-17 19:52:27
- * @LastEditTime: 2021-06-17 19:54:33
+ * @LastEditTime: 2021-08-24 15:04:49
 -->
 
 # npm相关命令
@@ -33,6 +33,10 @@ npm list -g --depth 0 # 0 表示只查看一级的，1表示两级，以此类�
 
 ```bash
 npm install npm -g
+
+npm install npm@latest -g # 这将安装最新的官方测试版 npm。
+
+npm install npm@next -g # 要安装将来发布的版本
 ```
 
 ## 5.查看 npm 配置信息
