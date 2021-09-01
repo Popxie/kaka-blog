@@ -30,6 +30,7 @@
       <module-loader-summary v-else-if="path === 'module-loader-summary'" v-highlight />
       <class-summary v-else-if="path === 'class-summary'" v-highlight />
       <blob-download v-else-if="path === 'blob-download'" v-highlight />
+      <memory v-else-if="path === 'memory'" v-highlight />
       <!-- npm -->
       <npm-yarn v-else-if="path === 'npm-yarn'" v-highlight />
       <npm-orders v-else-if="path === 'npm-orders'" v-highlight />
@@ -85,6 +86,7 @@ export default {
     'module-loader-summary': () => import('kaka/js/module加载实现总结.md'),
     'class-summary': () => import('kaka/js/class类总结.md'),
     'blob-download': () => import('kaka/js/js实现使用文件流下载文件.md'),
+    'memory': () => import('kaka/js/深入了解JavaScript内存泄漏.md'),
     // npm
     'npm-yarn': () => import('kaka/npm-yarn/npm和yarn.md'),
     'npm-orders': () => import('kaka/npm-yarn/npm相关命令.md'),
