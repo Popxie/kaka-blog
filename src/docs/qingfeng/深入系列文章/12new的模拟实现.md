@@ -70,7 +70,7 @@ var person = objectFactory(Otaku, ……)
 // 第一版代码
 function objectFactory() {
   var obj = new Object()
-  var Constructor = [].shift.call(arguments)
+  var Constructor = [].shift.call(arguments) // 截取 arguments[0] 数据
 
   obj.__proto__ = Constructor.prototype
 
@@ -117,7 +117,7 @@ Otaku.prototype.sayYourName = function() {
 
 function objectFactory() {
   var obj = new Object()
-  var Constructor = [].shift.call(arguments)
+  var Constructor = [].shift.call(arguments) // 指向 Otaku
   obj.__proto__ = Constructor.prototype
   Constructor.apply(obj, arguments)
   return obj

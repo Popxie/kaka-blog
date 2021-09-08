@@ -3,18 +3,18 @@
  * @Author: xiehuaqiang
  * @FilePath: /kaka-blog/src/docs/kaka/css/常见的css水平垂直居中的5种方法.md
  * @Date: 2021-06-18 14:38:25
- * @LastEditTime: 2021-06-18 15:02:53
+ * @LastEditTime: 2021-09-08 11:31:37
 -->
 
 # 常见的 css 水平垂直居中的 5 种方法
 
-![02_常见的css水平垂直居中的5种方法.png](https://raw.githubusercontent.com/Popxie/kaka-img-repo/master/img/blogs/02_常见的css水平垂直居中的5种方法.png)
+![02_常见的css水平垂直居中的5种方法](https://user-images.githubusercontent.com/24952644/132442073-16880ba2-896c-4ac9-86ed-c9aab62f9281.png)
 
 ## 前言
 
 > 这两天总是在掘金插件上看到一些关于 css 垂直水平居中的基础文章，刚好很久之前自己也总结了一些，那我也就分享一下自己平常用的方法吧~
 
-![12.gif](https://raw.githubusercontent.com/Popxie/kaka-img-repo/master/img/funny/12.gif)
+![12](https://user-images.githubusercontent.com/24952644/132442074-5b830f28-e319-41b1-b5df-e993a3c6cf40.gif)
 
 ## 代码实践
 
@@ -119,6 +119,6 @@
 
 ## 实际效果
 
-![垂直水平居中](https://raw.githubusercontent.com/Popxie/kaka-img-repo/master/img/daily-notes/5_垂直水平居中.png)
+![5_垂直水平居中](https://user-images.githubusercontent.com/24952644/132441818-0a152603-bb00-444f-b78c-8da62251c0ae.png)
 
 > 图片上的注释文字不是很对，但是效果都是一样的
