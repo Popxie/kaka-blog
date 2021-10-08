@@ -48,6 +48,7 @@
       <css-selector v-else-if="path === 'css-selector'" v-highlight />
       <flex-box v-else-if="path === 'flex-box'" v-highlight />
       <align-center v-else-if="path === 'align-center'" v-highlight />
+      <dom-tag v-else-if="path === 'dom-tag'" v-highlight />
     </div>
     <div id="gitalk-container" class="2"></div>
   </div>
@@ -104,6 +105,7 @@ export default {
     'css-selector': () => import('kaka/css/css类名选择器.md'),
     'flex-box': () => import('kaka/css/弹性盒子.md'),
     'align-center': () => import('kaka/css/常见的css水平垂直居中的5种方法.md'),
+    'dom-tag': () => import('kaka/css/彻底理解行内元素和块级元素.md'),
   },
   data() {
     return {

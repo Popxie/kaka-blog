@@ -10,6 +10,7 @@ const css = {
     { path: 'css-selector', name: 'css选择器', component },
     { path: 'flex-box', name: '弹性盒子布局', component },
     { path: 'align-center', name: '垂直水平居中有哪些方法', component },
+    { path: 'dom-tag', name: '彻底理解行内元素和块级元素', component },
   ]
 }
 
