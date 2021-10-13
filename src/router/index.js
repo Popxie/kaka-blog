@@ -17,6 +17,7 @@ import youDontKonwJs from './youDontKonwJs'
 import ruanYiFeng from './ruanYiFeng'
 import qingFeng from './qingFeng'
 import vue from './vue'
+import interview from './interview'
 
 /**
  * 通过cdn的形式注入 VueRouter Vuex  Vue 都会挂载到window下面，反之没有
@@ -34,7 +35,7 @@ const routes = [
     name: 'Home',
     component: () => import(/* webpackChunkName: "home" */ '@/pages/Home')
   },
-  engineering,
+  interview,
   javaScript,
   vue,
   git,
@@ -43,6 +44,7 @@ const routes = [
   collection,
   css,
   webpack,
+  engineering,
 
   youDontKonwJs,
   ruanYiFeng,

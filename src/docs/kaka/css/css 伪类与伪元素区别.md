@@ -3,7 +3,7 @@
  * @Author: xiehuaqiang
  * @FilePath: /kaka-blog/src/docs/kaka/css/css 伪类与伪元素区别.md
  * @Date: 2021-09-03 14:14:55
- * @LastEditTime: 2021-09-03 14:51:37
+ * @LastEditTime: 2021-10-13 16:25:34
 -->
 
 # css 伪类与伪元素区别
@@ -27,7 +27,7 @@
 - 表示⽅法
   - CSS2 中伪类、伪元素都是以单冒号 `:` 表示,
   - CSS2.1 后规定伪类⽤单冒号表示,伪元素⽤双冒号 `::`表示，
-  - 浏览器同样接受 CSS2 时代已经存在的伪元素(`:before`, `:after`, `:first-line`, :`first-letter` 等)的 **单冒号** 写法。
+  - 浏览器同样接受 CSS2 时代已经存在的伪元素(`:before`, `:after`, `:first-line`, `:first-letter` 等)的 **单冒号** 写法。
   - CSS2 之后所有新增的伪元素(如 `::selection` )，应该采⽤ **双冒号**的写法。
   - CSS3 中，伪类与伪元素在语法上也有所区别，伪元素修改为以 `::` 开头。浏览器对以:开头的伪元素也继续⽀持，但建议规范书写为 `::` 开头
 - 定义不同

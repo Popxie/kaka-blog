@@ -11,6 +11,8 @@ const css = {
     { path: 'flex-box', name: '弹性盒子布局', component },
     { path: 'align-center', name: '垂直水平居中有哪些方法', component },
     { path: 'dom-tag', name: '彻底理解行内元素和块级元素', component },
+    { path: 'bfc', name: '10分钟理解BFC原理', component },
+    { path: 'class-diff', name: 'css伪类与伪元素区别', component },
   ]
 }
 

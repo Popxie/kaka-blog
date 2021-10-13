@@ -21,6 +21,7 @@ const javaScript = {
     { path: 'class-summary', name: 'ES6 Class总结', component },
     { path: 'blob-download', name: '文件流下载文件', component },
     { path: 'memory', name: '深入了解JS内存泄漏', component },
+    { path: 'cookie', name: '浏览器系列之Cookie', component },
   ]
 }
 

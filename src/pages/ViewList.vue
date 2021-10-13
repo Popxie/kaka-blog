@@ -31,6 +31,7 @@
       <class-summary v-else-if="path === 'class-summary'" v-highlight />
       <blob-download v-else-if="path === 'blob-download'" v-highlight />
       <memory v-else-if="path === 'memory'" v-highlight />
+      <cookie v-else-if="path === 'cookie'" v-highlight />
       <!-- npm -->
       <npm-yarn v-else-if="path === 'npm-yarn'" v-highlight />
       <npm-orders v-else-if="path === 'npm-orders'" v-highlight />
@@ -49,6 +50,10 @@
       <flex-box v-else-if="path === 'flex-box'" v-highlight />
       <align-center v-else-if="path === 'align-center'" v-highlight />
       <dom-tag v-else-if="path === 'dom-tag'" v-highlight />
+      <bfc v-else-if="path === 'bfc'" v-highlight />
+      <class-diff v-else-if="path === 'class-diff'" v-highlight />
+      <!-- 面试题库 -->
+      <interview-summary v-else-if="path === 'interview-summary'" v-highlight />
     </div>
     <div id="gitalk-container" class="2"></div>
   </div>
@@ -88,6 +93,7 @@ export default {
     'class-summary': () => import('kaka/js/class类总结.md'),
     'blob-download': () => import('kaka/js/js实现使用文件流下载文件.md'),
     'memory': () => import('kaka/js/深入了解JavaScript内存泄漏.md'),
+    'cookie': () => import('kaka/js/浏览器系列之Cookie.md'),
     // npm
     'npm-yarn': () => import('kaka/npm-yarn/npm和yarn.md'),
     'npm-orders': () => import('kaka/npm-yarn/npm相关命令.md'),
@@ -106,6 +112,11 @@ export default {
     'flex-box': () => import('kaka/css/弹性盒子.md'),
     'align-center': () => import('kaka/css/常见的css水平垂直居中的5种方法.md'),
     'dom-tag': () => import('kaka/css/彻底理解行内元素和块级元素.md'),
+    'bfc': () => import('kaka/css/10分钟了解BFC.md'),
+    'class-diff': () => import('kaka/css/css 伪类与伪元素区别.md'),
+    // 面试题库
+    'interview-summary': () => import('kaka/面试/汇总集合.md'),
+
   },
   data() {
     return {
