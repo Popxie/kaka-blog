@@ -32,6 +32,7 @@
       <blob-download v-else-if="path === 'blob-download'" v-highlight />
       <memory v-else-if="path === 'memory'" v-highlight />
       <cookie v-else-if="path === 'cookie'" v-highlight />
+      <cookie-token v-else-if="path === 'cookie-token'" v-highlight />
       <!-- npm -->
       <npm-yarn v-else-if="path === 'npm-yarn'" v-highlight />
       <npm-orders v-else-if="path === 'npm-orders'" v-highlight />
@@ -94,6 +95,7 @@ export default {
     'blob-download': () => import('kaka/js/js实现使用文件流下载文件.md'),
     'memory': () => import('kaka/js/深入了解JavaScript内存泄漏.md'),
     'cookie': () => import('kaka/js/浏览器系列之Cookie.md'),
+    'cookie-token': () => import('kaka/js/Cookie、Session、Token、JWT 详解.md'),
     // npm
     'npm-yarn': () => import('kaka/npm-yarn/npm和yarn.md'),
     'npm-orders': () => import('kaka/npm-yarn/npm相关命令.md'),

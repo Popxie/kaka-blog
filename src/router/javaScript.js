@@ -22,6 +22,7 @@ const javaScript = {
     { path: 'blob-download', name: '文件流下载文件', component },
     { path: 'memory', name: '深入了解JS内存泄漏', component },
     { path: 'cookie', name: '浏览器系列之Cookie', component },
+    { path: 'cookie-token', name: 'Cookie、Session、Token、JWT 详解.md', component },
   ]
 }
 
