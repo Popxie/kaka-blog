@@ -36,8 +36,10 @@
       <!-- npm -->
       <npm-yarn v-else-if="path === 'npm-yarn'" v-highlight />
       <npm-orders v-else-if="path === 'npm-orders'" v-highlight />
-      <u-dont-konw-npm v-else-if="path === 'u-dont-konw-npm'" v-highlight />
+      <u-dont-know-npm v-else-if="path === 'u-dont-know-npm'" v-highlight />
       <npm-version-control v-else-if="path === 'npm-version-control'" v-highlight />
+      <npm-script v-else-if="path === 'npm-script'" v-highlight />
+      <npm-script-params v-else-if="path === 'npm-script-params'" v-highlight />
       <!-- VUE -->
       <mixin-extend v-else-if="path === 'mixin-extend'" v-highlight />
       <!-- 工程化 -->
@@ -99,8 +101,10 @@ export default {
     // npm
     'npm-yarn': () => import('kaka/npm-yarn/npm和yarn.md'),
     'npm-orders': () => import('kaka/npm-yarn/npm相关命令.md'),
-    'u-dont-konw-npm': () => import('kaka/npm-yarn/你不知道的npm.md'),
+    'u-dont-know-npm': () => import('kaka/npm-yarn/你不知道的npm.md'),
     'npm-version-control': () => import('kaka/npm-yarn/npm语义版本控制.md'),
+    'npm-script': () => import('kaka/npm-yarn/02运行多个 npm script 的各种姿势.md'),
+    'npm-script-params': () => import('kaka/npm-yarn/03给npm script 传递参数和添加注释.md'),
     // VUE
     'mixin-extend': () => import('kaka/vue/mixin混入&extend的覆盖逻辑.md'),
     // webpack
