@@ -57,6 +57,9 @@
       <class-diff v-else-if="path === 'class-diff'" v-highlight />
       <!-- 面试题库 -->
       <interview-summary v-else-if="path === 'interview-summary'" v-highlight />
+      <!-- terminal -->
+      <shell-bash-zsh v-else-if="path === 'shell-bash-zsh'" v-highlight />
+
     </div>
     <div id="gitalk-container" class="2"></div>
   </div>
@@ -98,7 +101,7 @@ export default {
     'memory': () => import('kaka/js/深入了解JavaScript内存泄漏.md'),
     'cookie': () => import('kaka/js/浏览器系列之Cookie.md'),
     'cookie-token': () => import('kaka/js/Cookie、Session、Token、JWT 详解.md'),
-    // npm
+    // npm-yarn
     'npm-yarn': () => import('kaka/npm-yarn/npm和yarn.md'),
     'npm-orders': () => import('kaka/npm-yarn/npm相关命令.md'),
     'u-dont-know-npm': () => import('kaka/npm-yarn/你不知道的npm.md'),
@@ -122,6 +125,8 @@ export default {
     'class-diff': () => import('kaka/css/css 伪类与伪元素区别.md'),
     // 面试题库
     'interview-summary': () => import('kaka/面试/汇总集合.md'),
+    // terminal
+    'shell-bash-zsh': () => import('kaka/terminal/带你了解shell、bash、zsh.md'),
 
   },
   data() {

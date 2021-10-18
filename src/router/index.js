@@ -18,6 +18,7 @@ import ruanYiFeng from './ruanYiFeng'
 import qingFeng from './qingFeng'
 import vue from './vue'
 import interview from './interview'
+import terminal from './terminal'
 
 /**
  * 通过cdn的形式注入 VueRouter Vuex  Vue 都会挂载到window下面，反之没有
@@ -43,6 +44,7 @@ const routes = [
   dailyNotes,
   collection,
   css,
+  terminal,
   webpack,
   engineering,
 
