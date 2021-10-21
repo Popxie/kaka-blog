@@ -111,7 +111,7 @@ export default {
     // VUE
     'mixin-extend': () => import('kaka/vue/mixin混入&extend的覆盖逻辑.md'),
     // webpack
-    'webpack-one': () => import('kaka/webpack-one.md'),
+    'webpack-one': () => import('kaka/webpack/webpack-one.md'),
     // 工程化 engineering 
     'semi-automatic-deploy': () => import('kaka/blogs/如何半自动化地部署到GitHubPages.md'),
     // 外链收藏
