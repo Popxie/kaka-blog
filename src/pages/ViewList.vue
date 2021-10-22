@@ -59,7 +59,7 @@
       <interview-summary v-else-if="path === 'interview-summary'" v-highlight />
       <!-- terminal -->
       <shell-bash-zsh v-else-if="path === 'shell-bash-zsh'" v-highlight />
-
+      <bash-zsh v-else-if="path === 'bash-zsh'" v-highlight />
     </div>
     <div id="gitalk-container" class="2"></div>
   </div>
@@ -127,7 +127,7 @@ export default {
     'interview-summary': () => import('kaka/面试/汇总集合.md'),
     // terminal
     'shell-bash-zsh': () => import('kaka/terminal/带你了解shell、bash、zsh.md'),
-
+    'bash-zsh': () => import('kaka/terminal/bash&zsh的四种运行模式.md'),
   },
   data() {
     return {
