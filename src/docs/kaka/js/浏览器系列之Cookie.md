@@ -3,7 +3,7 @@
  * @Author: xiehuaqiang
  * @FilePath: /kaka-blog/src/docs/kaka/js/浏览器系列之Cookie.md
  * @Date: 2021-10-13 15:05:16
- * @LastEditTime: 2021-10-13 16:12:43
+ * @LastEditTime: 2021-10-25 20:20:50
 -->
 
 # 浏览器系列之 Cookie 和 SameSite 属性
@@ -36,7 +36,7 @@
 
 ![001](https://user-images.githubusercontent.com/24952644/137084201-2b62ab62-3b06-46a3-a20c-f9adf9ea3eb4.jpeg)
 
-尽管我们在浏览器里查看到了 Cookie，这并不意味着 Cookie 文件只是存放在浏览器里的。实际上，Cookies 相关的内容还可以存在本地文件里，就比如说 Mac 下的 Chrome，存放目录就是 ~/Library/Application Support/Google/Chrome/Default，里面会有一个名为 Cookies 的数据库文件，你可以使用 sqlite 软件打开它：
+尽管我们在浏览器里查看到了 Cookie，这并不意味着 Cookie 文件只是存放在浏览器里的。实际上，Cookies 相关的内容还可以存在本地文件里，就比如说 Mac 下的 Chrome，存放目录就是 `~/Library/Application Support/Google/Chrome/Default`，里面会有一个名为 Cookies 的数据库文件，你可以使用 sqlite 软件打开它：
 
 ![002](https://user-images.githubusercontent.com/24952644/137084286-6f49070f-b962-4dc1-84e3-0edce89fa499.png)
 
@@ -51,7 +51,7 @@
 - 浏览器收到响应后保存下 Cookie
 - 之后对该服务器每一次请求中都通过 Cookie 字段将 Cookie 信息发送给服务器。
 
-我们以 `https://main.m.taobao.com/` 为例来看下这个过程：
+我们以 https://main.m.taobao.com/ 为例来看下这个过程：
 
 我们在请求返回的 Response Headers 可以看到 Set-Cookie 字段：
 
@@ -125,7 +125,7 @@
 
 - **Secure 属性**
 
-  标记为 Secure 的 Cookie 只应通过被 HTTPS 协议加密过的请求发送给服务端。使用 HTTPS 安全协议，可以保护 Cookie 在浏览器和 Web 服务器间的传输过程中不被窃取和篡改。
+  **标记为 Secure 的 Cookie 只应通过被 HTTPS 协议加密过的请求发送给服务端**。使用 HTTPS 安全协议，可以保护 Cookie 在浏览器和 Web 服务器间的传输过程中不被窃取和篡改。
 
 - **HTTPOnly**
 
@@ -143,13 +143,13 @@
 
   - **_属性值_**
 
-    SameSite 可以有下面三种值：
+    `SameSite` 可以有下面三种值：
 
-    Strict 仅允许一方请求携带 Cookie，即浏览器将只发送相同站点请求的 Cookie，即当前网页 URL 与请求目标 URL 完全一致。
-    Lax 允许部分第三方请求携带 Cookie
-    None 无论是否跨站都会发送 Cookie
+    - `Strict` 仅允许一方请求携带 Cookie，即浏览器将只发送相同站点请求的 Cookie，即当前网页 URL 与请求目标 URL 完全一致。  
+    - `Lax` 允许部分第三方请求携带 Cookie  
+    - `None` 无论是否跨站都会发送 Cookie
 
-  之前默认是 None 的，Chrome80 后默认是 Lax。
+  之前默认是 `None` 的，Chrome80 后默认是 `Lax`。
 
   - **_跨域和跨站_**
 
