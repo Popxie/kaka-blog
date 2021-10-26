@@ -3,7 +3,7 @@
  * @Author: xiehuaqiang
  * @FilePath: /kaka-blog/src/docs/kaka/js/options.md
  * @Date: 2021-06-16 10:28:10
- * @LastEditTime: 2021-06-16 17:32:47
+ * @LastEditTime: 2021-10-26 09:47:53
 -->
 
 # 如何避免 OPTIONS 请求?
@@ -12,7 +12,7 @@
 
 > 场景：在调用后端接口的时候会出现两次请求: `OPTIONS` 请求和 `GET` 请求。`OPTIONS` 请求耗费了一定的时间，需减少 `OPTIONS` 请求。
 
-查找原因是浏览器对简单跨域请求和复杂跨域请求的处理区别。
+查找原因是浏览器对**简单跨域请求**和**复杂跨域请求**的处理区别。
 
 `XMLHttpRequest` 会遵守同源策略(`same-origin policy`). 也即脚本只能访问相同协议/相同主机名/相同端口的资源, 如果要突破这个限制, 那就是所谓的跨域, 此时需要遵守跨域资源共享标准 `CORS`(`Cross-Origin Resource Sharing`)机制。
 
@@ -20,7 +20,7 @@
 
 简单请求浏览器请求不会触发预检请求，而**非简单请求会触发预检请求**。这两种方式怎么区分？
 
-**同时满足下列以下条件，就属于简单请求**，否则属于非简单请求[（参考 HTTP 访问控制（CORS）](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Access_control_CORS)）
+同时满足下列条件，就属于`简单请求`，否则属于`非简单请求`[（参考 HTTP 访问控制（CORS）](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Access_control_CORS)）
 
 > - 1.请求方式只能是：`GET、POST、HEAD`
 > - 2.HTTP 请求头限制这几种字段（不得人为设置该集合之外的其他首部字段）：
@@ -28,7 +28,7 @@
 > - 3.`Content-type` 只能取：`application/x-www-form-urlencoded`、`multipart/form-data`、`text/plain`
 > - 4.请求中的任意 `XMLHttpRequestUpload` 对象均没有注册任何事件监听器: `XMLHttpRequestUpload` 对象可以使用 `XMLHttpRequest.upload` 属性访问。
 > - 5.请求中没有使用 `ReadableStream` 对象。
->
+
 > 非简单请求 会在正式通信之前，增加一次 `HTTP` 请求，称之为预检请求。浏览器会先发起 `OPTIONS` 方法到服务器，以获知服务器是否允许该实际请求。
 
 由此可知，若要我们的请求满足简单请求就可以避免发起 `OPTIONS` 请求了。

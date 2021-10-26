@@ -3,7 +3,7 @@
  * @Author: xiehuaqiang
  * @FilePath: /kaka-blog/src/docs/kaka/npm-yarn/npm语义版本控制.md
  * @Date: 2021-04-07 10:21:27
- * @LastEditTime: 2021-10-25 20:37:28
+ * @LastEditTime: 2021-10-25 20:40:33
 -->
 
 # 使用 npm 的语义版本控制
@@ -86,15 +86,11 @@
     "baz": ">1.0.2 <=2.3.4",        // 必须大于1.0.2版本且小于等于2.3.4版本
     "boo": "2.3.1",                 // 必须匹配这个版本
     "boo": "~2.3.1",                // 约等于2.3.1，只更新最小版本，相当于2.3.X，即>=2.3.1 <2.4.0
-    "thr": "2.3.x",
     "boo": "^2.3.1",                // 与2.3.1版本兼容，相当于2.X.X, 即>=2.3.1 < 3.0.0,不改变大版本号。
-    "qux": "<1.0.0 || >=2.3.1 <2.4.5 || >=2.5.2 <3.0.0",
     "asd": "http://asdf.com/asdf.tar.gz",   // 在版本上指定一个压缩包的url，当执行npm install 时这个压缩包会被下载并安装到本地。
-    "til": "~1.2",
-    "elf": "~1.2.3",
-    "two": "2.x",
     "lat": "latest",                // 安装最新版本
     "dyl": "file:../dyl",           // 使用本地路径
+    "qux": "<1.0.0 || >=2.3.1 <2.4.5 || >=2.5.2 <3.0.0",
     "adf": "git://github.com/user/project.git#commit-ish"    // 使用git URL加commit-ish
   }
 }
