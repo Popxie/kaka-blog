@@ -67,7 +67,9 @@
           "args": "after-used"
         }
       ],
-      "vue/comment-directive": [0]
+      "vue/comment-directive": [
+        0
+      ]
     }
   },
   "postcss": {

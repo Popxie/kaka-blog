@@ -3,10 +3,10 @@
  * @Author: xiehuaqiang
  * @FilePath: /kaka-blog/src/docs/kaka/js/options.md
  * @Date: 2021-06-16 10:28:10
- * @LastEditTime: 2021-10-26 09:47:53
+ * @LastEditTime: 2021-12-30 14:12:36
 -->
 
-# 如何避免 OPTIONS 请求?
+# 如何避免 OPTIONS 请求? （文章 1）
 
 ## 减少 OPTIONS 请求
 
@@ -54,17 +54,17 @@
 
 Access-Control-Max-Age 方法对完全一样的 url 的缓存设置生效，多一个参数也视为不同 url。也就是说，如果设置了 10 分钟的缓存，在 10 分钟内，所有请求第一次会产生 options 请求，第二次以及第二次以后就只发送真正的请求了。
 
-## 跨域避免 option 请求
+# 跨域避免 option 请求（文章 2）
 
-### 个人观点
+## 个人观点
 
 > 这种做法个人觉得也不太现实，因为肯定是要往请求头里添加东西的还有就是会修改`Content-Type`
 
-### 最终解决方案
+## 最终解决方案
 
 > 去除自定义 `header`,修改为简单请求，避免该请求发出预检。
 
-### 思路过程
+## 思路过程
 
 一般来说使用 `application/json` 的 `post` 请求是必然会带入 `OPTION` 请求，何为 `OPTION` 预检：
 
@@ -89,11 +89,12 @@ HTTP 请求头只能包含如下信息：
 > Accept  
 > Accept-Language  
 > Content-Language  
-> Last-Event-ID
-> Content-Type，但仅能是下列之一
-> application/x-www-form-urlencoded
-> multipart/form-data
-> text/plain
+> Last-Event-ID  
+> text/plain  
+> Content-Type，但仅能是下列之一:
+
+- **application/x-www-form-urlencoded**
+- **multipart/form-data**
 
 任何一个不满足上述要求的请求，即被认为是复杂请求。一个复杂请求不仅有包含通信内容的请求，同时也包含`预检信息`。
 
