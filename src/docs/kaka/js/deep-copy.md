@@ -3,7 +3,7 @@
  * @Author: xiehuaqiang
  * @FilePath: /kaka-blog/src/docs/kaka/js/deep-copy.md
  * @Date: 2021-06-11 11:05:19
- * @LastEditTime: 2021-06-11 11:59:16
+ * @LastEditTime: 2021-12-31 14:55:19
 -->
 
 # Object & Array 的深拷贝
@@ -87,48 +87,39 @@ console.log(JSON.parse(JSON.stringify(obj)))
 ## 方法三 (函数方法)
 
 ```js
-function deepcopy(source) {
-  if (!source) {
-    return source
+function deepCopy(param) {
+  if (!param) return param
+
+  if (param instanceof Date) return new Date(param)
+  
+  if (param instanceof RegExp) return new RegExp(param)
+
+  if (typeof param !== "object") return param
+
+  // const blankArrOrObj = param instanceof Array ? [] : {}
+  // 或者
+  const blankArrOrObj = Array.isArray(param) ? [] : {}
+
+  // tips: for in 如果是数组那么就是 (index in arr) 如果是 对象 则就是 (key in obj)
+  for (const keyOrIndex in param) {
+    blankArrOrObj[keyOrIndex] = typeof param[keyOrIndex] === 'object' 
+      ? deepCopy(param[keyOrIndex]) 
+      : param[key]
   }
-  const sourceCopy = source instanceof Array ? [] : {}
-  for (const item in source) {
-    sourceCopy[item] =
-      typeof source[item] === 'object' ? deepcopy(source[item]) : source[item]
-  }
-  return sourceCopy
+  return blankArrOrObj
 }
 
 let a = { name: '张三' }
-const b = deepcopy(a)
+b = deepCopy(a)
 b.name = '李四'
 console.log('a:', a) // {name: "张三"}
 console.log('b:', b) // {name: "李四"}
 
 let a = [1, 2]
-b = deepcopy(a)
+b = deepCopy(a)
 b[1] = 3
 console.log('a:', a) // [1,2]
 console.log('b:', b) // [3]
-```
-
-## 方法4
-
-```js
-/**
- * 深度复制对象
- * @param {Object} obj
- * @return {Object}
- */
-function deepClone(obj) {
-  if (Array.isArray(obj)) {
-    return obj.map(item => this.deepClone(item))
-  }
-  if (typeof obj === 'object') {
-    return Object.assign({}, obj)
-  }
-  return obj
-}
 ```
 
 [深拷贝的终极探索·掘金](https://juejin.im/post/6844903692756336653)  
