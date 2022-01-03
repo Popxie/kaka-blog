@@ -3,7 +3,7 @@
  * @Author: xiehuaqiang
  * @FilePath: /kaka-blog/src/docs/kaka/css/css类名选择器.md
  * @Date: 2021-06-15 14:03:44
- * @LastEditTime: 2021-06-15 14:27:12
+ * @LastEditTime: 2022-01-02 13:36:15
 -->
 
 # css 选择器
@@ -67,3 +67,25 @@
 | :visited             | a:visited             | 选择所有已访问的链接。                                |
 
 [阅读原文](https://www.w3school.com.cn/cssref/css_selectors.asp)
+
+## [深度选择器](https://vue-loader.vuejs.org/guide/scoped-css.html#mixing-local-and-global-styles) `>>>` `/deep/` `::v-deep`
+
+```css
+<style scoped>
+>>> .scoped-third-party-class {
+  color: gray;
+}
+</style>
+
+<style scoped>
+/deep/ .scoped-third-party-class {
+  color: gray;
+}
+</style>
+
+<style scoped>
+::v-deep .scoped-third-party-class {
+  color: gray;
+}
+</style>
+```
