@@ -1,9 +1,9 @@
 <!--
  * @Description: 面试文件夹
  * @Author: xiehuaqiang
- * @FilePath: /kaka-blog/src/docs/kaka/webpack-one.md
+ * @FilePath: /kaka-blog/src/docs/kaka/webpack/webpack-one.md
  * @Date: 2021-06-17 21:35:51
- * @LastEditTime: 2021-06-17 21:40:28
+ * @LastEditTime: 2022-02-05 18:40:31
 -->
 
 # Webpack
@@ -12,7 +12,9 @@
 
 [2.webpack 中那些最易混淆的 5 个知识点](https://juejin.im/post/5cede821f265da1bbd4b5630)
 
-[3.Vue Cli3 项目打包优化](https://www.jianshu.com/p/476387c7fea3)
+[3.webpack 易混淆知识点](https://www.cnblogs.com/skychx/tag/Webpack/)
+
+[4.Vue Cli3 项目打包优化](https://www.jianshu.com/p/476387c7fea3)
 
 | loader       | 作用                      |
 | ------------ | ------------------------- |
