@@ -3,7 +3,7 @@
  * @Author: xiehuaqiang
  * @FilePath: /kaka-blog/src/docs/kaka/js/deep-copy.md
  * @Date: 2021-06-11 11:05:19
- * @LastEditTime: 2021-12-31 14:55:19
+ * @LastEditTime: 2022-02-07 13:22:21
 -->
 
 # Object & Array 的深拷贝
@@ -84,7 +84,7 @@ console.log(JSON.parse(JSON.stringify(obj)))
 }
 ```
 
-## 方法三 (函数方法)
+## 方法三 (自定义函数方法)
 
 ```js
 function deepCopy(param) {
@@ -94,6 +94,7 @@ function deepCopy(param) {
   
   if (param instanceof RegExp) return new RegExp(param)
 
+  // 数组和对象都会被判断为 'object'
   if (typeof param !== "object") return param
 
   // const blankArrOrObj = param instanceof Array ? [] : {}
@@ -104,22 +105,32 @@ function deepCopy(param) {
   for (const keyOrIndex in param) {
     blankArrOrObj[keyOrIndex] = typeof param[keyOrIndex] === 'object' 
       ? deepCopy(param[keyOrIndex]) 
-      : param[key]
+      : param[keyOrIndex]
   }
   return blankArrOrObj
 }
 
+// 对象
 let a = { name: '张三' }
 b = deepCopy(a)
 b.name = '李四'
 console.log('a:', a) // {name: "张三"}
 console.log('b:', b) // {name: "李四"}
 
+// 简单数组
 let a = [1, 2]
 b = deepCopy(a)
 b[1] = 3
 console.log('a:', a) // [1,2]
 console.log('b:', b) // [3]
+
+// 对象数组
+let a = [{ name: 'x'}, { name: 'y' }]
+b = deepCopy(a)
+b[1].name =  'z'
+console.log('a:', a) // [{ name: 'x'}, { name: 'y' }]
+console.log('b:', b) // [{ name: 'x'}, { name: 'z' }]
+
 ```
 
 [深拷贝的终极探索·掘金](https://juejin.im/post/6844903692756336653)  

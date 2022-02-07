@@ -3,7 +3,7 @@
  * @Author: xiehuaqiang
  * @FilePath: /kaka-blog/src/docs/kaka/面试/HTTP & TCP相关.md
  * @Date: 2022-02-06 14:02:51
- * @LastEditTime: 2022-02-06 14:07:32
+ * @LastEditTime: 2022-02-07 13:23:42
 -->
 
 # HTTP & TCP 相关
@@ -12,7 +12,33 @@
 
 - [一个故事讲完 https·微信公众号](https://mp.weixin.qq.com/s/StqqafHePlBkWAPQZg3NrA)
 
-- [Http2.0 的一些思考以及 Http3.0 的优势·掘金](https://blog.csdn.net/m0_60360320/article/details/119812431)
+- [Http2.0 的一些思考以及 Http3.0 的优势·csdn](https://blog.csdn.net/m0_60360320/article/details/119812431)
+
+## 1.较 http1.0,http2.0,http3.0 有哪些区别
+
+> http1.0,http2.0 是在 TCP 的基础之上，http3.0 是基于 UDP 之上
+
+### http2.0
+
+- 二进制分帧
+
+- 多路复用
+
+- 首字压缩
+
+- 请求优先级
+
+- 服务器推送
+
+### http3.0
+
+- 连接迁移
+
+- 无队头阻塞
+
+- 自定义的拥塞控制
+
+- 前向安全和前向纠错
 
 ## 2.一次完整的 HTTP 事务流程
 
@@ -50,9 +76,11 @@
 
 ## 4.TCP/IP 协议族
 
-TCP/IP 协议族是 Internet 最基本的协议，HTTP 协议是它的一个子集。TCP/IP 协议族按层次分为以下四层（网络基础，最好记住）
+TCP/IP 协议族是 Internet 最基本的协议，HTTP 协议是它的一个子集。**TCP/IP 协议族**按层次分为以下四层（不包含物理层和安全层）
 
 - 应用层
+
+- 安全层（TSL or SSL, https 对应才有）
 
 - 传输层
 
@@ -64,7 +92,9 @@ TCP/IP 协议族是 Internet 最基本的协议，HTTP 协议是它的一个子�
 
 - 网络层
 
-- 链路层
+- 数据链路层
+
+- 物理层
 
 ![tcp.jpg](https://user-images.githubusercontent.com/24952644/152668846-1a38ffdb-c76e-486a-82f6-57c56c2a43a1.jpeg)
 
