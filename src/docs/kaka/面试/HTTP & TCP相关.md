@@ -3,7 +3,7 @@
  * @Author: xiehuaqiang
  * @FilePath: /kaka-blog/src/docs/kaka/面试/HTTP & TCP相关.md
  * @Date: 2022-02-06 14:02:51
- * @LastEditTime: 2022-02-07 13:23:42
+ * @LastEditTime: 2022-02-08 15:17:18
 -->
 
 # HTTP & TCP 相关
@@ -24,7 +24,7 @@
 
 - 多路复用
 
-- 首字压缩
+- 头部压缩
 
 - 请求优先级
 
@@ -36,9 +36,9 @@
 
 - 无队头阻塞
 
-- 自定义的拥塞控制
+- 自定义拥塞控制
 
-- 前向安全和前向纠错
+- 前向纠错
 
 ## 2.一次完整的 HTTP 事务流程
 
@@ -74,13 +74,23 @@
 
 ---
 
-## 4.TCP/IP 协议族
+## [4.OSI 7层模型和TCP/IP 4层模型·知乎](https://zhuanlan.zhihu.com/p/32059190)
 
-TCP/IP 协议族是 Internet 最基本的协议，HTTP 协议是它的一个子集。**TCP/IP 协议族**按层次分为以下四层（不包含物理层和安全层）
+- 哪七层, 哪四层
+
+  ![七层网络模型](https://user-images.githubusercontent.com/24952644/152928629-f86894dc-6502-4f97-9f2d-99728fe94560.jpeg)
+
+- OSI模型各层的基本作用
+
+  ![OSI模型各层的基本作用](https://user-images.githubusercontent.com/24952644/152929186-a594b508-bda5-40b8-be32-4c5c2033dd84.jpeg)
+
+## 5.TCP/IP 协议族
+
+TCP/IP 协议族是 Internet 最基本的协议，HTTP 协议是它的一个子集。**TCP/IP 协议族**按层次分为以下**四层**
 
 - 应用层
 
-- 安全层（TSL or SSL, https 对应才有）
+- ~~安全层~~（TSL or SSL, https 对应才有）
 
 - 传输层
 
@@ -93,8 +103,6 @@ TCP/IP 协议族是 Internet 最基本的协议，HTTP 协议是它的一个子�
 - 网络层
 
 - 数据链路层
-
-- 物理层
 
 ![tcp.jpg](https://user-images.githubusercontent.com/24952644/152668846-1a38ffdb-c76e-486a-82f6-57c56c2a43a1.jpeg)
 
