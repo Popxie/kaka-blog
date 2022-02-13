@@ -3,7 +3,7 @@
  * @Author: xiehuaqiang
  * @FilePath: /kaka-blog/src/docs/kaka/css/10分钟了解BFC.md
  * @Date: 2021-10-08 16:32:39
- * @LastEditTime: 2021-10-08 16:46:44
+ * @LastEditTime: 2022-02-13 19:41:42
 -->
 
 # 10 分钟理解 BFC 原理
@@ -86,7 +86,7 @@
 
   ![2](https://user-images.githubusercontent.com/24952644/136524162-78e5322c-be14-4ff8-b409-dcb7785e7589.png)
 
-- 2.BFC 可以包含浮动的元素（清除浮动）
+- 2.高度塌陷 BFC 可以包含浮动的元素（清除浮动）
 
   我们都知道，浮动的元素会脱离普通文档流，来看下下面一个例子
 
@@ -132,4 +132,4 @@
 
   这个方法可以用来实现两列自适应布局，效果不错，这时候左边的宽度固定，右边的内容自适应宽度(去掉上面右边内容的宽度)。
 
-[阅读原文](https://zhuanlan.zhihu.com/p/25321647)
+[10 分钟理解 BFC 原理·知乎](https://zhuanlan.zhihu.com/p/25321647)
