@@ -3,7 +3,7 @@
  * @Author: xiehuaqiang
  * @FilePath: /kaka-blog/src/docs/kaka/面试/HTTP & TCP相关.md
  * @Date: 2022-02-06 14:02:51
- * @LastEditTime: 2022-02-08 15:17:18
+ * @LastEditTime: 2022-02-14 21:37:34
 -->
 
 # HTTP & TCP 相关
@@ -22,7 +22,7 @@
 
 - 二进制分帧
 
-- 多路复用
+- 多路复用 [[http2 中的多路复用·掘金](https://juejin.cn/post/6844903935648497678), [多路复用·简书](https://www.jianshu.com/p/ff8f0bd78942)]
 
 - 头部压缩
 
@@ -44,7 +44,7 @@
 
 - （1）DNS 域名解析
 
-- （2）发起 TCP 的三次握手（tcp 连接）
+- （2）tcp 连接 (发起 TCP 的三次握手)
 
   - 1.主机向服务器发送一个建立连接的请求（您好，我想认识您）；
 
@@ -52,7 +52,7 @@
 
   - 3.主机接到同意连接的信号后，再次向服务器发送了确认信号（我也很高兴认识您），自此，主机与服务器两者建立了连接。
 
-- （3）建立 TCP 连接后发起 http 请求
+- （3）发起 http 请求
 
 - （4）服务器响应 http 请求，浏览器得到 HTML 代码
 
@@ -74,13 +74,13 @@
 
 ---
 
-## [4.OSI 7层模型和TCP/IP 4层模型·知乎](https://zhuanlan.zhihu.com/p/32059190)
+## [4.OSI 7 层模型和 TCP/IP 4 层模型·知乎](https://zhuanlan.zhihu.com/p/32059190)
 
 - 哪七层, 哪四层
 
   ![七层网络模型](https://user-images.githubusercontent.com/24952644/152928629-f86894dc-6502-4f97-9f2d-99728fe94560.jpeg)
 
-- OSI模型各层的基本作用
+- OSI 模型各层的基本作用
 
   ![OSI模型各层的基本作用](https://user-images.githubusercontent.com/24952644/152929186-a594b508-bda5-40b8-be32-4c5c2033dd84.jpeg)
 

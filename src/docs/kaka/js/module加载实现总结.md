@@ -3,7 +3,7 @@
  * @Author: xiehuaqiang
  * @FilePath: /kaka-blog/src/docs/kaka/js/module加载实现总结.md
  * @Date: 2021-06-17 19:37:49
- * @LastEditTime: 2021-06-17 19:38:15
+ * @LastEditTime: 2022-02-14 21:55:12
 -->
 
 # Module 的加载实现总结
@@ -42,7 +42,7 @@
 - `<script>`标签的async属性也可以打开，这时只要加载完成，渲染引擎就会中断渲染立即执行。执行完成后，再恢复渲染。
 - 一旦使用了`async`属性，`<script type="module">`就不会按照在页面出现的顺序执行，而是只要该模块加载完成，就执行该模块。
 
-## 2 ES6 模块与 CommonJS 模块的差异
+## 2 ES6 模块与 CommonJS 模块的差异 [[CommonJs和Es Module及它们的区别](https://juejin.cn/post/6938581764432461854)]
 
 - `CommonJS` 模块输出的是一个`值的拷贝`，ES6 模块输出的是`值的引用`。
 - `CommonJS` 模块是`运行时加载`，ES6 模块是`编译时输出接口`。
