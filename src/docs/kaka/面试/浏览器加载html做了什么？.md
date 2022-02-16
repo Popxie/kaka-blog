@@ -3,7 +3,7 @@
  * @Author: xiehuaqiang
  * @FilePath: /kaka-blog/src/docs/kaka/面试/浏览器加载html做了什么？.md
  * @Date: 2022-02-14 22:29:40
- * @LastEditTime: 2022-02-14 22:37:16
+ * @LastEditTime: 2022-02-17 01:42:29
 -->
 
 # 浏览器加载html时做了什么?
@@ -12,7 +12,7 @@
 
 所有浏览器的引擎工作流程都差不多，如上图大致分5步：
 
-> 创建DOM tree –> 创建Style Rules -> 构建Render tree -> 布局Layout –> 绘制Painting
+> 创建DOM tree –> 创建Style Rules(Style Tree) -> 构建Render tree -> 布局Layout –> 绘制Painting
 
 - 第一步，用HTML分析器，分析HTML元素，构建一颗DOM树。
 
