@@ -124,7 +124,7 @@ export default {
     'bfc': () => import('kaka/css/10分钟了解BFC.md'),
     'class-diff': () => import('kaka/css/css 伪类与伪元素区别.md'),
     // 面试题库
-    'interview-summary': () => import('kaka/面试/汇总集合.md'),
+    'interview-summary': () => import('kaka/面试/面试题汇总.md'),
     // terminal
     'shell-bash-zsh': () => import('kaka/terminal/带你了解shell、bash、zsh.md'),
     'bash-zsh': () => import('kaka/terminal/bash&zsh的四种运行模式.md'),

@@ -3,7 +3,7 @@
  * @Author: xiehuaqiang
  * @FilePath: /kaka-blog/src/docs/kaka/面试/那些js中手写代码集合.md
  * @Date: 2022-02-16 00:47:47
- * @LastEditTime: 2022-02-16 22:13:50
+ * @LastEditTime: 2022-03-02 10:40:42
 -->
 
 # 那些 js 中手写代码集合
@@ -27,7 +27,7 @@ function myNew() {
   const obj = new Object()
   // 将类数组对象arguments转换成真正的数组，从而调用数组的方法
   const Constructor = [].shift.call(arguments) // 等价于 Array.prototype.shift.call(arguments)
-  
+
   obj.__proto__ = Constructor.prototype
 
   // 由于使用了 shift 会改变数组原始长度 所以现在的 arguments 是去除首部的新数组
@@ -37,12 +37,6 @@ function myNew() {
 }
 
 const person = myNew(Person, 'xx', 30)
-```
-
-## [实现一个 bind](https://github.com/mqyqingfeng/Blog/issues/12)
-
-```js
-
 ```
 
 ## [实现 call 和 apply](https://github.com/mqyqingfeng/Blog/issues/11)
@@ -153,3 +147,61 @@ Function.prototype.bind2 = function (context) {
 }
 ```
 
+## 4.实现一个 flat 不改变数组中的数据类型
+
+- 不改变数据类型
+
+  ```js
+  // 方法1 ES6特性 array.flat()
+  ;[1, 2, ['3', 4, '5', [6, [7, 8], 9]]].flat(Infinity) // [1, 2, '3', 4, '5', 6, 7, 8, 9]
+  ```
+
+  ```js
+  // 方法2 forEach + 递归
+  const arrs = [1, 2, ['3', 4, '5', [6, [7, 8], 9]]]
+  const newArr = []
+  function flatFn(params) {
+    if (Array.isArray(params)) {
+      params.forEach(item => {
+        Array.isArray(item) ? flatFn(item) : newArr.push(item)
+      })
+    }
+  }
+  flatFn(arrs)
+  console.log('newArr:', newArr)
+  ```
+
+  ```js
+  // 方法3 通过reduce + 递归
+  const arrs = [1, 2, ['3', 4, '5', [6, [7, 8], 9]]]
+  function flatFn2(params) {
+    const a = params.reduce((pre, cur) => {
+      return pre.concat(Array.isArray(cur) ? flatFn2(cur) : cur)
+    }, [])
+
+    return a
+  }
+
+  const newArr2 = flatFn2(arrs)
+
+  console.log('newArr2:', newArr2)
+  ```
+
+- 改变数据类型
+
+  ```js
+  //方法4：使用数组方法join和字符串方法split进行数组扁平化
+  let arr1 = [1, 2, ['3', 4, '5', [6, [7, 8], 9]]]
+  // arr1.join(',') // '1,2,3,4,5,6,7,8,9'
+  // arr1.join(',').split(',') // ['1', '2', '3', '4', '5', '6', '7', '8', '9']
+  let res1 = arr1.join(',').split(',').map(Number) // 也有String方法
+  console.log(res1) // [1, 2, 3, 4, 5, 6, 7, 8, 9]
+  ```
+
+  ```js
+  //方法5：通过正则方法和JSON.stringify（）方法和数组方法
+  let res3 = JSON.stringify(arr1).replace(/\[|\]/g, '').split(',').map(Number)
+  console.log(res3)
+  ```
+
+## 截取地址栏参数
