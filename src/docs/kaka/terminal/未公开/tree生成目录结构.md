@@ -1,9 +1,9 @@
 <!--
- * @Description: Terminal文件夹
+ * @Description:  
  * @Author: xiehuaqiang
- * @FilePath: /kaka-blog/src/docs/kaka/terminal/tree生成目录结构.md
+ * @FilePath: /kaka-blog/src/docs/kaka/terminal/未公开/tree生成目录结构.md
  * @Date: 2021-06-24 17:41:52
- * @LastEditTime: 2021-07-02 14:39:28
+ * @LastEditTime: 2022-05-01 15:27:00
 -->
 
 # Mac 环境快速生成目录结构树
