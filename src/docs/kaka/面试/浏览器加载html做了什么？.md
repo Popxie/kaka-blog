@@ -3,7 +3,7 @@
  * @Author: xiehuaqiang
  * @FilePath: /kaka-blog/src/docs/kaka/面试/浏览器加载html做了什么？.md
  * @Date: 2022-02-14 22:29:40
- * @LastEditTime: 2022-02-17 01:42:29
+ * @LastEditTime: 2022-05-01 15:20:13
 -->
 
 # 浏览器加载html时做了什么?
@@ -23,5 +23,3 @@
 - 第四步：有了Render树后，浏览器开始布局，会为每个Render树上的节点确定一个在显示屏上出现的精确坐标值。
 
 - 第五步：Render数有了，节点显示的位置坐标也有了，最后就是调用每个节点的paint方法，让它们显示出来。
-
-

@@ -3,7 +3,7 @@
  * @Author: xiehuaqiang
  * @FilePath: /kaka-blog/src/docs/kaka/面试/那些js中手写代码集合.md
  * @Date: 2022-02-16 00:47:47
- * @LastEditTime: 2022-03-02 10:40:42
+ * @LastEditTime: 2022-05-01 15:10:04
 -->
 
 # 那些 js 中手写代码集合
@@ -205,3 +205,70 @@ Function.prototype.bind2 = function (context) {
   ```
 
 ## 截取地址栏参数
+
+- 获取 `?` 后的参数并组装成 对象
+
+  ```js
+  const url = 'https://localhost:8080/a/b?name=kaka&age=22#token=222'
+  function getParams() {
+    const obj = {}
+    const paramsString = url.split('?')[1]
+    const paramsArr = paramsString.split('&')
+    paramsArr.forEach(item => {
+      const key = item.split('=')[0]
+      const value = item.split('=')[1]
+      obj[key] = value
+      // 剔除value为空的属性
+      if (!obj[key]) delete obj[key]
+    })
+    return obj
+  }
+  ```
+
+- 实现一个 `parseUrl函数` 解析当前 url 的各个部分
+
+  ```js
+  // 效果如下
+  parts = {
+    protocol: 'https',
+    host: 'localhost:8080',
+    path: '/a/b', // 对应 new URL()的 pathname
+    query: {      // new URL() 对象 没有这个字段
+      name: 'kaka',
+      age: '22',
+    },
+    hash: {
+      token: '222'
+    }
+  }
+  ```
+
+  ```js
+  const urlPath = 'https://localhost:8080/a/b?name=kaka&age=22#token=222&age=3'
+  
+  function getQueryOrHashParam(paramString) {
+    if (!paramString) return {}
+    let arr
+	paramString.startsWith('?')
+		? arr = paramString.substring(1).split('&') // location.hash = #token=222&age=3
+		: arr = paramString.split('?')[1].split('&') // location.search = ?name=kaka&age=22
+		
+    const obj = {}
+    arr.forEach(item => {
+      const key = item.split('=')[0]
+      const value = item.split('=')[1]
+      obj[key] = value
+      if (!value) delete obj[key] // 剔除空值属性    博客要更正
+    })
+    return obj
+  }
+
+  function parseUrl(url) {
+    const { protocol, host, pathname, search, hash } = new URL(url) // 得到一个 URL 对象
+    return { protocol, host, path:pathname, query: getQueryOrHash(search), hash:getQueryOrHash(hash) }
+  }
+  
+  const parts = parseUrl(urlPath)
+
+  console.log('parts:', parts)
+  ```
