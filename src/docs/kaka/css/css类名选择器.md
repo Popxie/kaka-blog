@@ -3,7 +3,7 @@
  * @Author: xiehuaqiang
  * @FilePath: /kaka-blog/src/docs/kaka/css/css类名选择器.md
  * @Date: 2021-06-15 14:03:44
- * @LastEditTime: 2022-01-02 13:36:15
+ * @LastEditTime: 2022-05-05 15:36:14
 -->
 
 # css 选择器
@@ -15,7 +15,7 @@
 | element.class        | p.intro               | 选择 class="intro" 的所有 \<p> 元素。                 |
 | element,element      | div, p                | 选择所有 \<div> 元素和所有 \<p> 元素。                |
 | element element      | div p                 | 选择 \<div> 元素内的所有 \<p> 元素。                  |
-| element>element      | div > p               | 选择父元素是 \<div> 的所有 \<p> 元素。                |
+| element>element      | div > p               | 选择父元素是 \<div> 的所有 \<p> 元素。(选择所有的 p，但是我的父元素必须是 div)                |
 | element+element      | div + p               | 选择紧跟 \<div> 元素的首个 \<p> 元素。                |
 | element1~element2    | p ~ ul                | 选择前面有 \<p> 元素的每个 \<ul> 元素。               |
 | [attribute]          | [target]              | 选择带有 target 属性的所有元素。                      |
