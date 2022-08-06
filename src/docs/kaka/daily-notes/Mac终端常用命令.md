@@ -3,12 +3,14 @@
  * @Author: xiehuaqiang
  * @FilePath: /kaka-blog/src/docs/kaka/daily-notes/Mac终端常用命令.md
  * @Date: 2021-03-03 17:38:15
- * @LastEditTime: 2021-08-04 11:34:46
+ * @LastEditTime: 2022-08-06 15:55:56
 -->
 
 # Mac Terminal 常用命令
 
-## 1 cat （读取）
+## [mv](https://blog.csdn.net/guoqx/article/details/124031830)
+
+## 1、 [cat](https://blog.csdn.net/weixin_43025071/article/details/122416263) （读取 ||创建 || 合并）
 
 ```bash
 cat xxx  # 直接在终端里显示xxx文件（不是文件夹）的内容（只读）
