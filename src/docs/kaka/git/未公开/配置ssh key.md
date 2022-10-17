@@ -3,14 +3,14 @@
  * @Author: xiehuaqiang
  * @FilePath: /kaka-blog/src/docs/kaka/git/配置ssh key.md
  * @Date: 2021-08-23 17:03:54
- * @LastEditTime: 2022-10-17 13:19:44
+ * @LastEditTime: 2022-10-17 16:06:22
 -->
 
 # GitHub 如何配置 ssh key
 
 ## 前提须知
 
-首先要知道自己的电脑有个全局的 `.gitconfig` 文件里面有个 `email`，这个是关键后面要用到！
+首先要知道自己的电脑有个全局的 `.gitconfig` 文件里面有个 `email` ，这个是关键后面要用到！
 
 ```bash
   $ vim ~/.gitconfig
@@ -59,7 +59,7 @@ and the repository exists.
 ## 如何解决问题？
 
 so easy~  
-就是修改全局的 `git` 配置中的 `email`，让他跟生成 ssh 时设置的一致就 ojbk 了
+就是修改全局的 `git` 配置中的 `email` ，让他跟生成 ssh 时设置的一致就 ojbk 了
 
 ```bash
   $ git config --global user.email 'mrxiehuaqiang@163.com'
@@ -67,20 +67,20 @@ so easy~
 
 **结论：以后多个仓库地址（GitHub GitLab）最好用一个邮箱！不论是全局的还是本地的**
 
-## 1.开始生成 ssh （以 GitHub 为例）
+## 1. 开始生成 ssh （以 GitHub 为例）
 
-- 1.1 执行下面的任意一行命令（注意邮箱要变更自己的）
+* 1.1 执行下面的任意一行命令（注意邮箱要变更自己的）
 
-  ```bash
+```bash
     $ ssh-keygen -t rsa -b 4096 -C "mrxiehuaqiang@163.com" # 这是GitHub官网的命令
     $ ssh-keygen -t rsa -C "mrxiehuaqiang@163.com" # 其他情况
   ```
 
-- 1.2 一路回车
+* 1.2 一路回车
 
   最后会生成 id_rsa， id_rsa.pu
 
-  ```bash
+```bash
   Your identification has been saved in /Users/kaka/.ssh/id_rsa.
   Your public key has been saved in /Users/kaka/.ssh/id_rsa.pub.
   +---[RSA 4096]----+
@@ -96,14 +96,14 @@ so easy~
   +----[SHA256]-----+
   ```
 
-- 1.3 查看公钥
+* 1.3 查看公钥
 
-  ```bash
+```bash
     # 第二步的时候已经告诉你文件位置了
     $ cat /Users/kaka/.ssh/id_rsa.pub
   ```
 
-  ```bash
+```bash
   # 公钥 也就是添加到GitHub的ssh配置里
   ssh-rsa AAAAB3NzaC1yc2EAAAADAQA……
   ```
@@ -117,25 +117,25 @@ ssh-add -D # delete cached keys
 ssh-add -l # 查看添加哪些
 ```
 
-- 2.1 生成代理 （自己的理解）
+* 2.1 生成代理 （自己的理解）
 
-  ```bash
+```bash
     $  eval `ssh-agent -s` || eval "$(ssh-agent -s)" # 两种写法都可以
 
     Agent pid 8833 # 输出
   ```
 
-- 2.2 写入代理
+* 2.2 写入代理
 
-  ```bash
+```bash
     $ ssh-add -K ~/.ssh/id_rsa
 
     Identity added: /Users/kaka/.ssh/id_rsa (mrxiehuaqiang@163.com) # 输出
   ```
 
-- 2.3 查看代理
+* 2.3 查看代理
 
-  ```bash
+```bash
     $ ssh-add -l
 
     4096 SHA256:tp……qA3ERkSoU mrxiehuaqiang@163.com (RSA) # 输出
@@ -145,7 +145,7 @@ ssh-add -l # 查看添加哪些
 
   > If you're using macOS Sierra 10.12.2 or later, you will need to modify your ~/.ssh/config file to automatically load keys into the ssh-agent and store passphrases in your keychain
 
-  ```bash
+```bash
   Host *
     AddKeysToAgent yes
     UseKeychain yes
@@ -154,16 +154,16 @@ ssh-add -l # 查看添加哪些
 
 ## 3. Add the SSH key to your GitHub account.
 
-- 3.1 将 ssh key(步骤1.3查看公钥的结果) 添加到 GitHub 账户
+* 3.1 将 ssh key(步骤1.3查看公钥的结果) 添加到 GitHub 账户
 
-- 3.2 检验是否设置成功
+* 3.2 检验是否设置成功
 
-  ```bash
+```bash
     $ ssh -T git@github.com # 配置文件中的地址，如果没有配置那就是走默认的git@github.com
 
     Hi Popxie! You've successfully authenticated, but GitHub does not provide shell access' # 输出
   ```
 
-- 3.3 git clone project
+* 3.3 git clone project
 
   如果 clone 不下来 请将公钥重新添加一次。（我写完这篇文档以后发现还是不行，就重新添加了一下，然后就 ojbk 了）
