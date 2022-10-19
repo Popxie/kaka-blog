@@ -3,7 +3,7 @@
  * @Author: xiehuaqiang
  * @FilePath: /kaka-blog/src/docs/kaka/面试/那些js中手写代码集合.md
  * @Date: 2022-02-16 00:47:47
- * @LastEditTime: 2022-10-18 19:27:04
+ * @LastEditTime: 2022-10-19 11:56:08
 -->
 
 # 那些 js 中手写代码集合
@@ -28,11 +28,12 @@ function Person() {
 function myNew() {
     const obj = new Object()
     // 将类数组对象arguments转换成真正的数组，从而调用数组的方法
+    // 截取 arguments的第一个参数函数f，实际就是Person构造函数
     const Constructor = [].shift.call(arguments) // 等价于 Array.prototype.shift.call(arguments)
 
     obj.__proto__ = Constructor.prototype
 
-    // 由于使用了 shift 会改变数组原始长度 所以现在的 arguments 是去除首部的新数组
+    // 由于使用了 shift 会改变数组原始长度 所以现在的 arguments 是去除第一个形参后的新数组
     const result = Constructor.call(obj, arguments)
 
     return typeof result === 'object' ? result : obj
@@ -43,14 +44,14 @@ const person = myNew(Person, 'xx', 30)
 
 ## [实现 call 和 apply](https://github.com/mqyqingfeng/Blog/issues/11)
 
-> 1. 将函数设为对象的属性  
-> 2. 执行该函数  
+> 1. 将**调用call或apply的函数**设为**传入对象**的属性  
+> 2. 执行该函数（执行之前要先用 [] 暂存所有的`arguments[${i}]）`
 > 3. 删除该函数
 
 ```js
 Function.prototype.call2 = function(context) {
     context = context || window
-    context.fn = this
+    context.fn = this // 这里的this 实际就是调用 call2()的函数，如下demo中的 bar.call2(obj, 'kevin', 18)，此时this 指的就是bar
 
     const args = []
 
@@ -58,7 +59,7 @@ Function.prototype.call2 = function(context) {
         args.push(`arguments[${i}]`)
     }
     // eval(String) 如果String是可执行js脚本就会执行 否则原样返回
-    // eval 会 自动将 args toString, '[2,3]' => '2,3'
+    // eval 会自动将 args toString化, '[arguments[1], arguments[2]]' => 'arguments[1], arguments[2]'
     const result = eval(`context.fn(${args})`)
     // 实际执行效果：
     // var result = context.fn(arguments[1], arguments[2], ...)
@@ -200,6 +201,9 @@ Function.prototype.bind2 = function(context) {
   // arr1.join(',') // '1,2,3,4,5,6,7,8,9'
   // arr1.join(',').split(',') // ['1', '2', '3', '4', '5', '6', '7', '8', '9']
   let res1 = arr1.join(',').split(',').map(Number) // 也有String方法
+  // 等价于
+  let res1 = arr1.join(',').split(',').map((item) => Number(item))
+  
   console.log(res1) // [1, 2, 3, 4, 5, 6, 7, 8, 9]
 ```
 
