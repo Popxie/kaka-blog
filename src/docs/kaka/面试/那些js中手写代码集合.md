@@ -3,7 +3,7 @@
  * @Author: xiehuaqiang
  * @FilePath: /kaka-blog/src/docs/kaka/面试/那些js中手写代码集合.md
  * @Date: 2022-02-16 00:47:47
- * @LastEditTime: 2022-10-19 11:56:08
+ * @LastEditTime: 2022-10-20 09:52:35
 -->
 
 # 那些 js 中手写代码集合
@@ -24,7 +24,13 @@ function Person() {
     // 如果返回基本类型，相当于没有任何操作
     return '基本类型'
 }
-
+/**
+ * new 的过程
+ * 1.创建一个对象
+ * 2.将新建对象的隐式原型 指向 构造函数的原型
+ * 3.执行构造函数并将构造函数的 this 指向 obj
+ * 4.判断构造函数的返回值是不是引用类型，是就返回返回值 不是就这个新建的对象
+ */
 function myNew() {
     const obj = new Object()
     // 将类数组对象arguments转换成真正的数组，从而调用数组的方法
